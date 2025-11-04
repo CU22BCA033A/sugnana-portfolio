@@ -48,6 +48,17 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
         }
+
+        /* --- FIX: Animated Code Snippet CSS --- */
+        @keyframes code-scroll {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-70%); } /* Scrolls through the 6 lines of code */
+        }
+
+        .animate-code-scroll {
+            animation: code-scroll 10s linear infinite;
+        }
+        /* --- END FIX --- */
     </style>
 </head>
 
@@ -59,7 +70,7 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Logo/Name -->
                 <div class="flex-shrink-0">
-                    <span class="text-2xl font-bold text-primary">Sugnana Murthy</span>
+                    <span class="text-2xl font-bold text-primary">Sugnana Murthy GM</span>
                 </div>
                 <!-- Navigation Links -->
                 <div class="flex space-x-6">
@@ -82,7 +93,7 @@
                 <div class="grid md:grid-cols-2 gap-12 items-center w-full">
                     <!-- Text Content -->
                     <div class="space-y-6">
-                        <p class="text-xl text-primary font-medium">Hello, I'm</p>
+                        <p class="text-xl text-primary font-medium"><b>Hello, I'm</b></p>
                         <h1 class="text-6xl font-extrabold tracking-tight text-text-color">
                             Sugnana Murthy GM
                         </h1>
@@ -113,14 +124,16 @@
                         </div>
                         <div class="card-bg p-4 rounded-xl border border-primary/20 w-full max-w-xs shadow-xl hidden lg:block">
                             <div class="h-20 bg-gray-900 rounded-lg flex flex-col justify-end p-2 font-mono text-xs overflow-hidden relative">
-                                <!-- Animated Code Snippet -->
-                                <pre class="text-primary/70 absolute inset-0 p-2 text-[10px] animate-code-scroll">
+                                <!-- Animated Code Snippet - Now working! -->
+                                <pre class="text-primary/70 absolute inset-0 p-2 text-[10px] leading-4 animate-code-scroll">
                                     <span class="text-red-400"># CyberSec Trace:</span> Initiated...
                                     <span class="text-yellow-400">> $ nmap -sV -p 80,443 target.com</span>
                                     <span class="text-green-400">Deployment successful!</span>
                                     <span class="text-yellow-400">git commit -m "Secure API endpoints"</span>
                                     <span class="text-primary">$ git push origin main</span>
                                     <span class="text-green-400">Deployment successful!</span>
+                                    <span class="text-red-400">Vulnerability Scan:</span> Complete.
+                                    <span class="text-yellow-400"># Next task:</span> Review log files.
                                 </pre>
                             </div>
                         </div>
