@@ -49,16 +49,31 @@
             50% { opacity: 0; }
         }
 
-        /* --- FIX: Animated Code Snippet CSS --- */
+        /* Animated Code Snippet CSS */
         @keyframes code-scroll {
             0% { transform: translateY(0); }
-            100% { transform: translateY(-70%); } /* Scrolls through the 6 lines of code */
+            /* Adjusted scroll limit to ensure visibility and prevent content from disappearing too quickly */
+            100% { transform: translateY(-55%); } 
         }
 
         .animate-code-scroll {
             animation: code-scroll 10s linear infinite;
         }
-        /* --- END FIX --- */
+
+        /* Spinning loader for AI generation */
+        .loader {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 
@@ -70,7 +85,7 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Logo/Name -->
                 <div class="flex-shrink-0">
-                    <span class="text-2xl font-bold text-primary">Sugnana Murthy GM</span>
+                    <span class="text-2xl font-bold text-primary">Sugnana Murthy</span>
                 </div>
                 <!-- Navigation Links -->
                 <div class="flex space-x-6">
@@ -93,7 +108,7 @@
                 <div class="grid md:grid-cols-2 gap-12 items-center w-full">
                     <!-- Text Content -->
                     <div class="space-y-6">
-                        <p class="text-xl text-primary font-medium"><b>Hello, I'm</b></p>
+                        <p class="text-xl text-primary font-medium">Hello, I'm</p>
                         <h1 class="text-6xl font-extrabold tracking-tight text-text-color">
                             Sugnana Murthy GM
                         </h1>
@@ -115,7 +130,7 @@
                     <!-- Profile Picture and Code Visual -->
                     <div class="flex flex-col items-center space-y-6">
                         <div class="card-bg p-3 rounded-full border-4 border-primary shadow-2xl shadow-primary/30">
-                            <!-- Image URL corrected to the user-provided external link -->
+                            <!-- Image URL updated to the latest link provided by the user -->
                             <img src="https://media.licdn.com/dms/image/v2/D5603AQGY3wqGUe6vyw/profile-displayphoto-crop_800_800/B56ZpH.9hQJkAI-/0/1762144280370?e=1767225600&v=beta&t=50kn0sEUvB4bJQFPg-NCOC2BVadrs7pPz3XxDsLQa5c" 
                                  alt="Sugnana Murthy GM professional portrait" 
                                  class="w-64 h-64 object-cover rounded-full transform hover:scale-105 transition duration-500"
@@ -123,8 +138,9 @@
                             >
                         </div>
                         <div class="card-bg p-4 rounded-xl border border-primary/20 w-full max-w-xs shadow-xl hidden lg:block">
-                            <div class="h-20 bg-gray-900 rounded-lg flex flex-col justify-end p-2 font-mono text-xs overflow-hidden relative">
-                                <!-- Animated Code Snippet - Now working! -->
+                            <!-- Increased height from h-20 to h-32 to show more content clearly -->
+                            <div class="h-32 bg-gray-900 rounded-lg flex flex-col justify-end p-2 font-mono text-xs overflow-hidden relative">
+                                <!-- Animated Code Snippet -->
                                 <pre class="text-primary/70 absolute inset-0 p-2 text-[10px] leading-4 animate-code-scroll">
                                     <span class="text-red-400"># CyberSec Trace:</span> Initiated...
                                     <span class="text-yellow-400">> $ nmap -sV -p 80,443 target.com</span>
@@ -141,7 +157,7 @@
                 </div>
             </section>
             
-            <!-- SKILLS SECTION - Enhanced and Updated -->
+            <!-- SKILLS SECTION -->
             <section id="skills" data-section="skills" class="section-content hidden pt-8">
                 <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Core Skills & Expertise</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -193,7 +209,7 @@
                 </div>
             </section>
             
-            <!-- PROJECTS SECTION - All 7 Projects Added -->
+            <!-- PROJECTS SECTION -->
             <section id="projects" data-section="projects" class="section-content hidden pt-8">
                 <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Key Projects</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -222,7 +238,7 @@
                         </div>
                     </div>
                     
-                    <!-- Project 3: Steganography Web App (NEW) -->
+                    <!-- Project 3: Steganography Web App -->
                     <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-text-color mb-2">3. Steganography Web App</h3>
@@ -258,7 +274,7 @@
                         </div>
                     </div>
                     
-                    <!-- Project 6: Temple and Monument Detection (NEW) -->
+                    <!-- Project 6: Temple and Monument Detection -->
                     <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-text-color mb-2">6. Temple and Monument Detection</h3>
@@ -284,12 +300,12 @@
                 </div>
             </section>
             
-            <!-- ACTIVITIES & CERTIFICATIONS SECTION - Certifications Individually Listed -->
+            <!-- ACTIVITIES & CERTIFICATIONS SECTION -->
             <section id="activities" data-section="activities" class="section-content hidden pt-8">
                 <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Professional Growth & Certifications</h2>
                 
                 <div class="grid lg:grid-cols-2 gap-12">
-                    <!-- Column 1: Activities/Experience (Unchanged from original structure) -->
+                    <!-- Column 1: Activities/Experience -->
                     <div class="space-y-6">
                         <h3 class="text-2xl font-semibold text-text-color flex items-center mb-4">
                             <i data-lucide="award" class="text-primary w-5 h-5 mr-3"></i> Professional Activities & Experience
@@ -310,7 +326,7 @@
                         </ul>
                     </div>
 
-                    <!-- Column 2: Certifications (Updated to individual entries) -->
+                    <!-- Column 2: Certifications -->
                     <div class="space-y-6">
                         <h3 class="text-2xl font-semibold text-text-color flex items-center mb-4">
                             <i data-lucide="graduation-cap" class="text-primary w-5 h-5 mr-3"></i> Key Certifications
@@ -351,7 +367,7 @@
                 </div>
             </section>
             
-            <!-- CONTACT SECTION (Unchanged) -->
+            <!-- CONTACT SECTION -->
             <section id="contact" data-section="contact" class="section-content hidden pt-8">
                 <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Connect with Me</h2>
                 <div class="grid md:grid-cols-3 gap-8">
@@ -394,27 +410,50 @@
     </footer>
 
 
-    <!-- Project Detail Modal (Unchanged structure) -->
+    <!-- Project Detail Modal -->
     <div id="project-modal" class="fixed inset-0 bg-black/80 z-[100] hidden flex items-center justify-center p-4" onclick="closeProjectModal()">
-        <div class="card-bg w-full max-w-2xl rounded-xl p-8 shadow-2xl relative" onclick="event.stopPropagation()">
+        <div class="card-bg w-full max-w-3xl rounded-xl p-8 shadow-2xl relative" onclick="event.stopPropagation()">
             <button onclick="closeProjectModal()" class="absolute top-4 right-4 text-gray-400 hover:text-primary transition duration-300">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
             <h3 id="modal-title" class="text-3xl font-bold text-primary mb-2"></h3>
             <p id="modal-tech" class="text-lg text-gray-300 mb-4"></p>
-            <div id="modal-description" class="text-gray-400 space-y-4"></div>
+            <div id="modal-description" class="text-gray-400 space-y-4 mb-6 border-b border-primary/20 pb-4"></div>
+            
+            <!-- Gemini AI Feature Section -->
+            <h4 class="text-xl font-semibold text-text-color mb-4 flex items-center">
+                <i data-lucide="lightbulb" class="w-5 h-5 text-primary mr-2"></i> Cybersecurity Intelligence (Powered by Gemini)
+            </h4>
+
+            <button id="generate-summary-btn" class="bg-primary text-background-color font-bold py-2 px-4 rounded-lg flex items-center hover:opacity-90 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed" onclick="generateSecuritySummary()">
+                <i data-lucide="sparkles" class="w-5 h-5 mr-2"></i>
+                <span id="button-text">✨ Get Security Insight</span>
+            </button>
+
+            <!-- AI Output Area -->
+            <div id="ai-output-container" class="mt-4 hidden p-4 border border-primary/50 rounded-lg bg-gray-900/50">
+                <p id="ai-summary" class="text-gray-300"></p>
+                <div id="ai-sources" class="text-xs text-gray-500 mt-2 space-y-1"></div>
+            </div>
+
         </div>
     </div>
 
 
     <script>
+        // --- Configuration for Gemini API ---
+        const GEMINI_MODEL = 'gemini-2.5-flash-preview-09-2025';
+        const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=`;
+        const API_KEY = ""; // Canvas will provide the key at runtime
+
         // --- 1. State and Data Management ---
         const sections = ['home', 'skills', 'projects', 'activities', 'contact'];
         const sectionElements = sections.map(id => document.getElementById(id));
         const navLinks = document.querySelectorAll('.nav-link');
         let currentSection = 'home';
+        let currentProjectId = null;
         
-        // Data for Project Modals - Updated with all 6 main projects
+        // Data for Project Modals - Added specific prompt keys for Gemini
         const projectDetails = {
             1: {
                 title: "Cybersecurity Awareness Portal (NISD Compliance)",
@@ -424,7 +463,8 @@
                     "The content is specifically aligned with NISD (National Information Security Division) standards for high-quality cybersecurity education.",
                     "Hosted on AWS, demonstrating cloud deployment proficiency and ensuring high availability and scalability.",
                     "Achieved 90% user satisfaction, proving its effectiveness as a training and awareness tool."
-                ]
+                ],
+                geminiPrompt: "Analyze this NISD-compliant Cybersecurity Awareness Portal built on React/Flask/AWS. What are the key security best practices for hosting such a platform on the cloud, specifically regarding data integrity and user authentication? Summarize in one paragraph."
             },
             2: {
                 title: "Translatr (Encryption/Decryption Tool)",
@@ -433,7 +473,8 @@
                     "A cryptographic tool developed to implement and demonstrate various classical encryption algorithms.",
                     "Supports Caesar, Beaufort, and Autokey ciphers, providing practical insight into cryptographic mechanisms.",
                     "Utilized the AWS Encryption SDK to handle key management and secure operations, showcasing cloud-based security development."
-                ]
+                ],
+                geminiPrompt: "Summarize the modern risks associated with using classical ciphers (Caesar, Beaufort, Autokey) for modern applications and why the AWS Encryption SDK or AES-256 is a more secure, industry-standard alternative for data at rest/in transit. Summarize in one paragraph."
             },
             3: {
                 title: "Steganography Web App",
@@ -442,7 +483,8 @@
                     "Developed a full-stack web application using JavaScript and Flask to implement steganography.",
                     "Functionality includes securely hiding and extracting messages embedded within image files.",
                     "Demonstrates skill in web security and advanced data manipulation techniques."
-                ]
+                ],
+                geminiPrompt: "Explain the threat landscape of steganography in web applications (e.g., C2 communications) and suggest three technical mitigation steps a modern Web Application Firewall (WAF) or Intrusion Detection System (IDS) could take to identify and block it. Summarize in one paragraph."
             },
             4: {
                 title: "Secure Adversarial AI Models",
@@ -451,7 +493,8 @@
                     "Focused on the critical domain of AI security by implementing robust defenses against common adversarial attacks.",
                     "Demonstrated ability to improve model robustness by 15% against malicious data injection and manipulation attempts.",
                     "Explores the intersection of Machine Learning and Cybersecurity, a highly advanced and sought-after skill."
-                ]
+                ],
+                geminiPrompt: "Provide a brief overview of the two most common adversarial AI attacks (e.g., model poisoning, evasion attacks) and how improving model robustness by 15% directly benefits an organization's security posture. Summarize in one paragraph."
             },
             5: {
                 title: "Real-Time Threat Intelligence Dashboard",
@@ -460,7 +503,8 @@
                     "Designed and developed a comprehensive cybersecurity application for visualizing threat data.",
                     "The dashboard is built to collect and analyze security intelligence in real-time, enabling rapid response to emerging threats.",
                     "A critical project demonstrating skills in data processing, analysis, and intuitive visualization for security operations."
-                ]
+                ],
+                geminiPrompt: "What are the three most critical real-time threat indicators that an effective dashboard should monitor (e.g., failed login attempts, anomalous network traffic, known bad IPs), and what is the primary security benefit of centralizing this data? Summarize in one paragraph."
             },
             6: {
                 title: "Temple and Monument Detection",
@@ -469,7 +513,8 @@
                     "A computer vision project utilizing the YOLOV8 Deep Learning model.",
                     "Achieved efficient, real-time object recognition and detection of specific temples and monuments.",
                     "Showcases strong skills in AI, Deep Learning model implementation, and performance optimization."
-                ]
+                ],
+                geminiPrompt: "When deploying a computer vision model like YOLOV8 in a security or public infrastructure context (e.g., monitoring), what are the main privacy and ethical concerns that must be addressed, and what steps should be taken to ensure GDPR or similar compliance? Summarize in one paragraph."
             }
         };
 
@@ -562,12 +607,26 @@
         const modalTitle = document.getElementById('modal-title');
         const modalTech = document.getElementById('modal-tech');
         const modalDescription = document.getElementById('modal-description');
+        const aiOutputContainer = document.getElementById('ai-output-container');
+        const aiSummary = document.getElementById('ai-summary');
+        const aiSources = document.getElementById('ai-sources');
+        const generateBtn = document.getElementById('generate-summary-btn');
+        const btnText = document.getElementById('button-text');
+        
 
         function showProjectModal(projectId) {
+            currentProjectId = projectId;
             const detail = projectDetails[projectId];
             if (!detail) return;
 
-            // Populate content
+            // Reset AI content and button state
+            aiOutputContainer.classList.add('hidden');
+            aiSummary.textContent = '';
+            aiSources.innerHTML = '';
+            generateBtn.disabled = false;
+            btnText.innerHTML = '<i data-lucide="sparkles" class="w-5 h-5 mr-2"></i> ✨ Get Security Insight';
+
+            // Populate static content
             modalTitle.textContent = detail.title;
             modalTech.textContent = detail.tech;
             
@@ -576,14 +635,131 @@
 
             // Show modal
             modal.classList.remove('hidden');
+            lucide.createIcons(); // Re-render icons in the modal
         }
 
         function closeProjectModal() {
             modal.classList.add('hidden');
+            currentProjectId = null;
         }
 
 
-        // --- 4. Typing Animation (Advanced Feature) ---
+        // --- 4. Gemini API Integration ---
+
+        /**
+         * Generic function to fetch response from Gemini API with exponential backoff.
+         * @param {object} payload - The request body for the API.
+         * @returns {Promise<{text: string, sources: Array<{uri: string, title: string}>}>}
+         */
+        async function fetchGeminiResponse(payload, maxRetries = 5) {
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const response = await fetch(GEMINI_API_URL + API_KEY, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        // Throw error to trigger retry if 429 (Rate Limit) or other retryable errors
+                        throw new Error(`API error: ${response.status} ${response.statusText}`);
+                    }
+
+                    const result = await response.json();
+                    const candidate = result.candidates?.[0];
+
+                    if (candidate && candidate.content?.parts?.[0]?.text) {
+                        const text = candidate.content.parts[0].text;
+                        
+                        // Extract grounding sources
+                        let sources = [];
+                        const groundingMetadata = candidate.groundingMetadata;
+                        if (groundingMetadata && groundingMetadata.groundingAttributions) {
+                            sources = groundingMetadata.groundingAttributions
+                                .map(attribution => ({
+                                    uri: attribution.web?.uri,
+                                    title: attribution.web?.title,
+                                }))
+                                .filter(source => source.uri && source.title);
+                        }
+                        
+                        return { text, sources };
+
+                    } else {
+                        return { text: "Error: The model returned an empty response.", sources: [] };
+                    }
+
+                } catch (error) {
+                    console.error("Gemini API call failed:", error);
+                    if (i < maxRetries - 1) {
+                        const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                    } else {
+                        throw new Error("Failed to connect to the Gemini API after multiple retries.");
+                    }
+                }
+            }
+        }
+
+        /**
+         * Triggers the Gemini API call to generate a security summary for the current project.
+         */
+        async function generateSecuritySummary() {
+            if (!currentProjectId) return;
+            const project = projectDetails[currentProjectId];
+            if (!project) return;
+
+            // Set loading state
+            generateBtn.disabled = true;
+            btnText.innerHTML = '<span class="loader mr-2"></span> Generating Insight...';
+            aiOutputContainer.classList.add('hidden');
+            aiSummary.textContent = '';
+            aiSources.innerHTML = '';
+
+
+            const systemPrompt = "You are a concise, world-class Cybersecurity Consultant. Your task is to analyze the following project description and provide a single-paragraph summary of its key security implications, attack vectors, or defensive mechanisms. Start your summary with 'Security Insight: '";
+            const userQuery = project.geminiPrompt;
+
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                tools: [{ "google_search": {} }],
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                },
+            };
+
+            try {
+                const { text, sources } = await fetchGeminiResponse(payload);
+                
+                aiSummary.textContent = text;
+                
+                // Display sources
+                if (sources.length > 0) {
+                    aiSources.innerHTML = '<p class="font-bold text-primary mt-3">Sources:</p>' + sources.map((s, index) => 
+                        `<a href="${s.uri}" target="_blank" rel="noopener noreferrer" class="block text-gray-500 hover:text-primary underline transition duration-300">
+                            ${index + 1}. ${s.title}
+                        </a>`
+                    ).join('');
+                } else {
+                     aiSources.innerHTML = '';
+                }
+
+                aiOutputContainer.classList.remove('hidden');
+
+            } catch (error) {
+                aiSummary.textContent = `Error generating insight: ${error.message}`;
+                aiOutputContainer.classList.remove('hidden');
+                console.error("Final API error:", error);
+            } finally {
+                // Reset button state
+                generateBtn.disabled = false;
+                btnText.innerHTML = '<i data-lucide="sparkles" class="w-5 h-5 mr-2"></i> ✨ Get Security Insight';
+                lucide.createIcons(); // Re-render sparkle icon
+            }
+        }
+
+
+        // --- 5. Typing Animation (Advanced Feature) ---
         const textElement = document.getElementById('typewriter-text');
         const roles = [
             "Security Consultant",
@@ -632,7 +808,7 @@
             setTimeout(type, typingSpeed);
         }
         
-        // --- 5. Initialization on Load ---
+        // --- 6. Initialization on Load ---
         window.onload = function() {
             initializeSections(); // Sets the correct initial page state
             type(); // Start the typewriter effect
