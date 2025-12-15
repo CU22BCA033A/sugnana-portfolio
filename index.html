@@ -75,21 +75,24 @@
             100% { transform: rotate(360deg); }
         }
         
-        /* New style for the terminal area to remove internal padding */
+        /* Updated style for the terminal area */
         .terminal-window {
             height: 32; /* matches h-32 in HTML */
             background-color: #1a1e24; /* Darker than the card background, typical terminal color */
             border-radius: 0.5rem; /* matches rounded-lg in HTML */
-            padding: 0; /* Remove default padding */
+            padding: 0; /* Ensure no padding on the container */
             overflow: hidden;
             position: relative;
         }
         
-        /* Ensure the pre element starts from the edge */
+        /* Ensure the pre element starts from the edge, removing all padding/margins */
         .terminal-window pre {
             position: absolute;
             inset: 0;
-            padding: 8px; /* Added back minimal padding (p-2 equivalent) for professional look */
+            /* CRUCIAL FIX: Remove all padding from the PRE element */
+            padding: 0; 
+            padding-left: 8px; /* ADDED: Minimal left padding for professional look (p-2 equivalent) */
+            padding-top: 4px; /* ADDED: Minimal top padding */
             line-height: 1.4;
             margin: 0; /* Remove default margin */
         }
