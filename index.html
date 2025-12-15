@@ -49,15 +49,15 @@
             50% { opacity: 0; }
         }
 
-        /* Animated Code Snippet CSS */
+        /* --- Animated Code Snippet CSS --- */
         @keyframes code-scroll {
             0% { transform: translateY(0); }
-            /* Adjusted scroll limit to ensure visibility and prevent content from disappearing too quickly */
-            100% { transform: translateY(-55%); } 
+            /* Significantly increased scroll limit to make animation clearer with larger font */
+            100% { transform: translateY(-70%); } 
         }
 
         .animate-code-scroll {
-            animation: code-scroll 10s linear infinite;
+            animation: code-scroll 12s linear infinite; /* Slightly slower speed for better readability */
         }
 
         /* Spinning loader for AI generation */
@@ -77,24 +77,25 @@
         
         /* Updated style for the terminal area */
         .terminal-window {
-            height: 32; /* matches h-32 in HTML */
-            background-color: #1a1e24; /* Darker than the card background, typical terminal color */
-            border-radius: 0.5rem; /* matches rounded-lg in HTML */
-            padding: 0; /* Ensure no padding on the container */
+            /* INCREASED HEIGHT from 32 (8rem) to 48 (12rem) */
+            height: 12rem; 
+            background-color: #1a1e24; 
+            border-radius: 0.5rem; 
+            padding: 0; 
             overflow: hidden;
             position: relative;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5); /* Added shadow for depth */
         }
         
         /* Ensure the pre element starts from the edge, removing all padding/margins */
         .terminal-window pre {
             position: absolute;
             inset: 0;
-            /* CRUCIAL FIX: Remove all padding from the PRE element */
             padding: 0; 
-            padding-left: 8px; /* ADDED: Minimal left padding for professional look (p-2 equivalent) */
-            padding-top: 4px; /* ADDED: Minimal top padding */
-            line-height: 1.4;
-            margin: 0; /* Remove default margin */
+            padding-left: 10px; /* Adjusted padding for better fit */
+            padding-top: 8px; /* Adjusted padding for better fit */
+            line-height: 1.6; /* Increased line-height for better spacing */
+            margin: 0; 
         }
     </style>
 </head>
@@ -159,19 +160,23 @@
                                  onerror="this.onerror=null; this.src='https://placehold.co/256x256/393E46/EEEEEE?text=Profile+Image+Fallback';"
                             >
                         </div>
-                        <div class="card-bg p-4 rounded-xl border border-primary/20 w-full max-w-xs shadow-xl hidden lg:block">
+                        <!-- Increased max-w-xs to max-w-sm and removed h-32, letting custom CSS define height -->
+                        <div class="card-bg p-4 rounded-xl border border-primary/20 w-full max-w-sm shadow-xl hidden lg:block">
                             <!-- Applied the new terminal-window class -->
-                            <div class="terminal-window font-mono text-xs">
-                                <!-- Removed the Tailwind classes inside, now using CSS for padding control -->
-                                <pre class="text-primary/70 text-[10px] leading-4 animate-code-scroll">
-                                    <span class="text-red-400"># CyberSec Trace:</span> Initiated...
-                                    <span class="text-yellow-400">> $ nmap -sV -p 80,443 target.com</span>
-                                    <span class="text-green-400">Deployment successful!</span>
-                                    <span class="text-yellow-400">git commit -m "Secure API endpoints"</span>
-                                    <span class="text-primary">$ git push origin main</span>
-                                    <span class="text-green-400">Deployment successful!</span>
-                                    <span class="text-red-400">Vulnerability Scan:</span> Complete.
-                                    <span class="text-yellow-400"># Next task:</span> Review log files.
+                            <div class="terminal-window font-mono">
+                                <!-- Increased text size from text-[10px] to text-sm (14px) and line-height adjusted in CSS -->
+                                <pre class="text-primary/70 text-sm animate-code-scroll">
+<span class="text-red-400"># CyberSec Trace:</span> Initiated...
+<span class="text-yellow-400">> $ nmap -sV -p 80,443 target.com</span>
+<span class="text-green-400">80/tcp open http Apache httpd 2.4.41 ((Unix))</span>
+<span class="text-green-400">443/tcp open ssl/http Apache httpd 2.4.41 ((Unix))</span>
+<span class="text-primary">$ git add .</span>
+<span class="text-yellow-400">$ git commit -m "Secure API endpoints (Auth fix)"</span>
+<span class="text-primary">$ git push origin main</span>
+<span class="text-green-400">Deployment successful!</span>
+<span class="text-red-400">Vulnerability Scan:</span> Complete. 1 critical, 0 high.
+<span class="text-yellow-400"># Next task:</span> Review log files and apply patch.
+<span class="text-green-400">Security Patch Applied:</span> Successfully mitigated CVE-2023-4447.
                                 </pre>
                             </div>
                         </div>
