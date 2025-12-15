@@ -74,6 +74,25 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        
+        /* New style for the terminal area to remove internal padding */
+        .terminal-window {
+            height: 32; /* matches h-32 in HTML */
+            background-color: #1a1e24; /* Darker than the card background, typical terminal color */
+            border-radius: 0.5rem; /* matches rounded-lg in HTML */
+            padding: 0; /* Remove default padding */
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Ensure the pre element starts from the edge */
+        .terminal-window pre {
+            position: absolute;
+            inset: 0;
+            padding: 8px; /* Added back minimal padding (p-2 equivalent) for professional look */
+            line-height: 1.4;
+            margin: 0; /* Remove default margin */
+        }
     </style>
 </head>
 
@@ -138,10 +157,10 @@
                             >
                         </div>
                         <div class="card-bg p-4 rounded-xl border border-primary/20 w-full max-w-xs shadow-xl hidden lg:block">
-                            <!-- Increased height from h-20 to h-32 to show more content clearly -->
-                            <div class="h-32 bg-gray-900 rounded-lg flex flex-col justify-end p-2 font-mono text-xs overflow-hidden relative">
-                                <!-- Animated Code Snippet -->
-                                <pre class="text-primary/70 absolute inset-0 p-2 text-[10px] leading-4 animate-code-scroll">
+                            <!-- Applied the new terminal-window class -->
+                            <div class="terminal-window font-mono text-xs">
+                                <!-- Removed the Tailwind classes inside, now using CSS for padding control -->
+                                <pre class="text-primary/70 text-[10px] leading-4 animate-code-scroll">
                                     <span class="text-red-400"># CyberSec Trace:</span> Initiated...
                                     <span class="text-yellow-400">> $ nmap -sV -p 80,443 target.com</span>
                                     <span class="text-green-400">Deployment successful!</span>
