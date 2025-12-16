@@ -720,4 +720,130 @@
 
                 } catch (error) {
                     console.error("Gemini API call failed:", error);
-                    if (i < maxRet
+                    if (i < maxRetries - 1) {
+                        const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                    } else {
+                        throw new Error("Failed to connect to the Gemini API after multiple retries.");
+                    }
+                }
+            }
+        }
+
+        /**
+         * Triggers the Gemini API call to generate a security summary for the current project.
+         */
+        async function generateSecuritySummary() {
+            if (!currentProjectId) return;
+            const project = projectDetails[currentProjectId];
+            if (!project) return;
+
+            // Set loading state
+            generateBtn.disabled = true;
+            btnText.innerHTML = '<span class="loader mr-2"></span> Generating Insight...';
+            aiOutputContainer.classList.add('hidden');
+            aiSummary.textContent = '';
+            aiSources.innerHTML = '';
+
+
+            const systemPrompt = "You are a concise, world-class Cybersecurity Consultant. Your task is to analyze the following project description and provide a single-paragraph summary of its key security implications, attack vectors, or defensive mechanisms. Start your summary with 'Security Insight: '";
+            const userQuery = project.geminiPrompt;
+
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                tools: [{ "google_search": {} }],
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                },
+            };
+
+            try {
+                const { text, sources } = await fetchGeminiResponse(payload);
+                
+                aiSummary.textContent = text;
+                
+                // Display sources
+                if (sources.length > 0) {
+                    aiSources.innerHTML = '<p class="font-bold text-primary mt-3">Sources:</p>' + sources.map((s, index) => 
+                        `<a href="${s.uri}" target="_blank" rel="noopener noreferrer" class="block text-gray-500 hover:text-primary underline transition duration-300">
+                            ${index + 1}. ${s.title}
+                        </a>`
+                    ).join('');
+                } else {
+                     aiSources.innerHTML = '';
+                }
+
+                aiOutputContainer.classList.remove('hidden');
+
+            } catch (error) {
+                aiSummary.textContent = `Error generating insight: ${error.message}`;
+                aiOutputContainer.classList.remove('hidden');
+                console.error("Final API error:", error);
+            } finally {
+                // Reset button state
+                generateBtn.disabled = false;
+                btnText.innerHTML = '<i data-lucide="sparkles" class="w-5 h-5 mr-2"></i> ✨ Get Security Insight';
+                lucide.createIcons(); // Re-render sparkle icon
+            }
+        }
+
+
+        // --- 5. Typing Animation (Advanced Feature) ---
+        const textElement = document.getElementById('typewriter-text');
+        const roles = [
+            "Security Consultant",
+            "Full-Stack Web Developer",
+            "Penetration Tester",
+            "Vulnerability Analyst"
+        ];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+
+        function type() {
+            const currentRole = roles[roleIndex];
+            const display = currentRole.substring(0, charIndex);
+            textElement.textContent = display;
+
+            if (!isDeleting) {
+                // Typing forward
+                charIndex++;
+                if (charIndex > currentRole.length) {
+                    isDeleting = true;
+                    typingSpeed = 20; // Pause at end, then faster delete
+                    setTimeout(type, 1500); // Wait longer before starting to delete
+                    return;
+                }
+                typingSpeed = 100 - Math.random() * 50; // Randomize speed
+            } else {
+                // Typing backward (deleting)
+                charIndex--;
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    roleIndex = (roleIndex + 1) % roles.length;
+                    typingSpeed = 150; // Pause slightly before next word starts
+                }
+                typingSpeed = 50; // Consistent delete speed
+            }
+
+            if (!isDeleting && charIndex > 0) {
+                // Scroll the typing element into view if it's the active section
+                if (currentSection === 'home') {
+                    textElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+
+            setTimeout(type, typingSpeed);
+        }
+        
+        // --- 6. Initialization on Load ---
+        window.onload = function() {
+            initializeSections(); // Sets the correct initial page state
+            type(); // Start the typewriter effect
+            lucide.createIcons(); // Initialize all Lucide icons
+        };
+    </script>
+
+</body>
+</html>
