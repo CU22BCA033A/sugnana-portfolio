@@ -75,9 +75,9 @@
             100% { transform: rotate(360deg); }
         }
         
-        /* Updated style for the terminal area */
+        /* Updated style for the terminal area: Rectangular shape fix applied here */
         .terminal-window {
-            /* INCREASED HEIGHT from 32 (8rem) to 48 (12rem) */
+            /* HEIGHT: Fixed height for the terminal look */
             height: 12rem; 
             background-color: #1a1e24; 
             border-radius: 0.5rem; 
@@ -151,8 +151,7 @@
                         </div>
                     </div>
                     <!-- Profile Picture and Code Visual -->
-                    <!-- *** CENTERING ADJUSTMENT: Added max-w-md and mx-auto to ensure this block is centered on small screens. *** -->
-                    <div class="flex flex-col items-center space-y-6 max-w-sm mx-auto">
+                    <div class="flex flex-col items-center space-y-6 max-w-md mx-auto">
                         <div class="card-bg p-3 rounded-full border-4 border-primary shadow-2xl shadow-primary/30">
                             <!-- Image URL updated to the latest link provided by the user -->
                             <img src="https://media.licdn.com/dms/image/v2/D5603AQGY3wqGUe6vyw/profile-displayphoto-crop_800_800/B56ZpH.9hQJkAI-/0/1762144280370?e=1767225600&v=beta&t=50kn0sEUvB4bJQFPg-NCOC2BVadrs7pPz3XxDsLQa5c" 
@@ -161,11 +160,11 @@
                                  onerror="this.onerror=null; this.src='https://placehold.co/256x256/393E46/EEEEEE?text=Profile+Image+Fallback';"
                             >
                         </div>
-                        <!-- Kept original centering classes for the terminal block -->
-                        <div class="card-bg p-4 rounded-xl border border-primary/20 w-full max-w-sm shadow-xl hidden lg:block">
-                            <!-- Applied the new terminal-window class -->
+                        <!-- Centering wrapper: Max width adjusted to max-w-sm for a better rectangular fit -->
+                        <div class="card-bg p-3 rounded-xl border border-primary/20 w-full max-w-sm shadow-xl hidden lg:block">
+                            <!-- Applied the new terminal-window class for fixed size and shape -->
                             <div class="terminal-window font-mono">
-                                <!-- Increased text size from text-[10px] to text-sm (14px) and line-height adjusted in CSS -->
+                                <!-- Increased text size and line-height adjusted in CSS -->
                                 <pre class="text-primary/70 text-sm animate-code-scroll">
 <span class="text-red-400"># CyberSec Trace:</span> Initiated...
 <span class="text-yellow-400">> $ nmap -sV -p 80,443 target.com</span>
@@ -617,7 +616,7 @@
                 const targetSection = link.dataset.section;
                 switchSection(targetSection);
                 // Smooth scroll to the top of the content area
-                document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+                document.querySelector('main').scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
