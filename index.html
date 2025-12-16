@@ -75,7 +75,7 @@
             100% { transform: rotate(360deg); }
         }
         
-        /* Updated style for the terminal area: Rectangular shape fix applied here */
+        /* Terminal Area */
         .terminal-window {
             /* HEIGHT: Fixed height for the terminal look */
             height: 12rem; 
@@ -97,6 +97,50 @@
             line-height: 1.6; /* Increased line-height for better spacing */
             margin: 0; 
         }
+
+        /* --- NEW: Angled/Diamond Shape Aesthetics --- */
+        .card-bg {
+            /* Apply a subtle angle to the top-right corner of all cards */
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 95% 100%, 0 100%);
+            /* Padding adjustment required due to clip-path */
+            padding: 1.5rem; 
+        }
+        
+        /* Style for the Section Title border, giving it a skewed/sharp look */
+        .section-title-border {
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title-border:after {
+            content: '';
+            position: absolute;
+            bottom: -5px; /* Position it below the text */
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+            /* Skew the border to create a sharp, dynamic look */
+            transform: skewX(-20deg); 
+        }
+
+        /* Specific style for the profile image border to make it look sharp */
+        .profile-border-shape {
+            /* Create a diamond-like or angular cutout border effect */
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            width: 276px; /* 64 + padding * 2 + border * 2 */
+            height: 276px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-border-shape img {
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            width: 256px; /* Same as w-64 */
+            height: 256px; /* Same as h-64 */
+        }
+
     </style>
 </head>
 
@@ -150,17 +194,17 @@
                             </a>
                         </div>
                     </div>
-                    <!-- Profile Picture and Code Visual -->
+                    <!-- Profile Picture and Code Visual - Applied new diamond shape class -->
                     <div class="flex flex-col items-center space-y-6 max-w-md mx-auto">
-                        <div class="card-bg p-3 rounded-full border-4 border-primary shadow-2xl shadow-primary/30">
-                            <!-- Image URL updated to the latest link provided by the user -->
+                        <!-- Profile Image: Use the new diamond shape classes -->
+                        <div class="card-bg p-3 border-4 border-primary shadow-2xl shadow-primary/30 profile-border-shape">
                             <img src="https://media.licdn.com/dms/image/v2/D5603AQGY3wqGUe6vyw/profile-displayphoto-crop_800_800/B56ZpH.9hQJkAI-/0/1762144280370?e=1767225600&v=beta&t=50kn0sEUvB4bJQFPg-NCOC2BVadrs7pPz3XxDsLQa5c" 
                                  alt="Sugnana Murthy GM professional portrait" 
-                                 class="w-64 h-64 object-cover rounded-full transform hover:scale-105 transition duration-500"
+                                 class="w-64 h-64 object-cover transform hover:scale-105 transition duration-500"
                                  onerror="this.onerror=null; this.src='https://placehold.co/256x256/393E46/EEEEEE?text=Profile+Image+Fallback';"
                             >
                         </div>
-                        <!-- Centering wrapper: Max width adjusted to max-w-sm for a better rectangular fit -->
+                        <!-- Terminal Visual -->
                         <div class="card-bg p-3 rounded-xl border border-primary/20 w-full max-w-sm shadow-xl hidden lg:block">
                             <!-- Applied the new terminal-window class for fixed size and shape -->
                             <div class="terminal-window font-mono">
@@ -169,7 +213,7 @@
 <span class="text-red-400"># CyberSec Trace:</span> Initiated...
 <span class="text-yellow-400">> $ nmap -sV -p 80,443 target.com</span>
 <span class="text-green-400">80/tcp open http Apache httpd 2.4.41 ((Unix))</span>
-<span class="text-green-400">443/tcp open ssl/http Apache httpd 2.4.41 ((Unix))</span>
+<span class="text-green-443/tcp open ssl/http Apache httpd 2.4.41 ((Unix))</span>
 <span class="text-primary">$ git add .</span>
 <span class="text-yellow-400">$ git commit -m "Secure API endpoints (Auth fix)"</span>
 <span class="text-primary">$ git push origin main</span>
@@ -186,11 +230,14 @@
             
             <!-- SKILLS SECTION -->
             <section id="skills" data-section="skills" class="section-content hidden pt-8">
-                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Core Skills & Expertise</h2>
+                <!-- Applied section-title-border class for the sharp look -->
+                <h2 class="text-4xl font-bold text-text-color mb-10 pb-4 section-title-border">
+                    <span class="text-primary">Core Skills</span> & Expertise
+                </h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
                     <!-- Category 1: Cybersecurity & AI Security -->
-                    <div class="card-bg p-6 rounded-xl shadow-lg border-t-4 border-primary">
+                    <div class="card-bg shadow-lg border-t-4 border-primary">
                         <div class="flex items-center space-x-3 mb-4">
                             <i data-lucide="shield-half" class="text-primary w-6 h-6"></i>
                             <h3 class="text-xl font-semibold text-text-color">Cybersecurity & AI Security</h3>
@@ -205,7 +252,7 @@
                     </div>
 
                     <!-- Category 2: Full-Stack Development -->
-                    <div class="card-bg p-6 rounded-xl shadow-lg border-t-4 border-primary">
+                    <div class="card-bg shadow-lg border-t-4 border-primary">
                         <div class="flex items-center space-x-3 mb-4">
                             <i data-lucide="code-square" class="text-primary w-6 h-6"></i>
                             <h3 class="text-xl font-semibold text-text-color">Full-Stack Development</h3>
@@ -220,7 +267,7 @@
                     </div>
                     
                     <!-- Category 3: Cloud, Analytics & Soft Skills -->
-                    <div class="card-bg p-6 rounded-xl shadow-lg border-t-4 border-primary">
+                    <div class="card-bg shadow-lg border-t-4 border-primary">
                         <div class="flex items-center space-x-3 mb-4">
                             <i data-lucide="cloud" class="text-primary w-6 h-6"></i>
                             <h3 class="text-xl font-semibold text-text-color">Cloud, Analytics & Soft Skills</h3>
@@ -238,11 +285,14 @@
             
             <!-- PROJECTS SECTION -->
             <section id="projects" data-section="projects" class="section-content hidden pt-8">
-                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Key Projects</h2>
+                <!-- Applied section-title-border class for the sharp look -->
+                <h2 class="text-4xl font-bold text-text-color mb-10 pb-4 section-title-border">
+                    <span class="text-primary">Key Projects</span>
+                </h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
                     <!-- Project 1: Cybersecurity Awareness Portal -->
-                    <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
+                    <div class="card-bg overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300 p-0">
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-text-color mb-2">1. Cybersecurity Awareness Portal (NISD Compliance)</h3>
                             <p class="text-primary font-medium mb-4">React, Flask, AWS</p>
@@ -254,7 +304,7 @@
                     </div>
 
                     <!-- Project 2: Translatr (Encryption Tool) -->
-                    <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
+                    <div class="card-bg overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300 p-0">
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-text-color mb-2">2. Translatr (Encryption/Decryption Tool)</h3>
                             <p class="text-primary font-medium mb-4">AWS Encryption SDK, Custom Ciphers</p>
@@ -266,7 +316,7 @@
                     </div>
                     
                     <!-- Project 3: Steganography Web App -->
-                    <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
+                    <div class="card-bg overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300 p-0">
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-text-color mb-2">3. Steganography Web App</h3>
                             <p class="text-primary font-medium mb-4">JavaScript, Flask</p>
@@ -278,7 +328,7 @@
                     </div>
                     
                     <!-- Project 4: Secure Adversarial AI Models -->
-                    <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
+                    <div class="card-bg overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300 p-0">
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-text-color mb-2">4. Secure Adversarial AI Models</h3>
                             <p class="text-primary font-medium mb-4">AI/ML Security</p>
@@ -290,7 +340,7 @@
                     </div>
                     
                     <!-- Project 5: Real-Time Threat Dashboard -->
-                    <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
+                    <div class="card-bg overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300 p-0">
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-text-color mb-2">5. Real-Time Threat Intelligence Dashboard</h3>
                             <p class="text-primary font-medium mb-4">Cyber Intelligence, Data Visualization</p>
@@ -302,7 +352,7 @@
                     </div>
                     
                     <!-- Project 6: Temple and Monument Detection -->
-                    <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
+                    <div class="card-bg overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300 p-0">
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-text-color mb-2">6. Temple and Monument Detection</h3>
                             <p class="text-primary font-medium mb-4">YOLOV8 Deep Learning, Computer Vision</p>
@@ -314,7 +364,7 @@
                     </div>
 
                     <!-- Project 7: Auction Web App (NEW - Simple Card, No Modal needed for this one) -->
-                    <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
+                    <div class="card-bg overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300 p-0">
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-text-color mb-2">7. Auction Web App (CPL)</h3>
                             <p class="text-primary font-medium mb-4">PHP, MySQL</p>
@@ -329,7 +379,10 @@
             
             <!-- ACTIVITIES & CERTIFICATIONS SECTION -->
             <section id="activities" data-section="activities" class="section-content hidden pt-8">
-                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Professional Growth & Certifications</h2>
+                <!-- Applied section-title-border class for the sharp look -->
+                <h2 class="text-4xl font-bold text-text-color mb-10 pb-4 section-title-border">
+                    <span class="text-primary">Professional Growth</span> & Certifications
+                </h2>
                 
                 <div class="grid lg:grid-cols-2 gap-12">
                     <!-- Column 1: Activities/Experience -->
@@ -338,17 +391,24 @@
                             <i data-lucide="award" class="text-primary w-5 h-5 mr-3"></i> Professional Activities & Experience
                         </h3>
                         <ul class="space-y-4">
-                            <li class="card-bg p-4 rounded-lg border-l-4 border-primary">
-                                <p class="font-bold text-lg">Cyber Job Simulations (Deloitte, Tata, Telstra)</p>
-                                <p class="text-sm text-gray-400">Completed simulations focusing on incident postmortem, malware mitigation, and security analysis on Forage.</p>
+                            <!-- Note: Removed the inline p-4/rounded-lg/border-l-4 from here to ensure the card-bg clip-path works on the main div -->
+                            <li class="card-bg border-l-4 border-primary p-0">
+                                <div class="p-6">
+                                    <p class="font-bold text-lg">Cyber Job Simulations (Deloitte, Tata, Telstra)</p>
+                                    <p class="text-sm text-gray-400">Completed simulations focusing on incident postmortem, malware mitigation, and security analysis on Forage.</p>
+                                </div>
                             </li>
-                            <li class="card-bg p-4 rounded-lg border-l-4 border-primary">
-                                <p class="font-bold text-lg">CTF & Bug Bounty Participation</p>
-                                <p class="text-sm text-gray-400">Actively participates in Capture The Flag challenges and bug bounty programs to enhance practical cybersecurity skills.</p>
+                            <li class="card-bg border-l-4 border-primary p-0">
+                                <div class="p-6">
+                                    <p class="font-bold text-lg">CTF & Bug Bounty Participation</p>
+                                    <p class="text-sm text-gray-400">Actively participates in Capture The Flag challenges and bug bounty programs to enhance practical cybersecurity skills.</p>
+                                </div>
                             </li>
-                            <li class="card-bg p-4 rounded-lg border-l-4 border-primary">
-                                <p class="font-bold text-lg">Technical Blog Author & Simulations</p>
-                                <p class="text-sm text-gray-400">Published technical blogs (TCP, MySQL Ports, STRIDE, SSH) and conducted networking simulations (Wireshark, Cisco Packet Tracer).</p>
+                            <li class="card-bg border-l-4 border-primary p-0">
+                                <div class="p-6">
+                                    <p class="font-bold text-lg">Technical Blog Author & Simulations</p>
+                                    <p class="text-sm text-gray-400">Published technical blogs (TCP, MySQL Ports, STRIDE, SSH) and conducted networking simulations (Wireshark, Cisco Packet Tracer).</p>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -359,35 +419,35 @@
                             <i data-lucide="graduation-cap" class="text-primary w-5 h-5 mr-3"></i> Key Certifications
                         </h3>
                         <ul class="space-y-3">
-                            <li class="card-bg p-3 rounded-lg border-l-4 border-primary/70">
-                                <p class="font-medium text-text-color">Google: AI Essentials</p>
+                            <li class="card-bg border-l-4 border-primary/70 p-0">
+                                <div class="p-6"><p class="font-medium text-text-color">Google: AI Essentials</p></div>
                             </li>
-                            <li class="card-bg p-3 rounded-lg border-l-4 border-primary/70">
-                                <p class="font-medium text-text-color">Google: Fundamentals of Cybersecurity</p>
+                            <li class="card-bg border-l-4 border-primary/70 p-0">
+                                <div class="p-6"><p class="font-medium text-text-color">Google: Fundamentals of Cybersecurity</p></div>
                             </li>
-                            <li class="card-bg p-3 rounded-lg border-l-4 border-primary/70">
-                                <p class="font-medium text-text-color">Google: Generative AI</p>
+                            <li class="card-bg border-l-4 border-primary/70 p-0">
+                                <div class="p-6"><p class="font-medium text-text-color">Google: Generative AI</p></div>
                             </li>
-                            <li class="card-bg p-3 rounded-lg border-l-4 border-primary/70">
-                                <p class="font-medium text-text-color">Google: Play It Safe: Manage Security Risks</p>
+                            <li class="card-bg border-l-4 border-primary/70 p-0">
+                                <div class="p-6"><p class="font-medium text-text-color">Google: Play It Safe: Manage Security Risks</p></div>
                             </li>
-                            <li class="card-bg p-3 rounded-lg border-l-4 border-primary/70">
-                                <p class="font-medium text-text-color">Infosys: Open AI Development</p>
+                            <li class="card-bg border-l-4 border-primary/70 p-0">
+                                <div class="p-6"><p class="font-medium text-text-color">Infosys: Open AI Development</p></div>
                             </li>
-                            <li class="card-bg p-3 rounded-lg border-l-4 border-primary/70">
-                                <p class="font-medium text-text-color">Infosys: Ethical Hacking for Beginner</p>
+                            <li class="card-bg border-l-4 border-primary/70 p-0">
+                                <div class="p-6"><p class="font-medium text-text-color">Infosys: Ethical Hacking for Beginner</p></div>
                             </li>
-                            <li class="card-bg p-3 rounded-lg border-l-4 border-primary/70">
-                                <p class="font-medium text-text-color">CISCO: Cybersecurity</p>
+                            <li class="card-bg border-l-4 border-primary/70 p-0">
+                                <div class="p-6"><p class="font-medium text-text-color">CISCO: Cybersecurity</p></div>
                             </li>
-                            <li class="card-bg p-3 rounded-lg border-l-4 border-primary/70">
-                                <p class="font-medium text-text-color">IIT Kharagpur: Introduction to Quantum Cryptography</p>
+                            <li class="card-bg border-l-4 border-primary/70 p-0">
+                                <div class="p-6"><p class="font-medium text-text-color">IIT Kharagpur: Introduction to Quantum Cryptography</p></div>
                             </li>
-                            <li class="card-bg p-3 rounded-lg border-l-4 border-primary/70">
-                                <p class="font-medium text-text-color">IIT Kharagpur: Astrophysics</p>
+                            <li class="card-bg border-l-4 border-primary/70 p-0">
+                                <div class="p-6"><p class="font-medium text-text-color">IIT Kharagpur: Astrophysics</p></div>
                             </li>
-                            <li class="card-bg p-3 rounded-lg border-l-4 border-primary/70">
-                                <p class="font-medium text-text-color">NISM Exam</p>
+                            <li class="card-bg border-l-4 border-primary/70 p-0">
+                                <div class="p-6"><p class="font-medium text-text-color">NISM Exam</p></div>
                             </li>
                         </ul>
                     </div>
@@ -396,28 +456,37 @@
             
             <!-- CONTACT SECTION -->
             <section id="contact" data-section="contact" class="section-content hidden pt-8">
-                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Connect with Me</h2>
+                <!-- Applied section-title-border class for the sharp look -->
+                <h2 class="text-4xl font-bold text-text-color mb-10 pb-4 section-title-border">
+                    <span class="text-primary">Connect</span> with Me
+                </h2>
                 <div class="grid md:grid-cols-3 gap-8">
                     
                     <!-- Contact Card 1: Email -->
-                    <a href="mailto:sugnanamurhtygm@gmail.com" class="card-bg p-6 rounded-xl text-center flex flex-col items-center justify-center hover:bg-primary/10 transition duration-300 shadow-xl">
-                        <i data-lucide="mail" class="text-primary w-8 h-8 mb-3"></i>
-                        <p class="text-lg font-semibold">Email Me</p>
-                        <p class="text-sm text-gray-400">sugnanamurhtygm@gmail.com</p>
+                    <a href="mailto:sugnanamurhtygm@gmail.com" class="card-bg text-center flex flex-col items-center justify-center hover:bg-primary/10 transition duration-300 shadow-xl p-0">
+                        <div class="p-6">
+                            <i data-lucide="mail" class="text-primary w-8 h-8 mb-3"></i>
+                            <p class="text-lg font-semibold">Email Me</p>
+                            <p class="text-sm text-gray-400">sugnanamurhtygm@gmail.com</p>
+                        </div>
                     </a>
                     
                     <!-- Contact Card 2: LinkedIn -->
-                    <a href="https://www.linkedin.com/in/sugnana-murthy-gm-6270" target="_blank" rel="noopener noreferrer" class="card-bg p-6 rounded-xl text-center flex flex-col items-center justify-center hover:bg-primary/10 transition duration-300 shadow-xl">
-                        <i data-lucide="linkedin" class="text-primary w-8 h-8 mb-3"></i>
-                        <p class="text-lg font-semibold">Connect on LinkedIn</p>
-                        <p class="text-sm text-gray-400">/sugnana-murthy-gm-6270</p>
+                    <a href="https://www.linkedin.com/in/sugnana-murthy-gm-6270" target="_blank" rel="noopener noreferrer" class="card-bg text-center flex flex-col items-center justify-center hover:bg-primary/10 transition duration-300 shadow-xl p-0">
+                        <div class="p-6">
+                            <i data-lucide="linkedin" class="text-primary w-8 h-8 mb-3"></i>
+                            <p class="text-lg font-semibold">Connect on LinkedIn</p>
+                            <p class="text-sm text-gray-400">/sugnana-murthy-gm-6270</p>
+                        </div>
                     </a>
                     
                     <!-- Contact Card 3: GitHub -->
-                    <a href="https://github.com/CU22BCA033A" target="_blank" rel="noopener noreferrer" class="card-bg p-6 rounded-xl text-center flex flex-col items-center justify-center hover:bg-primary/10 transition duration-300 shadow-xl">
-                        <i data-lucide="github" class="text-primary w-8 h-8 mb-3"></i>
-                        <p class="text-lg font-semibold">View My Code</p>
-                        <p class="text-sm text-gray-400">/CU22BCA033A</p>
+                    <a href="https://github.com/CU22BCA033A" target="_blank" rel="noopener noreferrer" class="card-bg text-center flex flex-col items-center justify-center hover:bg-primary/10 transition duration-300 shadow-xl p-0">
+                        <div class="p-6">
+                            <i data-lucide="github" class="text-primary w-8 h-8 mb-3"></i>
+                            <p class="text-lg font-semibold">View My Code</p>
+                            <p class="text-sm text-gray-400">/CU22BCA033A</p>
+                        </div>
                     </a>
                 </div>
                 
@@ -430,7 +499,7 @@
     </main>
     
     <!-- Footer -->
-    <footer class="card-bg mt-12 py-6 border-t border-primary/20">
+    <footer class="card-bg mt-12 py-6 border-t border-primary/20 p-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-400">
             &copy; 2024 Sugnana Murthy GM. All rights reserved. Built with passion and security in mind.
         </div>
@@ -439,6 +508,7 @@
 
     <!-- Project Detail Modal -->
     <div id="project-modal" class="fixed inset-0 bg-black/80 z-[100] hidden flex items-center justify-center p-4" onclick="closeProjectModal()">
+        <!-- Note: Modal uses standard rounded-xl shape to ensure readability and clear closure boundaries -->
         <div class="card-bg w-full max-w-3xl rounded-xl p-8 shadow-2xl relative" onclick="event.stopPropagation()">
             <button onclick="closeProjectModal()" class="absolute top-4 right-4 text-gray-400 hover:text-primary transition duration-300">
                 <i data-lucide="x" class="w-6 h-6"></i>
@@ -671,7 +741,7 @@
         }
 
 
-        // --- 4. Gemini API Integration ---
+        // --- 4. Gemini API Integration (Helper functions are defined but body is omitted for brevity as they are for LLM calls only) ---
 
         /**
          * Generic function to fetch response from Gemini API with exponential backoff.
