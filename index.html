@@ -75,29 +75,25 @@
             100% { transform: rotate(360deg); }
         }
         
-        /* Updated style for the terminal area: Rectangular shape fix applied here */
+       /* Updated style for the terminal area: Rectangular shape fix */
         .terminal-window {
-            /* HEIGHT: Fixed height for the terminal look (rectangular shape) */
-            min-height: 6rem; /* Adjusted height for a more distinct rectangular look */
+    /* HEIGHT: Fixed height for the terminal look (rectangular shape) */
+            height: 8rem; 
             background-color: #1a1e24; 
             border-radius: 0.5rem; 
             padding: 0; 
             overflow: hidden;
             position: relative;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5); /* Added shadow for depth */
-            /* WIDTH: Controlled by the parent element 'max-w-xl' below */
         }
-        
-        /* Ensure the pre element starts from the edge, removing all padding/margins */
+
+/* Ensure the pre element (the text) starts from the edge */
         .terminal-window pre {
-            position: absolute;
-            inset: 0;
-            padding: 0; 
-            padding-left: 10px; /* Adjusted padding for better fit */
-            padding-top: 8px; /* Adjusted padding for better fit */
-            line-height: 1.4; /* Slightly reduced line-height to fit more lines */
-            font-size: 0.875rem; /* Standard text-sm size */
-            margin: 0; 
+            margin: 0;
+            padding: 1rem; /* Added padding here so text isn't touching the very edge */
+            color: #f8fafc;
+            font-family: monospace;
+            white-space: pre-wrap; /* Ensures long lines wrap inside the box */
         }
     </style>
 </head>
