@@ -21,9 +21,8 @@
         .border-primary { border-color: var(--primary-color); }
         .bg-primary { background-color: var(--primary-color); }
         
-        /* Fixed Navigation Logic: Prevents layout breaking */
         .section-content {
-            display: none;
+            display: none; /* Reverted to your exact SPA logic */
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.5s ease-out, transform 0.5s ease-out;
@@ -78,6 +77,7 @@
 
 <body class="dark-theme-bg text-gray-100 font-sans min-h-screen" style="font-family: 'Inter', sans-serif;">
 
+    <!-- Navigation Bar -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 card-bg shadow-lg border-b border-primary/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
@@ -85,21 +85,22 @@
                     <span class="text-2xl font-bold text-primary">Sugnana Murthy GM</span>
                 </div>
                 <div class="flex space-x-6">
-                    <a href="javascript:void(0)" onclick="switchSection('home')" class="nav-link text-primary transition duration-300 font-medium">Home</a>
-                    <a href="javascript:void(0)" onclick="switchSection('skills')" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium">Skills</a>
-                    <a href="javascript:void(0)" onclick="switchSection('projects')" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium">Projects</a>
-                    <a href="javascript:void(0)" onclick="switchSection('activities')" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium">Experience</a>
-                    <a href="javascript:void(0)" onclick="switchSection('contact')" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium">Contact</a>
+                    <a href="#home" data-section="home" class="nav-link text-primary transition duration-300 font-medium">Home</a>
+                    <a href="#skills" data-section="skills" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium">Skills</a>
+                    <a href="#projects" data-section="projects" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium">Projects</a>
+                    <a href="#activities" data-section="activities" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium">Experience</a>
+                    <a href="#contact" data-section="contact" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- Main Content Area -->
     <main class="pt-20 pb-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
 
-            <!-- HOME SECTION -->
-            <section id="home" class="section-content active min-h-[calc(100vh-80px)] flex items-center">
+            <!-- HOME SECTION (Alignment Restored) -->
+            <section id="home" data-section="home" class="section-content active min-h-[calc(100vh-80px)] flex items-center">
                 <div class="grid md:grid-cols-2 gap-12 items-center w-full">
                     <div class="space-y-6">
                         <p class="text-xl text-primary font-medium">Hello, I'm</p>
@@ -108,25 +109,28 @@
                             <span id="typewriter-text" class="font-mono"></span><span class="typing-cursor"></span>
                         </h2>
                         <p class="text-lg text-gray-400 max-w-xl">
-                            Dynamic <b>Full-Stack Web Developer and Cybersecurity Enthusiast</b> specializing in building secure, scalable web applications[cite: 1]. Proficient in HTML, CSS, JavaScript, React, Flask, and AWS, with hands-on experience in ethical hacking and AI security[cite: 1]. Currently a student at <b>Chanakya University (8.3 CGPA)</b>[cite: 1].
+                            Dynamic <b>Full-Stack Web Developer and Cybersecurity Enthusiast</b> specializing in building secure, scalable web applications and implementing robust security practices[cite: 1]. Proficient in HTML, CSS, JavaScript, React, Flask, and AWS[cite: 1]. Currently a Cybersecurity student at <b>Chanakya University (8.3 CGPA)</b>[cite: 1].
                         </p>
                         <div class="flex space-x-4 pt-4">
-                            <button onclick="switchSection('projects')" class="bg-primary text-background-color font-bold py-3 px-6 rounded-lg hover:opacity-90 transition duration-300 shadow-lg shadow-primary/30">View Projects</button>
-                            <button onclick="switchSection('contact')" class="border border-primary text-primary font-bold py-3 px-6 rounded-lg hover:bg-primary/10 transition duration-300">Get In Touch</button>
+                            <a href="#projects" class="bg-primary text-background-color font-bold py-3 px-6 rounded-lg hover:opacity-90 transition duration-300 shadow-lg shadow-primary/30" onclick="switchSection('projects')">View Projects</a>
+                            <a href="#contact" class="border border-primary text-primary font-bold py-3 px-6 rounded-lg hover:bg-primary/10 transition duration-300" onclick="switchSection('contact')">Get In Touch</a>
                         </div>
                     </div>
                     <div class="flex flex-col items-center space-y-6 max-w-md mx-auto">
                         <div class="card-bg p-3 rounded-full border-4 border-primary shadow-2xl shadow-primary/30">
-                            <img src="https://media.licdn.com/dms/image/v2/D5603AQFxwD4mr9Hnbw/profile-displayphoto-scale_400_400/B56ZsvqQfUI0Ak-/0/1766031166006?e=1778716800&v=beta&t=qVm8YV_yN258BjHJu_hPVXxwpjIysh8tZwhUjUyMqUM" alt="Sugnana Murthy GM" class="w-64 h-64 object-cover rounded-full">
+                            <img src="https://media.licdn.com/dms/image/v2/D5603AQFxwD4mr9Hnbw/profile-displayphoto-scale_400_400/B56ZsvqQfUI0Ak-/0/1766031166006?e=1778716800&v=beta&t=qVm8YV_yN258BjHJu_hPVXxwpjIysh8tZwhUjUyMqUM" 
+                                 alt="Sugnana Murthy GM" 
+                                 class="w-64 h-64 object-cover rounded-full">
                         </div>
                         <div class="card-bg p-3 rounded-xl border border-primary/20 w-full shadow-xl hidden lg:block">
                             <div class="terminal-window font-mono">
                                 <pre class="text-primary/70 animate-code-scroll">
 <span class="text-red-400"># Security Audit:</span> Initiated...
 <span class="text-yellow-400">> $ nmap -sV target.com</span>
-<span class="text-green-400">Vulnerability scanning in progress...</span>
-<span class="text-primary">$ git commit -m "Hardened API security"</span>
-<span class="text-green-400">SENTINEL.IO:</span> Intelligence active.
+<span class="text-green-400">Scanning for vulnerabilities...</span>
+<span class="text-primary">$ git commit -m "Secure API"</span>
+<span class="text-green-400">Deployment successful!</span>
+<span class="text-red-400">SENTINEL.IO:</span> Analyzing...
                                 </pre>
                             </div>
                         </div>
@@ -135,7 +139,7 @@
             </section>
             
             <!-- SKILLS SECTION -->
-            <section id="skills" class="section-content pt-8">
+            <section id="skills" data-section="skills" class="section-content hidden pt-8">
                 <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Professional Skills</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="card-bg p-6 rounded-xl shadow-lg border-t-4 border-primary">
@@ -147,6 +151,7 @@
                             <li>Ethical Hacking & Penetration Testing[cite: 1]</li>
                             <li>Burp Suite, Metasploit, Nmap, Wireshark[cite: 1]</li>
                             <li>Web Application Security & Log Inspection[cite: 1]</li>
+                            <li>Quantum Cryptography & Networks[cite: 1]</li>
                         </ul>
                     </div>
                     <div class="card-bg p-6 rounded-xl shadow-lg border-t-4 border-primary">
@@ -156,104 +161,177 @@
                         </div>
                         <ul class="space-y-2 text-gray-400 text-sm">
                             <li>HTML, CSS, JS, React, Flask, PHP[cite: 1]</li>
-                            <li>AWS, Google Cloud & Git[cite: 1]</li>
+                            <li>AWS, Google Cloud & Git Version Control[cite: 1]</li>
                             <li>MySQL & MongoDB Management[cite: 1]</li>
+                            <li>Responsive Design & SEO Best Practices[cite: 1]</li>
+                        </ul>
+                    </div>
+                    <div class="card-bg p-6 rounded-xl shadow-lg border-t-4 border-primary">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <i data-lucide="languages" class="text-primary w-6 h-6"></i>
+                            <h3 class="text-xl font-semibold text-text-color">Communication</h3>
+                        </div>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li>English (C2 Proficient)[cite: 1]</li>
+                            <li>Kannada & Hindi (C1 Advanced)[cite: 1]</li>
+                            <li>Prompt Engineering & Technical Writing[cite: 1]</li>
+                            <li>Project Management & Problem Solving[cite: 1]</li>
                         </ul>
                     </div>
                 </div>
             </section>
             
             <!-- PROJECTS SECTION -->
-            <section id="projects" class="section-content pt-8">
-                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Technical Projects</h2>
+            <section id="projects" data-section="projects" class="section-content hidden pt-8">
+                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Key Projects</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="card-bg rounded-xl p-6 shadow-xl border-b-4 border-primary">
-                        <h3 class="text-xl font-bold text-text-color mb-2">SENTINEL.IO</h3>
-                        <p class="text-primary font-medium mb-4">AI Threat Detection</p>
-                        <p class="text-gray-400 text-sm">Multi-layered artificial intelligence for real-time threat detection[cite: 1].</p>
+                    <!-- Project 1 -->
+                    <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-text-color mb-2">SENTINEL.IO</h3>
+                            <p class="text-primary font-medium mb-4">AI Threat Detection</p>
+                            <p class="text-gray-400 text-sm mb-4">Multi-layered artificial intelligence for real-time threat detection[cite: 1].</p>
+                            <button onclick="showProjectModal(8)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">View Details</button>
+                        </div>
                     </div>
-                    <div class="card-bg rounded-xl p-6 shadow-xl border-b-4 border-primary">
-                        <h3 class="text-xl font-bold text-text-color mb-2">Vuln-scanner</h3>
-                        <p class="text-primary font-medium mb-4">Phishing Intelligence</p>
-                        <p class="text-gray-400 text-sm">Multi-Modal Phishing Intelligence System for advanced threat analysis[cite: 1].</p>
+                    <!-- Project 2 -->
+                    <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-text-color mb-2">Vuln-scanner</h3>
+                            <p class="text-primary font-medium mb-4">Phishing Intelligence</p>
+                            <p class="text-gray-400 text-sm mb-4">Multi-Modal Phishing Intelligence System for advanced threat analysis[cite: 1].</p>
+                            <button onclick="showProjectModal(10)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">View Details</button>
+                        </div>
                     </div>
-                    <div class="card-bg rounded-xl p-6 shadow-xl border-b-4 border-primary">
-                        <h3 class="text-xl font-bold text-text-color mb-2">IoT Door Controller</h3>
-                        <p class="text-primary font-medium mb-4">RFID Encryption</p>
-                        <p class="text-gray-400 text-sm">Automatic Door controller Using Encryption with the help of RFID[cite: 1].</p>
+                    <!-- Project 3 -->
+                    <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-text-color mb-2">IoT Door Controller</h3>
+                            <p class="text-primary font-medium mb-4">RFID Encryption</p>
+                            <p class="text-gray-400 text-sm mb-4">Automatic Door controller Using Encryption with the help of RFID[cite: 1].</p>
+                            <button onclick="showProjectModal(11)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">View Details</button>
+                        </div>
+                    </div>
+                    <!-- Translatr -->
+                    <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-text-color mb-2">Translatr</h3>
+                            <p class="text-primary font-medium mb-4">AWS Cryptography</p>
+                            <p class="text-gray-400 text-sm mb-4">Encryption tool utilizing Caesar, Beaufort, and Autokey ciphers[cite: 1].</p>
+                            <button onclick="showProjectModal(2)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">View Details</button>
+                        </div>
                     </div>
                 </div>
             </section>
             
             <!-- EXPERIENCE SECTION -->
-            <section id="activities" class="section-content pt-8">
-                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Experience & Growth</h2>
+            <section id="activities" data-section="activities" class="section-content hidden pt-8">
+                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Professional Growth</h2>
                 <div class="grid lg:grid-cols-2 gap-12">
                     <div class="space-y-6">
-                        <h3 class="text-2xl font-semibold text-text-color mb-4">Internships</h3>
+                        <h3 class="text-2xl font-semibold text-text-color flex items-center mb-4"><i data-lucide="briefcase" class="text-primary w-5 h-5 mr-3"></i> Internships</h3>
                         <div class="card-bg p-4 rounded-lg border-l-4 border-primary">
                             <p class="font-bold text-lg">Fidrox Technology Pvt. Ltd.[cite: 1]</p>
                             <p class="text-sm text-primary">Cybersecurity Intern (Current)</p>
-                            <p class="text-gray-400 text-xs mt-1">Working on industry-grade security projects[cite: 1].</p>
+                            <p class="text-gray-400 text-xs mt-1">Gaining experience in real-world industry projects[cite: 1].</p>
+                        </div>
+                        <div class="card-bg p-4 rounded-lg border-l-4 border-primary/50">
+                            <p class="font-bold text-lg">NullClass Pvt. Ltd.[cite: 1]</p>
+                            <p class="text-sm text-gray-400">Cybersecurity Intern</p>
                         </div>
                     </div>
                     <div class="space-y-6">
-                        <h3 class="text-2xl font-semibold text-text-color mb-4">Education</h3>
-                        <div class="card-bg p-4 rounded-lg">
-                            <p class="font-bold text-lg">Bachelor of Computer Applications</p>
+                        <h3 class="text-2xl font-semibold text-text-color flex items-center mb-4"><i data-lucide="award" class="text-primary w-5 h-5 mr-3"></i> Simulations & Education</h3>
+                        <div class="card-bg p-4 rounded-lg mb-4">
+                            <p class="font-bold text-lg">BCA (Honours), Cybersecurity[cite: 1]</p>
                             <p class="text-sm text-gray-400">Chanakya University (8.3 CGPA)[cite: 1]</p>
                         </div>
+                        <ul class="text-sm text-gray-400 space-y-1">
+                            <li>• Deloitte Cyber Job Simulation[cite: 1]</li>
+                            <li>• Tata Security Analyst Simulation[cite: 1]</li>
+                            <li>• Telstra Malware Mitigation Simulation[cite: 1]</li>
+                        </ul>
                     </div>
                 </div>
             </section>
             
             <!-- CONTACT SECTION -->
-            <section id="contact" class="section-content pt-8">
-                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Contact</h2>
-                <div class="grid md:grid-cols-3 gap-8 text-center">
-                    <a href="mailto:sugnanamurthygm@gmail.com" class="card-bg p-6 rounded-xl hover:bg-primary/10 transition">
+            <section id="contact" data-section="contact" class="section-content hidden pt-8">
+                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Contact Information</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <a href="mailto:sugnanamurthygm@gmail.com" class="card-bg p-6 rounded-xl text-center flex flex-col items-center hover:bg-primary/10 transition duration-300">
+                        <i data-lucide="mail" class="text-primary w-8 h-8 mb-3"></i>
                         <p class="text-lg font-semibold">Email</p>
                         <p class="text-xs text-gray-400">sugnanamurthygm@gmail.com</p>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sugnana-murthy-gm-6270" target="_blank" class="card-bg p-6 rounded-xl text-center flex flex-col items-center hover:bg-primary/10 transition duration-300">
+                        <i data-lucide="linkedin" class="text-primary w-8 h-8 mb-3"></i>
+                        <p class="text-lg font-semibold">LinkedIn</p>
+                    </a>
+                    <a href="https://github.com/CU22BCA033A" target="_blank" class="card-bg p-6 rounded-xl text-center flex flex-col items-center hover:bg-primary/10 transition duration-300">
+                        <i data-lucide="github" class="text-primary w-8 h-8 mb-3"></i>
+                        <p class="text-lg font-semibold">GitHub</p>
                     </a>
                 </div>
             </section>
         </div>
     </main>
     
-    <footer class="card-bg mt-12 py-6 text-center text-xs text-gray-400 border-t border-primary/20">
-        &copy; 2026 Sugnana Murthy GM. All rights reserved.
+    <footer class="card-bg mt-12 py-6 border-t border-primary/20">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-400">
+            &copy; 2026 Sugnana Murthy GM. All rights reserved.
+        </div>
     </footer>
 
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-black/80 z-[100] hidden flex items-center justify-center p-4" onclick="closeProjectModal()">
+        <div class="card-bg w-full max-w-3xl rounded-xl p-8 shadow-2xl relative" onclick="event.stopPropagation()">
+            <button onclick="closeProjectModal()" class="absolute top-4 right-4 text-gray-400 hover:text-primary">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <h3 id="modal-title" class="text-3xl font-bold text-primary mb-2"></h3>
+            <p id="modal-tech" class="text-lg text-gray-300 mb-4"></p>
+            <div id="modal-description" class="text-gray-400 space-y-4 mb-6 border-b border-primary/20 pb-4"></div>
+            <button id="generate-summary-btn" class="bg-primary text-background-color font-bold py-2 px-4 rounded-lg flex items-center hover:opacity-90 disabled:opacity-50" onclick="generateSecuritySummary()">
+                <span>Get Technical Insight</span>
+            </button>
+            <div id="ai-output-container" class="mt-4 hidden p-4 border border-primary/50 rounded-lg bg-gray-900/50">
+                <p id="ai-summary" class="text-gray-300 text-sm italic"></p>
+            </div>
+        </div>
+    </div>
+
     <script>
+        const projectDetails = {
+            2: { title: "Translatr", tech: "AWS Cryptography", description: ["Implemented encryption ciphers using AWS SDK[cite: 1]."] },
+            8: { title: "SENTINEL.IO", tech: "AI Threat Detection", description: ["Multi-layered AI for network security[cite: 1]."] },
+            10: { title: "Vuln-scanner", tech: "Phishing Intelligence", description: ["Advanced phishing intelligence system[cite: 1]."] },
+            11: { title: "IoT Door Controller", tech: "RFID Encryption", description: ["Secure RFID access control[cite: 1]."] }
+        };
+
+        // NAVIGATION LOGIC
         function switchSection(id) {
-            // Hide all
             document.querySelectorAll('.section-content').forEach(el => {
                 el.classList.remove('active');
+                el.classList.add('hidden');
             });
-            
-            // Show target
             const target = document.getElementById(id);
             if (target) {
-                target.classList.add('active');
+                target.classList.remove('hidden');
+                setTimeout(() => target.classList.add('active'), 50);
             }
-
-            // Update Nav
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('text-primary');
                 link.classList.add('text-gray-300');
-                if (link.getAttribute('onclick').includes(id)) {
-                    link.classList.add('text-primary');
-                    link.classList.remove('text-gray-300');
-                }
+                if (link.dataset.section === id) link.classList.add('text-primary');
             });
-
-            // Update URL
             window.location.hash = id;
             lucide.createIcons();
         }
 
+        // TYPEWRITER
         const textElement = document.getElementById('typewriter-text');
-        const roles = ["Security Consultant", "Penetration Tester", "Cybersecurity Engineer", "Vulnerability Analyst"];[cite: 1]
+        const roles = ["Security Consultant", "Penetration Tester", "Cybersecurity Engineer", "Vulnerability Analyst", "Full-Stack Developer"];[cite: 1]
         let roleIndex = 0, charIndex = 0, isDeleting = false;
 
         function type() {
@@ -269,6 +347,30 @@
             setTimeout(type, isDeleting ? 50 : 100);
         }
 
+        function showProjectModal(id) {
+            const data = projectDetails[id];
+            if (!data) return;
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-tech').textContent = data.tech;
+            document.getElementById('modal-description').innerHTML = data.description.map(p => `<p>${p}</p>`).join('');
+            document.getElementById('project-modal').classList.remove('hidden');
+        }
+
+        function closeProjectModal() { document.getElementById('project-modal').classList.add('hidden'); }
+
+        async function generateSecuritySummary() {
+            const btn = document.getElementById('generate-summary-btn');
+            btn.disabled = true;
+            btn.textContent = "Analyzing...";
+            setTimeout(() => {
+                document.getElementById('ai-summary').textContent = "Technical security insight generated.";
+                document.getElementById('ai-output-container').classList.remove('hidden');
+                btn.disabled = false;
+                btn.textContent = "Get Technical Insight";
+            }, 800);
+        }
+
+        // INITIALIZE
         window.onload = () => {
             const hash = window.location.hash.replace('#', '') || 'home';
             switchSection(hash);
@@ -280,6 +382,14 @@
             const hash = window.location.hash.replace('#', '') || 'home';
             switchSection(hash);
         };
+
+        // NAV LINK EVENT LISTENERS
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                switchSection(link.dataset.section);
+            });
+        });
     </script>
 </body>
 </html>
