@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sugnana Murthy GM - Security & Full-Stack Portfolio</title>
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
@@ -20,10 +18,8 @@
         .dark-theme-bg { background-color: var(--background-color); }
         .card-bg { background-color: var(--secondary-color); }
         .text-primary { color: var(--primary-color); }
-        .border-primary { border-color: var(--primary-color); }
-        .bg-primary { background-color: var(--primary-color); }
         
-        /* Fixed SPA Navigation: This ensures vertical alignment stays perfect */
+        /* Original Alignment Styles */
         .section-content {
             display: none; 
             opacity: 0;
@@ -45,19 +41,14 @@
             animation: blink 0.7s infinite;
         }
 
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
         @keyframes code-scroll {
             0% { transform: translateY(0); }
             100% { transform: translateY(-30%); } 
         }
 
-        .animate-code-scroll {
-            animation: code-scroll 12s linear infinite;
-        }
+        .animate-code-scroll { animation: code-scroll 12s linear infinite; }
 
         .terminal-window {
             height: 8rem; 
@@ -80,7 +71,7 @@
 
 <body class="dark-theme-bg text-gray-100 font-sans min-h-screen" style="font-family: 'Inter', sans-serif;">
 
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 card-bg shadow-lg border-b border-primary/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
@@ -88,12 +79,11 @@
                     <span class="text-2xl font-bold text-primary">Sugnana Murthy GM</span>
                 </div>
                 <div class="flex space-x-6">
-                    <!-- Updated links to ensure they trigger the JS correctly -->
-                    <button onclick="switchSection('home')" class="nav-link text-primary transition duration-300 font-medium px-2">Home</button>
-                    <button onclick="switchSection('skills')" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium px-2">Skills</button>
-                    <button onclick="switchSection('projects')" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium px-2">Projects</button>
-                    <button onclick="switchSection('activities')" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium px-2">Experience</button>
-                    <button onclick="switchSection('contact')" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium px-2">Contact</button>
+                    <button onclick="switchSection('home')" class="nav-link text-primary font-medium">Home</button>
+                    <button onclick="switchSection('skills')" class="nav-link text-gray-300 hover:text-primary font-medium">Skills</button>
+                    <button onclick="switchSection('projects')" class="nav-link text-gray-300 hover:text-primary font-medium">Projects</button>
+                    <button onclick="switchSection('activities')" class="nav-link text-gray-300 hover:text-primary font-medium">Experience</button>
+                    <button onclick="switchSection('contact')" class="nav-link text-gray-300 hover:text-primary font-medium">Contact</button>
                 </div>
             </div>
         </div>
@@ -112,25 +102,23 @@
                             <span id="typewriter-text" class="font-mono"></span><span class="typing-cursor"></span>
                         </h2>
                         <p class="text-lg text-gray-400 max-w-xl">
-                            Dynamic <b>Full-Stack Web Developer and Cybersecurity Enthusiast</b> specializing in building secure, scalable web applications. Proficient in HTML, CSS, JavaScript, React, Flask, and AWS. Currently a Cybersecurity student at <b>Chanakya University (8.0 CGPA)</b>.
+                            Dynamic <b>Full-Stack Web Developer and Cybersecurity Enthusiast</b> specializing in building secure applications[cite: 1]. Currently a Cybersecurity student at <b>Chanakya University (8.3 CGPA)</b>[cite: 1].
                         </p>
                         <div class="flex space-x-4 pt-4">
-                            <button onclick="switchSection('projects')" class="bg-primary text-background-color font-bold py-3 px-6 rounded-lg hover:opacity-90 transition duration-300 shadow-lg shadow-primary/30">View Projects</button>
-                            <button onclick="switchSection('contact')" class="border border-primary text-primary font-bold py-3 px-6 rounded-lg hover:bg-primary/10 transition duration-300">Get In Touch</button>
+                            <button onclick="switchSection('projects')" class="bg-primary text-background-color font-bold py-3 px-6 rounded-lg shadow-lg shadow-primary/30">View Projects</button>
+                            <button onclick="switchSection('contact')" class="border border-primary text-primary font-bold py-3 px-6 rounded-lg hover:bg-primary/10">Get In Touch</button>
                         </div>
                     </div>
                     <div class="flex flex-col items-center space-y-6 max-w-md mx-auto">
-                        <div class="card-bg p-3 rounded-full border-4 border-primary shadow-2xl shadow-primary/30">
-                            <img src="https://media.licdn.com/dms/image/v2/D5603AQFxwD4mr9Hnbw/profile-displayphoto-scale_400_400/B56ZsvqQfUI0Ak-/0/1766031166006?e=1778716800&v=beta&t=qVm8YV_yN258BjHJu_hPVXxwpjIysh8tZwhUjUyMqUM" alt="Sugnana Murthy GM" class="w-64 h-64 object-cover rounded-full">
+                        <div class="card-bg p-3 rounded-full border-4 border-primary shadow-2xl">
+                            <img src="https://media.licdn.com/dms/image/v2/D5603AQFxwD4mr9Hnbw/profile-displayphoto-scale_400_400/B56ZsvqQfUI0Ak-/0/1766031166006?e=1778716800&v=beta&t=qVm8YV_yN258BjHJu_hPVXxwpjIysh8tZwhUjUyMqUM" alt="Profile" class="w-64 h-64 object-cover rounded-full">
                         </div>
                         <div class="card-bg p-3 rounded-xl border border-primary/20 w-full shadow-xl hidden lg:block">
                             <div class="terminal-window font-mono">
                                 <pre class="text-primary/70 animate-code-scroll">
-<span class="text-red-400"># Security Audit:</span> Initiated...
+<span class="text-red-400"># Audit:</span> Initiated...
 <span class="text-yellow-400">> $ nmap -sV target.com</span>
-<span class="text-green-400">Scanning for vulnerabilities...</span>
-<span class="text-primary">$ git commit -m "Hardened API security"</span>
-<span class="text-green-400">SENTINEL.IO:</span> Threat detection active.
+<span class="text-green-400">SENTINEL.IO:</span> Intelligence Active.
                                 </pre>
                             </div>
                         </div>
@@ -143,25 +131,17 @@
                 <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Professional Skills</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="card-bg p-6 rounded-xl shadow-lg border-t-4 border-primary">
-                        <div class="flex items-center space-x-3 mb-4">
-                            <i data-lucide="shield" class="text-primary w-6 h-6"></i>
-                            <h3 class="text-xl font-semibold text-text-color">Cybersecurity</h3>
-                        </div>
+                        <h3 class="text-xl font-semibold text-text-color mb-4">Cybersecurity</h3>
                         <ul class="space-y-2 text-gray-400 text-sm">
-                            <li>Ethical Hacking & Penetration Testing[cite: 1]</li>
-                            <li>Burp Suite, Metasploit, Nmap, Wireshark[cite: 1]</li>
-                            <li>Web Application Security & Log Inspection[cite: 1]</li>
+                            <li>Ethical Hacking & Pen Testing[cite: 1]</li>
+                            <li>Burp Suite, Metasploit, Nmap[cite: 1]</li>
                         </ul>
                     </div>
                     <div class="card-bg p-6 rounded-xl shadow-lg border-t-4 border-primary">
-                        <div class="flex items-center space-x-3 mb-4">
-                            <i data-lucide="terminal" class="text-primary w-6 h-6"></i>
-                            <h3 class="text-xl font-semibold text-text-color">Development</h3>
-                        </div>
+                        <h3 class="text-xl font-semibold text-text-color mb-4">Full-Stack</h3>
                         <ul class="space-y-2 text-gray-400 text-sm">
                             <li>HTML, CSS, JS, React, Flask, PHP[cite: 1]</li>
-                            <li>AWS, Google Cloud & Git[cite: 1]</li>
-                            <li>MySQL & MongoDB Management[cite: 1]</li>
+                            <li>AWS & Google Cloud[cite: 1]</li>
                         </ul>
                     </div>
                 </div>
@@ -171,46 +151,28 @@
             <section id="projects" class="section-content pt-8">
                 <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Technical Projects</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="card-bg rounded-xl p-6 shadow-xl border-b-4 border-primary">
-                        <h3 class="text-xl font-bold text-text-color mb-2">SENTINEL.IO</h3>
-                        <p class="text-primary font-medium mb-4">AI Threat Detection</p>
-                        <p class="text-gray-400 text-sm">Multi-layered artificial intelligence for real-time threat detection[cite: 1].</p>
+                    <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
+                        <h3 class="text-xl font-bold text-text-color">SENTINEL.IO</h3>
+                        <p class="text-gray-400 text-sm mt-2">Multi-layered AI for real-time threat detection.</p>
                     </div>
-                    <div class="card-bg rounded-xl p-6 shadow-xl border-b-4 border-primary">
-                        <h3 class="text-xl font-bold text-text-color mb-2">Vuln-scanner</h3>
-                        <p class="text-primary font-medium mb-4">Phishing Intelligence</p>
-                        <p class="text-gray-400 text-sm">Multi-Modal Phishing Intelligence System for advanced threat analysis[cite: 1].</p>
-                    </div>
-                    <div class="card-bg rounded-xl p-6 shadow-xl border-b-4 border-primary">
-                        <h3 class="text-xl font-bold text-text-color mb-2">IoT Door Controller</h3>
-                        <p class="text-primary font-medium mb-4">RFID Encryption</p>
-                        <p class="text-gray-400 text-sm">Automatic Door controller Using Encryption with the help of RFID[cite: 1].</p>
+                    <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
+                        <h3 class="text-xl font-bold text-text-color">Vuln-scanner</h3>
+                        <p class="text-gray-400 text-sm mt-2">Multi-Modal Phishing Intelligence System.</p>
                     </div>
                 </div>
             </section>
             
             <!-- EXPERIENCE SECTION -->
             <section id="activities" class="section-content pt-8">
-                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Professional Growth</h2>
+                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Experience</h2>
                 <div class="grid lg:grid-cols-2 gap-12">
-                    <div class="space-y-6">
-                        <h3 class="text-2xl font-semibold text-text-color mb-4">Internships</h3>
-                        <div class="card-bg p-4 rounded-lg border-l-4 border-primary">
-                            <p class="font-bold text-lg">Fidrox Technology Pvt. Ltd.[cite: 1]</p>
-                            <p class="text-sm text-primary">Cybersecurity Intern (Current)</p>
-                            <p class="text-gray-400 text-xs mt-1">Working on industry-grade security projects[cite: 1].</p>
-                        </div>
-                        <div class="card-bg p-4 rounded-lg border-l-4 border-primary/50">
-                            <p class="font-bold text-lg">NullClass Pvt. Ltd.[cite: 1]</p>
-                            <p class="text-sm text-gray-400">Cybersecurity Intern</p>
-                        </div>
+                    <div class="card-bg p-6 rounded-lg border-l-4 border-primary">
+                        <p class="font-bold text-lg">Fidrox Technology Pvt. Ltd</p>
+                        <p class="text-sm text-primary">Cybersecurity Intern</p>
                     </div>
-                    <div class="space-y-6">
-                        <h3 class="text-2xl font-semibold text-text-color mb-4">Education</h3>
-                        <div class="card-bg p-4 rounded-lg">
-                            <p class="font-bold text-lg">Bachelor of Computer Applications</p>
-                            <p class="text-sm text-gray-400">Chanakya University (8.3 CGPA)[cite: 1]</p>
-                        </div>
+                    <div class="card-bg p-6 rounded-lg">
+                        <p class="font-bold text-lg">Chanakya University[cite: 1]</p>
+                        <p class="text-sm text-gray-400">8.3 CGPA[cite: 1]</p>
                     </div>
                 </div>
             </section>
@@ -219,63 +181,42 @@
             <section id="contact" class="section-content pt-8">
                 <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Contact</h2>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <a href="mailto:sugnanamurthygm@gmail.com" class="card-bg p-6 rounded-xl text-center flex flex-col items-center hover:bg-primary/10 transition">
-                        <p class="text-lg font-semibold">Email</p>
-                        <p class="text-xs text-gray-400">sugnanamurthygm@gmail.com</p>
-                    </a>
-                    <a href="https://www.linkedin.com/in/sugnana-murthy-gm-6270" target="_blank" class="card-bg p-6 rounded-xl text-center flex flex-col items-center hover:bg-primary/10 transition">
-                        <p class="text-lg font-semibold">LinkedIn</p>
-                    </a>
+                    <a href="mailto:sugnanamurthygm@gmail.com" class="card-bg p-6 rounded-xl text-center">Email Me</a>
                 </div>
             </section>
         </div>
     </main>
     
-    <footer class="card-bg mt-12 py-6 text-center text-xs text-gray-400 border-t border-primary/20">
+    <footer class="card-bg py-6 text-center text-xs text-gray-400 border-t border-primary/20">
         &copy; 2026 Sugnana Murthy GM. All rights reserved.
     </footer>
 
     <script>
-        // Restored Navigation Logic for Single Page Portfolio
         function switchSection(id) {
-            // Hide all sections first
-            const sections = document.querySelectorAll('.section-content');
-            sections.forEach(section => {
-                section.classList.remove('active');
+            document.querySelectorAll('.section-content').forEach(el => {
+                el.classList.remove('active');
             });
-            
-            // Show the requested section
             const target = document.getElementById(id);
             if (target) {
                 target.classList.add('active');
             }
-
-            // Update Nav visual state
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('text-primary');
                 link.classList.add('text-gray-300');
-                // Check if the button's text or id matches the target
                 if (link.innerText.toLowerCase() === id || (id === 'activities' && link.innerText.toLowerCase() === 'experience')) {
                     link.classList.add('text-primary');
                     link.classList.remove('text-gray-300');
                 }
             });
-
-            // Update the URL hash to prevent broken redirects on GitHub Pages
             window.location.hash = id;
-            
-            // Re-initialize Lucide icons in case they were hidden
             lucide.createIcons();
         }
 
-        // Typewriter Effect
-        const textElement = document.getElementById('typewriter-text');
-        const roles = ["Security Consultant", "Penetration Tester", "Cybersecurity Engineer", "Vulnerability Analyst"];[cite: 1]
+        const roles = ["Security Consultant", "Penetration Tester", "Cybersecurity Engineer", "Vulnerability Analyst"];
         let roleIndex = 0, charIndex = 0, isDeleting = false;
-
         function type() {
             const currentRole = roles[roleIndex];
-            textElement.textContent = currentRole.substring(0, charIndex);
+            document.getElementById('typewriter-text').textContent = currentRole.substring(0, charIndex);
             if (!isDeleting) {
                 charIndex++;
                 if (charIndex > currentRole.length) { isDeleting = true; setTimeout(type, 1500); return; }
@@ -286,18 +227,11 @@
             setTimeout(type, isDeleting ? 50 : 100);
         }
 
-        // Initialize on page load
         window.onload = () => {
             const hash = window.location.hash.replace('#', '') || 'home';
             switchSection(hash);
             type();
             lucide.createIcons();
-        };
-
-        // Ensure browser back button works correctly
-        window.onhashchange = () => {
-            const hash = window.location.hash.replace('#', '') || 'home';
-            switchSection(hash);
         };
     </script>
 </body>
