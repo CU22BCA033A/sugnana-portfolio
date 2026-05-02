@@ -21,9 +21,8 @@
         .card-bg { background-color: var(--secondary-color); }
         .text-primary { color: var(--primary-color); }
         .border-primary { border-color: var(--primary-color); }
-        .bg-primary { background-color: var(--primary-color); }
         
-        /* Section Visibility - Restored to your original alignment logic */
+        /* Fixed SPA Visibility Logic: Prevents Gaps & broken layout */
         .section-content {
             display: none; 
             opacity: 0;
@@ -45,19 +44,14 @@
             animation: blink 0.7s infinite;
         }
 
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
         @keyframes code-scroll {
             0% { transform: translateY(0); }
             100% { transform: translateY(-30%); } 
         }
 
-        .animate-code-scroll {
-            animation: code-scroll 12s linear infinite;
-        }
+        .animate-code-scroll { animation: code-scroll 12s linear infinite; }
 
         .terminal-window {
             height: 8rem; 
@@ -80,7 +74,7 @@
 
 <body class="dark-theme-bg text-gray-100 font-sans min-h-screen" style="font-family: 'Inter', sans-serif;">
 
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 card-bg shadow-lg border-b border-primary/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
@@ -98,7 +92,7 @@
         </div>
     </nav>
 
-    <main class="pt-20 pb-12">
+    <main class="pt-28 pb-12"> <!-- Adjusted padding for short top gap -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
 
             <!-- HOME SECTION -->
@@ -111,7 +105,7 @@
                             <span id="typewriter-text" class="font-mono"></span><span class="typing-cursor"></span>
                         </h2>
                         <p class="text-lg text-gray-400 max-w-xl">
-                            Dynamic <b>Full-Stack Web Developer and Cybersecurity Enthusiast</b> specializing in building secure, scalable web applications and implementing robust security practices. Proficient in HTML, CSS, JavaScript, React, Flask, and AWS. Currently a Cybersecurity student at <b>Chanakya University (8.3 CGPA)</b>.
+                            Dynamic <b>Full-Stack Web Developer and Cybersecurity Enthusiast</b> specializing in building secure, scalable applications and defending against adversarial attacks. Proficient in HTML, CSS, JavaScript, React, Flask, and AWS. Currently a student at <b>Chanakya University (8.3 CGPA)</b>.
                         </p>
                         <div class="flex space-x-4 pt-4">
                             <button onclick="switchSection('projects')" class="bg-primary text-background-color font-bold py-3 px-6 rounded-lg hover:opacity-90 transition duration-300 shadow-lg shadow-primary/30">View Projects</button>
@@ -120,15 +114,15 @@
                     </div>
                     <div class="flex flex-col items-center space-y-6 max-w-md mx-auto">
                         <div class="card-bg p-3 rounded-full border-4 border-primary shadow-2xl shadow-primary/30">
-                            <img src="https://media.licdn.com/dms/image/v2/D5603AQFxwD4mr9Hnbw/profile-displayphoto-scale_400_400/B56ZsvqQfUI0Ak-/0/1766031166006?e=1778716800&v=beta&t=qVm8YV_yN258BjHJu_hPVXxwpjIysh8tZwhUjUyMqUM" alt="Sugnana Murthy GM" class="w-64 h-64 object-cover rounded-full">
+                            <img src="https://media.licdn.com/dms/image/v2/D5603AQFxwD4mr9Hnbw/profile-displayphoto-scale_400_400/B56ZsvqQfUI0Ak-/0/1766031166006?e=1778716800&v=beta&t=qVm8YV_yN258BjHJu_hPVXxwpjIysh8tZwhUjUyMqUM" alt="Profile" class="w-64 h-64 object-cover rounded-full">
                         </div>
                         <div class="card-bg p-3 rounded-xl border border-primary/20 w-full shadow-xl hidden lg:block">
                             <div class="terminal-window font-mono">
                                 <pre class="text-primary/70 animate-code-scroll">
-<span class="text-red-400"># Security Audit:</span> Initiated...
+<span class="text-red-400"># Audit:</span> Initiated...
 <span class="text-yellow-400">> $ nmap -sV target.com</span>
 <span class="text-green-400">Vulnerability scanning in progress...</span>
-<span class="text-primary">$ git commit -m "Hardened API security"</span>
+<span class="text-primary">$ git commit -m "Hardened API"</span>
 <span class="text-green-400">SENTINEL.IO:</span> Intelligence Active.
                                 </pre>
                             </div>
@@ -159,20 +153,20 @@
                             <h3 class="text-xl font-semibold text-text-color">Full-Stack Dev</h3>
                         </div>
                         <ul class="space-y-2 text-gray-400 text-sm">
-                            <li>HTML, CSS, JS, React, Flask, PHP</li>
-                            <li>AWS, Google Cloud & Git Version Control</li>
+                            <li>HTML, CSS, JavaScript, React, Flask, PHP</li>
+                            <li>AWS, Google Cloud & Git</li>
                             <li>MySQL & MongoDB Management</li>
                         </ul>
                     </div>
                     <div class="card-bg p-6 rounded-xl shadow-lg border-t-4 border-primary">
                         <div class="flex items-center space-x-3 mb-4">
                             <i data-lucide="globe" class="text-primary w-6 h-6"></i>
-                            <h3 class="text-xl font-semibold text-text-color">Languages</h3>
+                            <h3 class="text-xl font-semibold text-text-color">Communication</h3>
                         </div>
                         <ul class="space-y-2 text-gray-400 text-sm">
                             <li>English: C2 Proficient</li>
                             <li>Kannada & Hindi: C1 Advanced</li>
-                            <li>Sanskrit: A1</li>
+                            <li>Prompt Engineering & Critical Thinking</li>
                         </ul>
                     </div>
                 </div>
@@ -180,7 +174,7 @@
             
             <!-- PROJECTS SECTION -->
             <section id="projects" class="section-content pt-8">
-                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Technical Projects</h2>
+                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Key Projects</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Project New: SENTINEL.IO -->
                     <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
@@ -214,21 +208,30 @@
                     <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
                         <h3 class="text-xl font-bold text-text-color mb-2">Adversarial AI</h3>
                         <p class="text-primary font-medium mb-4">Model Security</p>
-                        <p class="text-gray-400 text-sm">Improved model robustness by 15% against adversarial attacks.</p>
+                        <p class="text-gray-400 text-sm">Improved model robustness by 15% against attacks.</p>
+                    </div>
+                    <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
+                        <h3 class="text-xl font-bold text-text-color mb-2">Threat Dashboard</h3>
+                        <p class="text-primary font-medium mb-4">Visualization</p>
+                        <p class="text-gray-400 text-sm">Threat Intelligence system reducing latency.</p>
+                    </div>
+                    <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
+                        <h3 class="text-xl font-bold text-text-color mb-2">Monument Detection</h3>
+                        <p class="text-primary font-medium mb-4">Deep Learning</p>
+                        <p class="text-gray-400 text-sm">YOLOv8 model for real-time recognition.</p>
                     </div>
                 </div>
             </section>
             
             <!-- EXPERIENCE SECTION -->
             <section id="activities" class="section-content pt-8">
-                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Professional Experience</h2>
+                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Professional Growth</h2>
                 <div class="grid lg:grid-cols-2 gap-12">
                     <div class="space-y-6">
                         <h3 class="text-2xl font-semibold text-text-color flex items-center mb-4"><i data-lucide="briefcase" class="text-primary w-5 h-5 mr-3"></i> Internships</h3>
                         <div class="card-bg p-4 rounded-lg border-l-4 border-primary mb-4">
                             <p class="font-bold text-lg">Fidrox Technology Pvt. Ltd.</p>
                             <p class="text-sm text-primary">Cybersecurity Intern (Current)</p>
-                            <p class="text-gray-400 text-xs mt-1">Gaining hands-on experience in real-world industry projects.</p>
                         </div>
                         <div class="card-bg p-4 rounded-lg border-l-4 border-primary/50">
                             <p class="font-bold text-lg">NullClass Pvt. Ltd.</p>
@@ -254,21 +257,31 @@
             
             <!-- CONTACT SECTION -->
             <section id="contact" class="section-content pt-8">
-                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Contact</h2>
+                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Connect with Me</h2>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <a href="mailto:sugnanamurthygm@gmail.com" class="card-bg p-6 rounded-xl text-center flex flex-col items-center hover:bg-primary/10 transition duration-300 shadow-xl">
+                    <!-- Email Card -->
+                    <a href="mailto:sugnanamurthygm@gmail.com" class="card-bg p-6 rounded-xl text-center flex flex-col items-center hover:bg-primary/10 transition duration-300">
                         <i data-lucide="mail" class="text-primary w-8 h-8 mb-3"></i>
-                        <p class="text-lg font-semibold">Email</p>
+                        <p class="text-lg font-semibold">Email Me</p>
                         <p class="text-xs text-gray-400">sugnanamurthygm@gmail.com</p>
                     </a>
-                    <a href="https://www.linkedin.com/in/sugnana-murthy-gm-6270" target="_blank" class="card-bg p-6 rounded-xl text-center flex flex-col items-center hover:bg-primary/10 transition duration-300 shadow-xl">
+                    <!-- LinkedIn Card -->
+                    <a href="https://www.linkedin.com/in/sugnana-murthy-gm-6270" target="_blank" class="card-bg p-6 rounded-xl text-center flex flex-col items-center hover:bg-primary/10 transition duration-300">
                         <i data-lucide="linkedin" class="text-primary w-8 h-8 mb-3"></i>
-                        <p class="text-lg font-semibold">LinkedIn</p>
+                        <p class="text-lg font-semibold">Sugnana Murthy GM</p>
+                        <p class="text-xs text-gray-400">Profile</p>
                     </a>
-                    <a href="https://github.com/CU22BCA033A" target="_blank" class="card-bg p-6 rounded-xl text-center flex flex-col items-center hover:bg-primary/10 transition duration-300 shadow-xl">
+                    <!-- GitHub Card -->
+                    <a href="https://github.com/CU22BCA033A" target="_blank" class="card-bg p-6 rounded-xl text-center flex flex-col items-center hover:bg-primary/10 transition duration-300">
                         <i data-lucide="github" class="text-primary w-8 h-8 mb-3"></i>
-                        <p class="text-lg font-semibold">GitHub</p>
+                        <p class="text-lg font-semibold">CU22BCA033A</p>
+                        <p class="text-xs text-gray-400">GitHub</p>
                     </a>
+                </div>
+                <!-- Phone Card -->
+                <div class="mt-8 text-center text-gray-400 text-sm flex items-center justify-center space-x-2">
+                    <i data-lucide="phone" class="text-primary w-4 h-4"></i>
+                    <p>Phone: 7483546559 | Bengaluru</p>
                 </div>
             </section>
 
@@ -280,26 +293,38 @@
     </footer>
 
     <script>
+        // SPA Logic with fixed visibility/gap logic
         function switchSection(id) {
+            // 1. Hide all sections
             document.querySelectorAll('.section-content').forEach(el => {
                 el.classList.remove('active');
             });
+            
+            // 2. Show target section
             const target = document.getElementById(id);
             if (target) {
                 target.classList.add('active');
             }
+
+            // 3. Reset Nav Link colors
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('text-primary');
                 link.classList.add('text-gray-300');
+                // Standard single page portfolio logic
                 if (link.innerText.toLowerCase() === id || (id === 'activities' && link.innerText.toLowerCase() === 'experience')) {
                     link.classList.add('text-primary');
                     link.classList.remove('text-gray-300');
                 }
             });
+
+            // 4. Update the URL hash without reloading the page
             window.location.hash = id;
+            
+            // Refresh Lucide icons in newly displayed sections
             lucide.createIcons();
         }
 
+        // Typewriter Effect
         const textElement = document.getElementById('typewriter-text');
         const roles = ["Security Consultant", "Penetration Tester", "Cybersecurity Engineer", "Vulnerability Analyst", "Full-Stack Developer"];
         let roleIndex = 0, charIndex = 0, isDeleting = false;
@@ -317,6 +342,7 @@
             setTimeout(type, isDeleting ? 50 : 100);
         }
 
+        // Initialize on load
         window.onload = () => {
             const hash = window.location.hash.replace('#', '') || 'home';
             switchSection(hash);
@@ -324,6 +350,7 @@
             lucide.createIcons();
         };
 
+        // Handle browser back/forward buttons
         window.onhashchange = () => {
             const hash = window.location.hash.replace('#', '') || 'home';
             switchSection(hash);
