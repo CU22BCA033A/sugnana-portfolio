@@ -22,12 +22,12 @@
         .text-primary { color: var(--primary-color); }
         .border-primary { border-color: var(--primary-color); }
         
-        /* Fixed SPA Visibility Logic: Prevents Gaps & broken layout */
+        /* Visibility Logic: Removed the top gap issue */
         .section-content {
             display: none; 
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            transform: translateY(10px);
+            transition: opacity 0.4s ease-out, transform 0.4s ease-out;
         }
         .section-content.active {
             display: block;
@@ -92,8 +92,9 @@
         </div>
     </nav>
 
-    <main class="pt-28 pb-12"> <!-- Adjusted padding for short top gap -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+    <!-- Reduced top padding to move info up to the top -->
+    <main class="pt-20 pb-12"> 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <!-- HOME SECTION -->
             <section id="home" class="section-content active min-h-[calc(100vh-80px)] flex items-center">
@@ -105,7 +106,7 @@
                             <span id="typewriter-text" class="font-mono"></span><span class="typing-cursor"></span>
                         </h2>
                         <p class="text-lg text-gray-400 max-w-xl">
-                            Dynamic <b>Full-Stack Web Developer and Cybersecurity Enthusiast</b> specializing in building secure, scalable applications and defending against adversarial attacks. Proficient in HTML, CSS, JavaScript, React, Flask, and AWS. Currently a student at <b>Chanakya University (8.3 CGPA)</b>.
+                            Dynamic <b>Full-Stack Web Developer and Cybersecurity Enthusiast</b> specializing in building secure, scalable applications[cite: 1]. Currently a student at <b>Chanakya University (8.3 CGPA)</b>[cite: 1].
                         </p>
                         <div class="flex space-x-4 pt-4">
                             <button onclick="switchSection('projects')" class="bg-primary text-background-color font-bold py-3 px-6 rounded-lg hover:opacity-90 transition duration-300 shadow-lg shadow-primary/30">View Projects</button>
@@ -132,7 +133,7 @@
             </section>
             
             <!-- SKILLS SECTION -->
-            <section id="skills" class="section-content pt-8">
+            <section id="skills" class="section-content pt-4">
                 <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Professional Skills</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="card-bg p-6 rounded-xl shadow-lg border-t-4 border-primary">
@@ -141,10 +142,10 @@
                             <h3 class="text-xl font-semibold text-text-color">Cybersecurity</h3>
                         </div>
                         <ul class="space-y-2 text-gray-400 text-sm">
-                            <li>Ethical Hacking & Penetration Testing</li>
-                            <li>Burp Suite, Metasploit, Nmap, Wireshark</li>
-                            <li>Web Application Security & Log Inspection</li>
-                            <li>Quantum Cryptography & Computer Networks</li>
+                            <li>Ethical Hacking & Penetration Testing[cite: 1]</li>
+                            <li>Burp Suite, Metasploit, Nmap, Wireshark[cite: 1]</li>
+                            <li>Web Application Security & Log Inspection[cite: 1]</li>
+                            <li>Quantum Cryptography & Computer Networks[cite: 1]</li>
                         </ul>
                     </div>
                     <div class="card-bg p-6 rounded-xl shadow-lg border-t-4 border-primary">
@@ -153,9 +154,9 @@
                             <h3 class="text-xl font-semibold text-text-color">Full-Stack Dev</h3>
                         </div>
                         <ul class="space-y-2 text-gray-400 text-sm">
-                            <li>HTML, CSS, JavaScript, React, Flask, PHP</li>
-                            <li>AWS, Google Cloud & Git</li>
-                            <li>MySQL & MongoDB Management</li>
+                            <li>HTML, CSS, JavaScript, React, Flask, PHP[cite: 1]</li>
+                            <li>AWS, Google Cloud & Git[cite: 1]</li>
+                            <li>MySQL & MongoDB Management[cite: 1]</li>
                         </ul>
                     </div>
                     <div class="card-bg p-6 rounded-xl shadow-lg border-t-4 border-primary">
@@ -164,124 +165,131 @@
                             <h3 class="text-xl font-semibold text-text-color">Communication</h3>
                         </div>
                         <ul class="space-y-2 text-gray-400 text-sm">
-                            <li>English: C2 Proficient</li>
-                            <li>Kannada & Hindi: C1 Advanced</li>
-                            <li>Prompt Engineering & Critical Thinking</li>
+                            <li>English: C2 Proficient[cite: 1]</li>
+                            <li>Kannada & Hindi: C1 Advanced[cite: 1]</li>
+                            <li>Sanskrit: A1[cite: 1]</li>
+                            <li>Prompt Engineering & Critical Thinking[cite: 1]</li>
                         </ul>
                     </div>
                 </div>
             </section>
             
             <!-- PROJECTS SECTION -->
-            <section id="projects" class="section-content pt-8">
-                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Key Projects</h2>
+            <section id="projects" class="section-content pt-4">
+                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Key Technical Projects</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project New: SENTINEL.IO -->
                     <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
                         <h3 class="text-xl font-bold text-text-color mb-2">SENTINEL.IO</h3>
                         <p class="text-primary font-medium mb-4">AI Threat Detection</p>
-                        <p class="text-gray-400 text-sm">Multi-layered artificial intelligence for real-time threat detection.</p>
+                        <p class="text-gray-400 text-sm">Multi-layered artificial intelligence for real-time threat detection[cite: 1].</p>
                     </div>
-                    <!-- Project New: Vuln-scanner -->
                     <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
                         <h3 class="text-xl font-bold text-text-color mb-2">Vuln-scanner</h3>
                         <p class="text-primary font-medium mb-4">Phishing Intelligence</p>
-                        <p class="text-gray-400 text-sm">Multi-Modal Phishing Intelligence System for advanced threat analysis.</p>
+                        <p class="text-gray-400 text-sm">Multi-Modal Phishing Intelligence System for advanced threat analysis[cite: 1].</p>
                     </div>
-                    <!-- Project New: IoT -->
                     <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
                         <h3 class="text-xl font-bold text-text-color mb-2">IoT Door Controller</h3>
                         <p class="text-primary font-medium mb-4">RFID Encryption</p>
-                        <p class="text-gray-400 text-sm">Automatic Door controller Using Encryption with the help of RFID.</p>
+                        <p class="text-gray-400 text-sm">Automatic Door controller Using Encryption with the help of RFID[cite: 1].</p>
                     </div>
-                    <!-- Old Projects Restored -->
                     <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
                         <h3 class="text-xl font-bold text-text-color mb-2">Translatr</h3>
                         <p class="text-primary font-medium mb-4">AWS Cryptography</p>
-                        <p class="text-gray-400 text-sm">Encryption tool utilizing Caesar, Beaufort, and Autokey ciphers.</p>
+                        <p class="text-gray-400 text-sm">Encryption tool utilizing Caesar, Beaufort, and Autokey ciphers[cite: 1].</p>
                     </div>
                     <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
                         <h3 class="text-xl font-bold text-text-color mb-2">Steganography App</h3>
                         <p class="text-primary font-medium mb-4">JavaScript/Flask</p>
-                        <p class="text-gray-400 text-sm">Developed a secure application to hide messages in digital images.</p>
+                        <p class="text-gray-400 text-sm">Developed a secure application to hide messages in digital images[cite: 1].</p>
                     </div>
                     <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
                         <h3 class="text-xl font-bold text-text-color mb-2">Adversarial AI</h3>
                         <p class="text-primary font-medium mb-4">Model Security</p>
-                        <p class="text-gray-400 text-sm">Improved model robustness by 15% against attacks.</p>
+                        <p class="text-gray-400 text-sm">Improved model robustness by 15% against attacks[cite: 1].</p>
                     </div>
                     <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
                         <h3 class="text-xl font-bold text-text-color mb-2">Threat Dashboard</h3>
-                        <p class="text-primary font-medium mb-4">Visualization</p>
-                        <p class="text-gray-400 text-sm">Threat Intelligence system reducing latency.</p>
+                        <p class="text-primary font-medium mb-4">Intelligence Visualization</p>
+                        <p class="text-gray-400 text-sm">Developed real-time visualization system using Python[cite: 1].</p>
                     </div>
                     <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
                         <h3 class="text-xl font-bold text-text-color mb-2">Monument Detection</h3>
                         <p class="text-primary font-medium mb-4">Deep Learning</p>
-                        <p class="text-gray-400 text-sm">YOLOv8 model for real-time recognition.</p>
+                        <p class="text-gray-400 text-sm">Used YOLOv8 Deep Learning for real-time object recognition[cite: 1].</p>
                     </div>
                 </div>
             </section>
             
             <!-- EXPERIENCE SECTION -->
-            <section id="activities" class="section-content pt-8">
+            <section id="activities" class="section-content pt-4">
                 <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Professional Growth</h2>
                 <div class="grid lg:grid-cols-2 gap-12">
                     <div class="space-y-6">
                         <h3 class="text-2xl font-semibold text-text-color flex items-center mb-4"><i data-lucide="briefcase" class="text-primary w-5 h-5 mr-3"></i> Internships</h3>
                         <div class="card-bg p-4 rounded-lg border-l-4 border-primary mb-4">
-                            <p class="font-bold text-lg">Fidrox Technology Pvt. Ltd.</p>
-                            <p class="text-sm text-primary">Cybersecurity Intern (Current)</p>
+                            <p class="font-bold text-lg">Fidrox Technology Pvt. Ltd.[cite: 1]</p>
+                            <p class="text-sm text-primary">Cybersecurity Intern (Current)[cite: 1]</p>
+                            <p class="text-gray-400 text-xs mt-1">Gaining experience in real-world industry projects[cite: 1].</p>
                         </div>
                         <div class="card-bg p-4 rounded-lg border-l-4 border-primary/50">
-                            <p class="font-bold text-lg">NullClass Pvt. Ltd.</p>
-                            <p class="text-sm text-gray-400">Cybersecurity Intern</p>
+                            <p class="font-bold text-lg">NullClass Pvt. Ltd.[cite: 1]</p>
+                            <p class="text-sm text-gray-400">Cybersecurity Intern[cite: 1]</p>
                         </div>
+                        <h3 class="text-2xl font-semibold text-text-color flex items-center mt-6 mb-4"><i data-lucide="award" class="text-primary w-5 h-5 mr-3"></i> Job Simulations</h3>
+                        <ul class="text-sm text-gray-400 space-y-1">
+                            <li>• Deloitte: Cyber Job Simulation (Forage)[cite: 1]</li>
+                            <li>• Tata: Security Analyst Simulation[cite: 1]</li>
+                            <li>• Telstra: Malware Mitigation Simulation[cite: 1]</li>
+                        </ul>
                     </div>
                     <div class="space-y-6">
                         <h3 class="text-2xl font-semibold text-text-color flex items-center mb-4"><i data-lucide="graduation-cap" class="text-primary w-5 h-5 mr-3"></i> Education</h3>
                         <div class="card-bg p-4 rounded-lg">
-                            <p class="font-bold text-lg">Bachelor of Computer Applications (Honours)</p>
-                            <p class="text-sm text-gray-400">Chanakya University, Bengaluru</p>
-                            <p class="text-xs text-primary mt-1">CGPA: 8.3/10</p>
+                            <p class="font-bold text-lg">Bachelor of Computer Applications (Honours)[cite: 1]</p>
+                            <p class="text-sm text-gray-400">Chanakya University, Bengaluru[cite: 1]</p>
+                            <p class="text-xs text-primary mt-1">CGPA: 8.3/10[cite: 1]</p>
                         </div>
-                        <h3 class="text-2xl font-semibold text-text-color flex items-center mt-6 mb-4"><i data-lucide="award" class="text-primary w-5 h-5 mr-3"></i> Job Simulations</h3>
-                        <ul class="text-sm text-gray-400 space-y-1">
-                            <li>• Deloitte: Cyber Job Simulation (Forage)</li>
-                            <li>• Tata: Security Analyst Simulation</li>
-                            <li>• Telstra: Malware Mitigation Simulation</li>
-                        </ul>
+                        <h3 class="text-2xl font-semibold text-text-color flex items-center mt-6 mb-4"><i data-lucide="scroll" class="text-primary w-5 h-5 mr-3"></i> Certifications</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div class="card-bg p-3 rounded-lg text-xs">Google: AI Essentials[cite: 1]</div>
+                            <div class="card-bg p-3 rounded-lg text-xs">Google: Cyber Fundamentals[cite: 1]</div>
+                            <div class="card-bg p-3 rounded-lg text-xs">Google: Play It Safe[cite: 1]</div>
+                            <div class="card-bg p-3 rounded-lg text-xs">CISCO: Cybersecurity[cite: 1]</div>
+                            <div class="card-bg p-3 rounded-lg text-xs">IIT: Quantum Cryptography[cite: 1]</div>
+                            <div class="card-bg p-3 rounded-lg text-xs">Infosys: OpenAI Dev[cite: 1]</div>
+                            <div class="card-bg p-3 rounded-lg text-xs">Infosys: Ethical Hacking[cite: 1]</div>
+                        </div>
                     </div>
                 </div>
             </section>
             
             <!-- CONTACT SECTION -->
-            <section id="contact" class="section-content pt-8">
+            <section id="contact" class="section-content pt-4">
                 <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Connect with Me</h2>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Email Card -->
                     <a href="mailto:sugnanamurthygm@gmail.com" class="card-bg p-6 rounded-xl text-center flex flex-col items-center hover:bg-primary/10 transition duration-300">
                         <i data-lucide="mail" class="text-primary w-8 h-8 mb-3"></i>
                         <p class="text-lg font-semibold">Email Me</p>
-                        <p class="text-xs text-gray-400">sugnanamurthygm@gmail.com</p>
+                        <p class="text-xs text-gray-400">sugnanamurthygm@gmail.com[cite: 1]</p>
                     </a>
-                    <!-- LinkedIn Card -->
                     <a href="https://www.linkedin.com/in/sugnana-murthy-gm-6270" target="_blank" class="card-bg p-6 rounded-xl text-center flex flex-col items-center hover:bg-primary/10 transition duration-300">
                         <i data-lucide="linkedin" class="text-primary w-8 h-8 mb-3"></i>
                         <p class="text-lg font-semibold">Sugnana Murthy GM</p>
-                        <p class="text-xs text-gray-400">Profile</p>
+                        <p class="text-xs text-gray-400">LinkedIn[cite: 1]</p>
                     </a>
-                    <!-- GitHub Card -->
                     <a href="https://github.com/CU22BCA033A" target="_blank" class="card-bg p-6 rounded-xl text-center flex flex-col items-center hover:bg-primary/10 transition duration-300">
                         <i data-lucide="github" class="text-primary w-8 h-8 mb-3"></i>
                         <p class="text-lg font-semibold">CU22BCA033A</p>
-                        <p class="text-xs text-gray-400">GitHub</p>
+                        <p class="text-xs text-gray-400">GitHub[cite: 1]</p>
                     </a>
                 </div>
-                <!-- Phone Card -->
-                <div class="mt-8 text-center text-gray-400 text-sm flex items-center justify-center space-x-2">
-                    <i data-lucide="phone" class="text-primary w-4 h-4"></i>
-                    <p>Phone: 7483546559 | Bengaluru</p>
+                <div class="mt-8 text-center text-gray-400 text-sm flex flex-col items-center justify-center space-y-2">
+                    <div class="flex items-center space-x-2">
+                        <i data-lucide="phone" class="text-primary w-4 h-4"></i>
+                        <p>Phone: 7483546559[cite: 1]</p>
+                    </div>
+                    <p>Address: Bengaluru[cite: 1]</p>
                 </div>
             </section>
 
@@ -289,44 +297,35 @@
     </main>
     
     <footer class="card-bg mt-12 py-6 text-center text-xs text-gray-400 border-t border-primary/20">
-        &copy; 2026 Sugnana Murthy GM. All rights reserved.
+        &copy; 2026 Sugnana Murthy GM. All rights reserved.[cite: 1]
     </footer>
 
     <script>
-        // SPA Logic with fixed visibility/gap logic
         function switchSection(id) {
-            // 1. Hide all sections
             document.querySelectorAll('.section-content').forEach(el => {
                 el.classList.remove('active');
             });
             
-            // 2. Show target section
             const target = document.getElementById(id);
             if (target) {
                 target.classList.add('active');
             }
 
-            // 3. Reset Nav Link colors
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('text-primary');
                 link.classList.add('text-gray-300');
-                // Standard single page portfolio logic
                 if (link.innerText.toLowerCase() === id || (id === 'activities' && link.innerText.toLowerCase() === 'experience')) {
                     link.classList.add('text-primary');
                     link.classList.remove('text-gray-300');
                 }
             });
 
-            // 4. Update the URL hash without reloading the page
             window.location.hash = id;
-            
-            // Refresh Lucide icons in newly displayed sections
             lucide.createIcons();
         }
 
-        // Typewriter Effect
         const textElement = document.getElementById('typewriter-text');
-        const roles = ["Security Consultant", "Penetration Tester", "Cybersecurity Engineer", "Vulnerability Analyst", "Full-Stack Developer"];
+        const roles = ["Security Consultant", "Penetration Tester", "Cybersecurity Engineer", "Vulnerability Analyst", "Full-Stack Developer"];[cite: 1]
         let roleIndex = 0, charIndex = 0, isDeleting = false;
 
         function type() {
@@ -342,7 +341,6 @@
             setTimeout(type, isDeleting ? 50 : 100);
         }
 
-        // Initialize on load
         window.onload = () => {
             const hash = window.location.hash.replace('#', '') || 'home';
             switchSection(hash);
@@ -350,7 +348,6 @@
             lucide.createIcons();
         };
 
-        // Handle browser back/forward buttons
         window.onhashchange = () => {
             const hash = window.location.hash.replace('#', '') || 'home';
             switchSection(hash);
