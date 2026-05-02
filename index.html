@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sugnana Murthy GM - Security & Full-Stack Portfolio</title>
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
@@ -22,7 +20,7 @@
         .text-primary { color: var(--primary-color); }
         .border-primary { border-color: var(--primary-color); }
         
-        /* Visibility Logic: Removed the top gap issue */
+        /* Visibility Logic: Removes top gap and bottom dragging */
         .section-content {
             display: none; 
             opacity: 0;
@@ -35,6 +33,7 @@
             transform: translateY(0);
         }
 
+        /* Typewriter Cursor */
         .typing-cursor {
             display: inline-block;
             width: 3px;
@@ -43,14 +42,13 @@
             margin-left: 2px;
             animation: blink 0.7s infinite;
         }
-
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
+        /* Terminal Animation */
         @keyframes code-scroll {
             0% { transform: translateY(0); }
             100% { transform: translateY(-30%); } 
         }
-
         .animate-code-scroll { animation: code-scroll 12s linear infinite; }
 
         .terminal-window {
@@ -61,7 +59,6 @@
             position: relative;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
         }
-
         .terminal-window pre {
             margin: 0;
             padding: 1rem;
@@ -74,7 +71,7 @@
 
 <body class="dark-theme-bg text-gray-100 font-sans min-h-screen" style="font-family: 'Inter', sans-serif;">
 
-    <!-- Navigation -->
+    <!-- Navigation Bar -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 card-bg shadow-lg border-b border-primary/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
@@ -92,12 +89,12 @@
         </div>
     </nav>
 
-    <!-- Reduced top padding to move info up to the top -->
-    <main class="pt-20 pb-12"> 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Main Container: Standardized top padding to align content to the top -->
+    <main class="pt-24 pb-12 min-h-screen flex flex-col"> 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
-            <!-- HOME SECTION -->
-            <section id="home" class="section-content active min-h-[calc(100vh-80px)] flex items-center">
+            <!-- HOME SECTION: Uses min-h to stay centered visually on landing -->
+            <section id="home" class="section-content active min-h-[70vh] flex items-center">
                 <div class="grid md:grid-cols-2 gap-12 items-center w-full">
                     <div class="space-y-6">
                         <p class="text-xl text-primary font-medium">Hello, I'm</p>
@@ -114,10 +111,10 @@
                         </div>
                     </div>
                     <div class="flex flex-col items-center space-y-6 max-w-md mx-auto">
-                        <div class="card-bg p-3 rounded-full border-4 border-primary shadow-2xl shadow-primary/30">
+                        <div class="card-bg p-3 rounded-full border-4 border-primary shadow-2xl">
                             <img src="https://media.licdn.com/dms/image/v2/D5603AQFxwD4mr9Hnbw/profile-displayphoto-scale_400_400/B56ZsvqQfUI0Ak-/0/1766031166006?e=1778716800&v=beta&t=qVm8YV_yN258BjHJu_hPVXxwpjIysh8tZwhUjUyMqUM" alt="Profile" class="w-64 h-64 object-cover rounded-full">
                         </div>
-                        <div class="card-bg p-3 rounded-xl border border-primary/20 w-full shadow-xl hidden lg:block">
+                        <div class="card-bg p-3 rounded-xl border border-primary/20 w-full hidden lg:block">
                             <div class="terminal-window font-mono">
                                 <pre class="text-primary/70 animate-code-scroll">
 <span class="text-red-400"># Audit:</span> Initiated...
@@ -133,7 +130,7 @@
             </section>
             
             <!-- SKILLS SECTION -->
-            <section id="skills" class="section-content pt-4">
+            <section id="skills" class="section-content">
                 <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Professional Skills</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="card-bg p-6 rounded-xl shadow-lg border-t-4 border-primary">
@@ -175,7 +172,7 @@
             </section>
             
             <!-- PROJECTS SECTION -->
-            <section id="projects" class="section-content pt-4">
+            <section id="projects" class="section-content">
                 <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Key Technical Projects</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
@@ -210,7 +207,7 @@
                     </div>
                     <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
                         <h3 class="text-xl font-bold text-text-color mb-2">Threat Dashboard</h3>
-                        <p class="text-primary font-medium mb-4">Intelligence Visualization</p>
+                        <p class="text-primary font-medium mb-4">Visualization</p>
                         <p class="text-gray-400 text-sm">Developed real-time visualization system using Python[cite: 1].</p>
                     </div>
                     <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
@@ -222,7 +219,7 @@
             </section>
             
             <!-- EXPERIENCE SECTION -->
-            <section id="activities" class="section-content pt-4">
+            <section id="activities" class="section-content">
                 <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Professional Growth</h2>
                 <div class="grid lg:grid-cols-2 gap-12">
                     <div class="space-y-6">
@@ -230,7 +227,6 @@
                         <div class="card-bg p-4 rounded-lg border-l-4 border-primary mb-4">
                             <p class="font-bold text-lg">Fidrox Technology Pvt. Ltd.[cite: 1]</p>
                             <p class="text-sm text-primary">Cybersecurity Intern (Current)[cite: 1]</p>
-                            <p class="text-gray-400 text-xs mt-1">Gaining experience in real-world industry projects[cite: 1].</p>
                         </div>
                         <div class="card-bg p-4 rounded-lg border-l-4 border-primary/50">
                             <p class="font-bold text-lg">NullClass Pvt. Ltd.[cite: 1]</p>
@@ -265,7 +261,7 @@
             </section>
             
             <!-- CONTACT SECTION -->
-            <section id="contact" class="section-content pt-4">
+            <section id="contact" class="section-content">
                 <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Connect with Me</h2>
                 <div class="grid md:grid-cols-3 gap-8">
                     <a href="mailto:sugnanamurthygm@gmail.com" class="card-bg p-6 rounded-xl text-center flex flex-col items-center hover:bg-primary/10 transition duration-300">
@@ -296,7 +292,7 @@
         </div>
     </main>
     
-    <footer class="card-bg mt-12 py-6 text-center text-xs text-gray-400 border-t border-primary/20">
+    <footer class="card-bg py-6 text-center text-xs text-gray-400 border-t border-primary/20 mt-auto">
         &copy; 2026 Sugnana Murthy GM. All rights reserved.[cite: 1]
     </footer>
 
@@ -322,6 +318,8 @@
 
             window.location.hash = id;
             lucide.createIcons();
+            // Scroll to top of section content without the large gap
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         const textElement = document.getElementById('typewriter-text');
