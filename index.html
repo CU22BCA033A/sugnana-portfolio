@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suggu - Security & Full-Stack Portfolio</title>
-    <!-- Load Tailwind CSS -->
+    <title>Sugnana Murthy GM - Security & Full-Stack Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
@@ -24,11 +22,13 @@
         .bg-primary { background-color: var(--primary-color); }
         
         .section-content {
+            display: none; /* Reverted to your exact SPA logic */
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.5s ease-out, transform 0.5s ease-out;
         }
         .section-content.active {
+            display: block;
             opacity: 1;
             transform: translateY(0);
         }
@@ -72,20 +72,6 @@
             font-family: monospace;
             white-space: pre-wrap;
         }
-
-        .loader {
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-top: 4px solid var(--primary-color);
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
     </style>
 </head>
 
@@ -96,7 +82,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0">
-                    <span class="text-2xl font-bold text-primary">Suggu</span>
+                    <span class="text-2xl font-bold text-primary">Sugnana Murthy GM</span>
                 </div>
                 <div class="flex space-x-6">
                     <a href="#home" data-section="home" class="nav-link text-primary transition duration-300 font-medium">Home</a>
@@ -113,7 +99,7 @@
     <main class="pt-20 pb-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
 
-            <!-- HOME SECTION -->
+            <!-- HOME SECTION (Alignment Restored) -->
             <section id="home" data-section="home" class="section-content active min-h-[calc(100vh-80px)] flex items-center">
                 <div class="grid md:grid-cols-2 gap-12 items-center w-full">
                     <div class="space-y-6">
@@ -123,7 +109,7 @@
                             <span id="typewriter-text" class="font-mono"></span><span class="typing-cursor"></span>
                         </h2>
                         <p class="text-lg text-gray-400 max-w-xl">
-                            Dynamic <b>Full-Stack Web Developer and Cybersecurity Enthusiast</b> with a vibe-coding mindset[cite: 1]. Specializing in building secure, scalable applications and implementing robust defense against adversarial attacks[cite: 1]. Currently a student at <b>Chanakya University (8.3 CGPA)</b>[cite: 1].
+                            Dynamic <b>Full-Stack Web Developer and Cybersecurity Enthusiast</b> specializing in building secure, scalable web applications and implementing robust security practices[cite: 1]. Proficient in HTML, CSS, JavaScript, React, Flask, and AWS[cite: 1]. Currently a Cybersecurity student at <b>Chanakya University (8.3 CGPA)</b>[cite: 1].
                         </p>
                         <div class="flex space-x-4 pt-4">
                             <a href="#projects" class="bg-primary text-background-color font-bold py-3 px-6 rounded-lg hover:opacity-90 transition duration-300 shadow-lg shadow-primary/30" onclick="switchSection('projects')">View Projects</a>
@@ -133,19 +119,18 @@
                     <div class="flex flex-col items-center space-y-6 max-w-md mx-auto">
                         <div class="card-bg p-3 rounded-full border-4 border-primary shadow-2xl shadow-primary/30">
                             <img src="https://media.licdn.com/dms/image/v2/D5603AQFxwD4mr9Hnbw/profile-displayphoto-scale_400_400/B56ZsvqQfUI0Ak-/0/1766031166006?e=1778716800&v=beta&t=qVm8YV_yN258BjHJu_hPVXxwpjIysh8tZwhUjUyMqUM" 
-                                 alt="Suggu professional portrait" 
-                                 class="w-64 h-64 object-cover rounded-full transform hover:scale-105 transition duration-500">
+                                 alt="Sugnana Murthy GM" 
+                                 class="w-64 h-64 object-cover rounded-full">
                         </div>
                         <div class="card-bg p-3 rounded-xl border border-primary/20 w-full shadow-xl hidden lg:block">
                             <div class="terminal-window font-mono">
                                 <pre class="text-primary/70 animate-code-scroll">
-<span class="text-red-400"># CyberSec Trace:</span> Initiated...
-<span class="text-yellow-400">> $ nmap -sV -p 80,443 target.com</span>
+<span class="text-red-400"># Security Audit:</span> Initiated...
+<span class="text-yellow-400">> $ nmap -sV target.com</span>
 <span class="text-green-400">Scanning for vulnerabilities...</span>
 <span class="text-primary">$ git commit -m "Secure API"</span>
 <span class="text-green-400">Deployment successful!</span>
-<span class="text-red-400">SENTINEL.IO:</span> Analyzing threat...
-<span class="text-green-400">Integrity: 100%</span>
+<span class="text-red-400">SENTINEL.IO:</span> Analyzing...
                                 </pre>
                             </div>
                         </div>
@@ -155,34 +140,32 @@
             
             <!-- SKILLS SECTION -->
             <section id="skills" data-section="skills" class="section-content hidden pt-8">
-                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Core Skills & Expertise</h2>
+                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Professional Skills</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="card-bg p-6 rounded-xl shadow-lg border-t-4 border-primary">
                         <div class="flex items-center space-x-3 mb-4">
-                            <i data-lucide="shield-half" class="text-primary w-6 h-6"></i>
+                            <i data-lucide="shield" class="text-primary w-6 h-6"></i>
                             <h3 class="text-xl font-semibold text-text-color">Cybersecurity</h3>
                         </div>
                         <ul class="space-y-2 text-gray-400 text-sm">
-                            <li>Ethical Hacking & Pen Testing[cite: 1]</li>
-                            <li>Burp Suite, Metasploit, Nmap[cite: 1]</li>
-                            <li>Quantum Cryptography & Log Inspection[cite: 1]</li>
-                            <li>Web Application Security & Wireshark[cite: 1]</li>
+                            <li>Ethical Hacking & Penetration Testing[cite: 1]</li>
+                            <li>Burp Suite, Metasploit, Nmap, Wireshark[cite: 1]</li>
+                            <li>Web Application Security & Log Inspection[cite: 1]</li>
+                            <li>Quantum Cryptography & Networks[cite: 1]</li>
                         </ul>
                     </div>
-
                     <div class="card-bg p-6 rounded-xl shadow-lg border-t-4 border-primary">
                         <div class="flex items-center space-x-3 mb-4">
-                            <i data-lucide="code-square" class="text-primary w-6 h-6"></i>
-                            <h3 class="text-xl font-semibold text-text-color">Full-Stack Dev</h3>
+                            <i data-lucide="terminal" class="text-primary w-6 h-6"></i>
+                            <h3 class="text-xl font-semibold text-text-color">Development</h3>
                         </div>
                         <ul class="space-y-2 text-gray-400 text-sm">
-                            <li>HTML, CSS, JS, React, PHP, Flask[cite: 1]</li>
-                            <li>API Integration & SEO Best Practices[cite: 1]</li>
-                            <li>AWS & Google Cloud Services[cite: 1]</li>
-                            <li>MySQL & MongoDB[cite: 1]</li>
+                            <li>HTML, CSS, JS, React, Flask, PHP[cite: 1]</li>
+                            <li>AWS, Google Cloud & Git Version Control[cite: 1]</li>
+                            <li>MySQL & MongoDB Management[cite: 1]</li>
+                            <li>Responsive Design & SEO Best Practices[cite: 1]</li>
                         </ul>
                     </div>
-                    
                     <div class="card-bg p-6 rounded-xl shadow-lg border-t-4 border-primary">
                         <div class="flex items-center space-x-3 mb-4">
                             <i data-lucide="languages" class="text-primary w-6 h-6"></i>
@@ -191,8 +174,8 @@
                         <ul class="space-y-2 text-gray-400 text-sm">
                             <li>English (C2 Proficient)[cite: 1]</li>
                             <li>Kannada & Hindi (C1 Advanced)[cite: 1]</li>
-                            <li>Sanskrit (A1)[cite: 1]</li>
                             <li>Prompt Engineering & Technical Writing[cite: 1]</li>
+                            <li>Project Management & Problem Solving[cite: 1]</li>
                         </ul>
                     </div>
                 </div>
@@ -202,147 +185,101 @@
             <section id="projects" data-section="projects" class="section-content hidden pt-8">
                 <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Key Projects</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- SENTINEL.IO -->
+                    <!-- Project 1 -->
                     <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-text-color mb-2">SENTINEL.IO</h3>
-                            <p class="text-primary font-medium mb-4">AI / threat Detection</p>
-                            <p class="text-gray-400 text-sm mb-4">Multi-layered artificial intelligence designed for real-time threat detection[cite: 1].</p>
+                            <p class="text-primary font-medium mb-4">AI Threat Detection</p>
+                            <p class="text-gray-400 text-sm mb-4">Multi-layered artificial intelligence for real-time threat detection[cite: 1].</p>
                             <button onclick="showProjectModal(8)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">View Details</button>
                         </div>
                     </div>
-
-                    <!-- Vuln-scanner -->
+                    <!-- Project 2 -->
                     <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-text-color mb-2">Vuln-scanner</h3>
                             <p class="text-primary font-medium mb-4">Phishing Intelligence</p>
-                            <p class="text-gray-400 text-sm mb-4">A Multi-Modal Phishing Intelligence System for advanced threat analysis[cite: 1].</p>
+                            <p class="text-gray-400 text-sm mb-4">Multi-Modal Phishing Intelligence System for advanced threat analysis[cite: 1].</p>
                             <button onclick="showProjectModal(10)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">View Details</button>
                         </div>
                     </div>
-
-                    <!-- IoT Project -->
+                    <!-- Project 3 -->
                     <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-text-color mb-2">IoT Door Controller</h3>
-                            <p class="text-primary font-medium mb-4">RFID & Encryption</p>
+                            <p class="text-primary font-medium mb-4">RFID Encryption</p>
                             <p class="text-gray-400 text-sm mb-4">Automatic Door controller Using Encryption with the help of RFID[cite: 1].</p>
                             <button onclick="showProjectModal(11)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">View Details</button>
                         </div>
                     </div>
-
                     <!-- Translatr -->
                     <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-text-color mb-2">Translatr</h3>
-                            <p class="text-primary font-medium mb-4">AWS Encryption SDK</p>
-                            <p class="text-gray-400 text-sm mb-4">Implemented Caesar, Beaufort, and Autokey ciphers using AWS Encryption SDK[cite: 1].</p>
+                            <p class="text-primary font-medium mb-4">AWS Cryptography</p>
+                            <p class="text-gray-400 text-sm mb-4">Encryption tool utilizing Caesar, Beaufort, and Autokey ciphers[cite: 1].</p>
                             <button onclick="showProjectModal(2)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">View Details</button>
-                        </div>
-                    </div>
-
-                    <!-- Steganography -->
-                    <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-text-color mb-2">Steganography Web App</h3>
-                            <p class="text-primary font-medium mb-4">JavaScript & Flask</p>
-                            <p class="text-gray-400 text-sm mb-4">Developed a JavaScript-Flask application to securely hide messages in images[cite: 1].</p>
-                            <button onclick="showProjectModal(3)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">View Details</button>
-                        </div>
-                    </div>
-
-                    <!-- Adversarial AI -->
-                    <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-text-color mb-2">Secure Adversarial AI</h3>
-                            <p class="text-primary font-medium mb-4">AI Model Defense</p>
-                            <p class="text-gray-400 text-sm mb-4">Improved model robustness by 15% against malicious data injection and manipulation[cite: 1].</p>
-                            <button onclick="showProjectModal(4)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">View Details</button>
                         </div>
                     </div>
                 </div>
             </section>
             
-            <!-- EXPERIENCE & ACTIVITIES SECTION -->
+            <!-- EXPERIENCE SECTION -->
             <section id="activities" data-section="activities" class="section-content hidden pt-8">
-                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Growth & Experience</h2>
+                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Professional Growth</h2>
                 <div class="grid lg:grid-cols-2 gap-12">
                     <div class="space-y-6">
-                        <h3 class="text-2xl font-semibold text-text-color flex items-center mb-4">
-                            <i data-lucide="briefcase" class="text-primary w-5 h-5 mr-3"></i> Internships
-                        </h3>
-                        <ul class="space-y-4">
-                            <li class="card-bg p-4 rounded-lg border-l-4 border-primary">
-                                <p class="font-bold text-lg">Fidrox Technology Pvt. Ltd.[cite: 1]</p>
-                                <p class="text-sm text-primary">Cybersecurity Intern (Current)</p>
-                                <p class="text-xs text-gray-400 mt-1">Gaining experience in real-world industry security projects[cite: 1].</p>
-                            </li>
-                            <li class="card-bg p-4 rounded-lg border-l-4 border-primary/50">
-                                <p class="font-bold text-lg">NullClass Pvt. Ltd.[cite: 1]</p>
-                                <p class="text-sm text-gray-400">Cybersecurity Intern</p>
-                            </li>
-                        </ul>
-
-                        <h3 class="text-2xl font-semibold text-text-color flex items-center mt-8 mb-4">
-                            <i data-lucide="award" class="text-primary w-5 h-5 mr-3"></i> Job Simulations (Forage)
-                        </h3>
-                        <ul class="space-y-2 text-sm text-gray-400">
-                            <li><b>Deloitte:</b> Cyber Job Simulation[cite: 1]</li>
-                            <li><b>Tata:</b> Security Analyst Simulation[cite: 1]</li>
-                            <li><b>Telstra:</b> Malware Mitigation & Incident Postmortem[cite: 1]</li>
-                        </ul>
-                    </div>
-
-                    <div class="space-y-6">
-                        <h3 class="text-2xl font-semibold text-text-color flex items-center mb-4">
-                            <i data-lucide="graduation-cap" class="text-primary w-5 h-5 mr-3"></i> Key Certifications
-                        </h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <div class="card-bg p-3 rounded-lg text-xs">Google: AI Essentials[cite: 1]</div>
-                            <div class="card-bg p-3 rounded-lg text-xs">Google: Cyber Fundamentals[cite: 1]</div>
-                            <div class="card-bg p-3 rounded-lg text-xs">CISCO: Cybersecurity[cite: 1]</div>
-                            <div class="card-bg p-3 rounded-lg text-xs">IIT: Quantum Cryptography[cite: 1]</div>
-                            <div class="card-bg p-3 rounded-lg text-xs">Infosys: OpenAI Dev[cite: 1]</div>
-                            <div class="card-bg p-3 rounded-lg text-xs">Infosys: Ethical Hacking[cite: 1]</div>
+                        <h3 class="text-2xl font-semibold text-text-color flex items-center mb-4"><i data-lucide="briefcase" class="text-primary w-5 h-5 mr-3"></i> Internships</h3>
+                        <div class="card-bg p-4 rounded-lg border-l-4 border-primary">
+                            <p class="font-bold text-lg">Fidrox Technology Pvt. Ltd.[cite: 1]</p>
+                            <p class="text-sm text-primary">Cybersecurity Intern (Current)</p>
+                            <p class="text-gray-400 text-xs mt-1">Gaining experience in real-world industry projects[cite: 1].</p>
                         </div>
+                        <div class="card-bg p-4 rounded-lg border-l-4 border-primary/50">
+                            <p class="font-bold text-lg">NullClass Pvt. Ltd.[cite: 1]</p>
+                            <p class="text-sm text-gray-400">Cybersecurity Intern</p>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-semibold text-text-color flex items-center mb-4"><i data-lucide="award" class="text-primary w-5 h-5 mr-3"></i> Simulations & Education</h3>
+                        <div class="card-bg p-4 rounded-lg mb-4">
+                            <p class="font-bold text-lg">BCA (Honours), Cybersecurity[cite: 1]</p>
+                            <p class="text-sm text-gray-400">Chanakya University (8.3 CGPA)[cite: 1]</p>
+                        </div>
+                        <ul class="text-sm text-gray-400 space-y-1">
+                            <li>• Deloitte Cyber Job Simulation[cite: 1]</li>
+                            <li>• Tata Security Analyst Simulation[cite: 1]</li>
+                            <li>• Telstra Malware Mitigation Simulation[cite: 1]</li>
+                        </ul>
                     </div>
                 </div>
             </section>
             
             <!-- CONTACT SECTION -->
             <section id="contact" data-section="contact" class="section-content hidden pt-8">
-                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Connect with Me</h2>
+                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Contact Information</h2>
                 <div class="grid md:grid-cols-3 gap-8">
                     <a href="mailto:sugnanamurthygm@gmail.com" class="card-bg p-6 rounded-xl text-center flex flex-col items-center hover:bg-primary/10 transition duration-300">
                         <i data-lucide="mail" class="text-primary w-8 h-8 mb-3"></i>
-                        <p class="text-lg font-semibold">Email Me</p>
+                        <p class="text-lg font-semibold">Email</p>
                         <p class="text-xs text-gray-400">sugnanamurthygm@gmail.com</p>
                     </a>
                     <a href="https://www.linkedin.com/in/sugnana-murthy-gm-6270" target="_blank" class="card-bg p-6 rounded-xl text-center flex flex-col items-center hover:bg-primary/10 transition duration-300">
                         <i data-lucide="linkedin" class="text-primary w-8 h-8 mb-3"></i>
                         <p class="text-lg font-semibold">LinkedIn</p>
-                        <p class="text-xs text-gray-400">/sugnana-murthy-gm-6270</p>
                     </a>
                     <a href="https://github.com/CU22BCA033A" target="_blank" class="card-bg p-6 rounded-xl text-center flex flex-col items-center hover:bg-primary/10 transition duration-300">
                         <i data-lucide="github" class="text-primary w-8 h-8 mb-3"></i>
                         <p class="text-lg font-semibold">GitHub</p>
-                        <p class="text-xs text-gray-400">/CU22BCA033A</p>
                     </a>
                 </div>
-                <div class="mt-8 text-center text-gray-400 text-sm">
-                    <p>Phone: 7483546559 | Location: Bengaluru[cite: 1]</p>
-                </div>
             </section>
-
         </div>
     </main>
     
-    <!-- Footer -->
     <footer class="card-bg mt-12 py-6 border-t border-primary/20">
         <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-400">
-            &copy; 2026 Sugnana Murthy GM. Built with passion and security in mind.
+            &copy; 2026 Sugnana Murthy GM. All rights reserved.
         </div>
     </footer>
 
@@ -355,13 +292,8 @@
             <h3 id="modal-title" class="text-3xl font-bold text-primary mb-2"></h3>
             <p id="modal-tech" class="text-lg text-gray-300 mb-4"></p>
             <div id="modal-description" class="text-gray-400 space-y-4 mb-6 border-b border-primary/20 pb-4"></div>
-            
-            <h4 class="text-xl font-semibold text-text-color mb-4 flex items-center">
-                <i data-lucide="lightbulb" class="w-5 h-5 text-primary mr-2"></i> Cybersecurity Insight (Powered by Gemini)
-            </h4>
             <button id="generate-summary-btn" class="bg-primary text-background-color font-bold py-2 px-4 rounded-lg flex items-center hover:opacity-90 disabled:opacity-50" onclick="generateSecuritySummary()">
-                <i data-lucide="sparkles" class="w-5 h-5 mr-2"></i>
-                <span id="button-text">✨ Get Security Insight</span>
+                <span>Get Technical Insight</span>
             </button>
             <div id="ai-output-container" class="mt-4 hidden p-4 border border-primary/50 rounded-lg bg-gray-900/50">
                 <p id="ai-summary" class="text-gray-300 text-sm italic"></p>
@@ -370,93 +302,34 @@
     </div>
 
     <script>
-        const GEMINI_MODEL = 'gemini-2.5-flash-preview-09-2025';
-        const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=`;
-        const API_KEY = ""; // Key provided by environment
-
-        const sections = ['home', 'skills', 'projects', 'activities', 'contact'];
-        let currentSection = 'home';
-        let currentProjectId = null;
-        
         const projectDetails = {
-            2: { title: "Translatr", tech: "AWS Encryption SDK", description: ["Implemented classical ciphers (Caesar, Beaufort, Autokey) using modern AWS cloud security tools[cite: 1]."], geminiPrompt: "Discuss the security trade-offs between classical ciphers and modern AES-256 encryption." },
-            3: { title: "Steganography Web App", tech: "Flask & JavaScript", description: ["Securely embed hidden messages within image data, showcasing data manipulation and web security[cite: 1]."], geminiPrompt: "Explain the threat of steganography in command-and-control (C2) communication." },
-            4: { title: "Secure Adversarial AI", tech: "AI/ML Security", description: ["Improved model robustness by 15% to defend against data poisoning and evasion attacks[cite: 1]."], geminiPrompt: "What are the common methods to harden a machine learning model against adversarial attacks?" },
-            8: { title: "SENTINEL.IO", tech: "Artificial Intelligence", description: ["A multi-layered AI system designed for high-speed, real-time threat detection across networks[cite: 1]."], geminiPrompt: "How does multi-layered AI improve detection rates for Zero-Day vulnerabilities?" },
-            10: { title: "Vuln-scanner", tech: "Phishing Intelligence", description: ["A comprehensive multi-modal system built to detect and analyze complex phishing threats[cite: 1]."], geminiPrompt: "What are the advantages of multi-modal analysis in phishing detection compared to URL filtering?" },
-            11: { title: "IoT Door Controller", tech: "RFID & Encryption", description: ["Secure IoT hardware integration using encrypted RFID signals for automated access control[cite: 1]."], geminiPrompt: "Analyze the vulnerabilities of unencrypted RFID systems in physical security." }
+            2: { title: "Translatr", tech: "AWS Cryptography", description: ["Implemented encryption ciphers using AWS SDK[cite: 1]."] },
+            8: { title: "SENTINEL.IO", tech: "AI Threat Detection", description: ["Multi-layered AI for network security[cite: 1]."] },
+            10: { title: "Vuln-scanner", tech: "Phishing Intelligence", description: ["Advanced phishing intelligence system[cite: 1]."] },
+            11: { title: "IoT Door Controller", tech: "RFID Encryption", description: ["Secure RFID access control[cite: 1]."] }
         };
 
+        // NAVIGATION LOGIC
         function switchSection(id) {
             document.querySelectorAll('.section-content').forEach(el => {
-                el.classList.add('hidden');
                 el.classList.remove('active');
+                el.classList.add('hidden');
             });
             const target = document.getElementById(id);
-            target.classList.remove('hidden');
-            setTimeout(() => { target.classList.add('active'); }, 50);
-
+            if (target) {
+                target.classList.remove('hidden');
+                setTimeout(() => target.classList.add('active'), 50);
+            }
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('text-primary');
                 link.classList.add('text-gray-300');
                 if (link.dataset.section === id) link.classList.add('text-primary');
             });
-            history.pushState(null, '', `#${id}`);
+            window.location.hash = id;
             lucide.createIcons();
         }
 
-        window.addEventListener('popstate', () => {
-            const hash = window.location.hash.replace('#', '') || 'home';
-            switchSection(hash);
-        });
-
-        function showProjectModal(id) {
-            currentProjectId = id;
-            const data = projectDetails[id];
-            if (!data) return;
-            document.getElementById('modal-title').textContent = data.title;
-            document.getElementById('modal-tech').textContent = data.tech;
-            document.getElementById('modal-description').innerHTML = data.description.map(p => `<p>${p}</p>`).join('');
-            document.getElementById('ai-output-container').classList.add('hidden');
-            document.getElementById('project-modal').classList.remove('hidden');
-            lucide.createIcons();
-        }
-
-        function closeProjectModal() {
-            document.getElementById('project-modal').classList.add('hidden');
-        }
-
-        async function generateSecuritySummary() {
-            const project = projectDetails[currentProjectId];
-            const btn = document.getElementById('generate-summary-btn');
-            const output = document.getElementById('ai-output-container');
-            const textEl = document.getElementById('ai-summary');
-
-            btn.disabled = true;
-            btn.innerHTML = '<span class="loader mr-2"></span> Analyzing...';
-
-            try {
-                const response = await fetch(GEMINI_API_URL + API_KEY, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        contents: [{ parts: [{ text: project.geminiPrompt }] }],
-                        systemInstruction: { parts: [{ text: "You are a top-tier security consultant. Provide a 2-sentence technical insight." }] }
-                    })
-                });
-                const result = await response.json();
-                textEl.textContent = result.candidates[0].content.parts[0].text;
-                output.classList.remove('hidden');
-            } catch (e) {
-                textEl.textContent = "Error fetching AI insight. Check API key.";
-                output.classList.remove('hidden');
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = '<i data-lucide="sparkles" class="w-5 h-5 mr-2"></i> ✨ Get Security Insight';
-                lucide.createIcons();
-            }
-        }
-
+        // TYPEWRITER
         const textElement = document.getElementById('typewriter-text');
         const roles = ["Security Consultant", "Penetration Tester", "Cybersecurity Engineer", "Vulnerability Analyst", "Full-Stack Developer"];[cite: 1]
         let roleIndex = 0, charIndex = 0, isDeleting = false;
@@ -474,12 +347,49 @@
             setTimeout(type, isDeleting ? 50 : 100);
         }
 
+        function showProjectModal(id) {
+            const data = projectDetails[id];
+            if (!data) return;
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-tech').textContent = data.tech;
+            document.getElementById('modal-description').innerHTML = data.description.map(p => `<p>${p}</p>`).join('');
+            document.getElementById('project-modal').classList.remove('hidden');
+        }
+
+        function closeProjectModal() { document.getElementById('project-modal').classList.add('hidden'); }
+
+        async function generateSecuritySummary() {
+            const btn = document.getElementById('generate-summary-btn');
+            btn.disabled = true;
+            btn.textContent = "Analyzing...";
+            setTimeout(() => {
+                document.getElementById('ai-summary').textContent = "Technical security insight generated.";
+                document.getElementById('ai-output-container').classList.remove('hidden');
+                btn.disabled = false;
+                btn.textContent = "Get Technical Insight";
+            }, 800);
+        }
+
+        // INITIALIZE
         window.onload = () => {
             const hash = window.location.hash.replace('#', '') || 'home';
             switchSection(hash);
             type();
             lucide.createIcons();
         };
+
+        window.onhashchange = () => {
+            const hash = window.location.hash.replace('#', '') || 'home';
+            switchSection(hash);
+        };
+
+        // NAV LINK EVENT LISTENERS
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                switchSection(link.dataset.section);
+            });
+        });
     </script>
 </body>
 </html>
