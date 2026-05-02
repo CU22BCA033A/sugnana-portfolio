@@ -19,7 +19,6 @@
         .card-bg { background-color: var(--secondary-color); }
         .text-primary { color: var(--primary-color); }
         
-        /* Original Alignment Styles */
         .section-content {
             display: none; 
             opacity: 0;
@@ -102,7 +101,7 @@
                             <span id="typewriter-text" class="font-mono"></span><span class="typing-cursor"></span>
                         </h2>
                         <p class="text-lg text-gray-400 max-w-xl">
-                            Dynamic <b>Full-Stack Web Developer and Cybersecurity Enthusiast</b> specializing in building secure applications[cite: 1]. Currently a Cybersecurity student at <b>Chanakya University (8.3 CGPA)</b>[cite: 1].
+                            Dynamic <b>Full-Stack Web Developer and Cybersecurity Enthusiast</b> specializing in building secure, scalable web applications[cite: 1]. Currently a Cybersecurity student at <b>Chanakya University (8.3 CGPA)</b>[cite: 1].
                         </p>
                         <div class="flex space-x-4 pt-4">
                             <button onclick="switchSection('projects')" class="bg-primary text-background-color font-bold py-3 px-6 rounded-lg shadow-lg shadow-primary/30">View Projects</button>
@@ -118,7 +117,8 @@
                                 <pre class="text-primary/70 animate-code-scroll">
 <span class="text-red-400"># Audit:</span> Initiated...
 <span class="text-yellow-400">> $ nmap -sV target.com</span>
-<span class="text-green-400">SENTINEL.IO:</span> Intelligence Active.
+<span class="text-green-400">SENTINEL.IO:</span> Analyzing Threats...
+<span class="text-primary">$ git commit -m "Security patch applied"</span>
                                 </pre>
                             </div>
                         </div>
@@ -133,15 +133,17 @@
                     <div class="card-bg p-6 rounded-xl shadow-lg border-t-4 border-primary">
                         <h3 class="text-xl font-semibold text-text-color mb-4">Cybersecurity</h3>
                         <ul class="space-y-2 text-gray-400 text-sm">
-                            <li>Ethical Hacking & Pen Testing[cite: 1]</li>
-                            <li>Burp Suite, Metasploit, Nmap[cite: 1]</li>
+                            <li>Ethical Hacking & Pen Testing (Burp Suite, Nmap)[cite: 1]</li>
+                            <li>Web App Security & Log Inspection[cite: 1]</li>
+                            <li>Quantum Cryptography & Networks[cite: 1]</li>
                         </ul>
                     </div>
                     <div class="card-bg p-6 rounded-xl shadow-lg border-t-4 border-primary">
-                        <h3 class="text-xl font-semibold text-text-color mb-4">Full-Stack</h3>
+                        <h3 class="text-xl font-semibold text-text-color mb-4">Development</h3>
                         <ul class="space-y-2 text-gray-400 text-sm">
                             <li>HTML, CSS, JS, React, Flask, PHP[cite: 1]</li>
-                            <li>AWS & Google Cloud[cite: 1]</li>
+                            <li>AWS, Google Cloud & Git[cite: 1]</li>
+                            <li>MySQL & MongoDB[cite: 1]</li>
                         </ul>
                     </div>
                 </div>
@@ -151,37 +153,76 @@
             <section id="projects" class="section-content pt-8">
                 <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Technical Projects</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- New Projects -->
                     <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
                         <h3 class="text-xl font-bold text-text-color">SENTINEL.IO</h3>
-                        <p class="text-gray-400 text-sm mt-2">Multi-layered AI for real-time threat detection.</p>
+                        <p class="text-gray-400 text-sm mt-2">Multi-layered AI for real-time threat detection[cite: 1].</p>
                     </div>
                     <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
                         <h3 class="text-xl font-bold text-text-color">Vuln-scanner</h3>
-                        <p class="text-gray-400 text-sm mt-2">Multi-Modal Phishing Intelligence System.</p>
+                        <p class="text-gray-400 text-sm mt-2">Multi-Modal Phishing Intelligence System[cite: 1].</p>
+                    </div>
+                    <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
+                        <h3 class="text-xl font-bold text-text-color">IoT Door Controller</h3>
+                        <p class="text-gray-400 text-sm mt-2">Automatic Door controller Using Encryption and RFID[cite: 1].</p>
+                    </div>
+                    <!-- Restored Old Projects -->
+                    <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
+                        <h3 class="text-xl font-bold text-text-color">Translatr</h3>
+                        <p class="text-gray-400 text-sm mt-2">Encryption tool utilizing AWS Encryption SDK[cite: 1].</p>
+                    </div>
+                    <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
+                        <h3 class="text-xl font-bold text-text-color">Steganography App</h3>
+                        <p class="text-gray-400 text-sm mt-2">JavaScript-Flask app to hide messages in images[cite: 1].</p>
+                    </div>
+                    <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
+                        <h3 class="text-xl font-bold text-text-color">Adversarial AI</h3>
+                        <p class="text-gray-400 text-sm mt-2">Improved model robustness by 15% against attacks[cite: 1].</p>
+                    </div>
+                    <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
+                        <h3 class="text-xl font-bold text-text-color">Threat Dashboard</h3>
+                        <p class="text-gray-400 text-sm mt-2">Real-time visualization system reducing latency[cite: 1].</p>
+                    </div>
+                    <div class="card-bg p-6 rounded-xl shadow-xl border-b-4 border-primary">
+                        <h3 class="text-xl font-bold text-text-color">Monument Detection</h3>
+                        <p class="text-gray-400 text-sm mt-2">YOLOv8 Deep Learning for real-time recognition[cite: 1].</p>
                     </div>
                 </div>
             </section>
             
             <!-- EXPERIENCE SECTION -->
             <section id="activities" class="section-content pt-8">
-                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Experience</h2>
+                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Professional Experience</h2>
                 <div class="grid lg:grid-cols-2 gap-12">
-                    <div class="card-bg p-6 rounded-lg border-l-4 border-primary">
-                        <p class="font-bold text-lg">Fidrox Technology Pvt. Ltd</p>
-                        <p class="text-sm text-primary">Cybersecurity Intern</p>
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-semibold text-text-color mb-4">Internships</h3>
+                        <div class="card-bg p-4 rounded-lg border-l-4 border-primary mb-4">
+                            <p class="font-bold text-lg">Fidrox Technology Pvt. Ltd.[cite: 1]</p>
+                            <p class="text-sm text-primary">Cybersecurity Intern (Current)[cite: 1]</p>
+                        </div>
+                        <div class="card-bg p-4 rounded-lg border-l-4 border-primary/50">
+                            <p class="font-bold text-lg">NullClass Pvt. Ltd.[cite: 1]</p>
+                            <p class="text-sm text-gray-400">Cybersecurity Intern[cite: 1]</p>
+                        </div>
                     </div>
-                    <div class="card-bg p-6 rounded-lg">
-                        <p class="font-bold text-lg">Chanakya University[cite: 1]</p>
-                        <p class="text-sm text-gray-400">8.3 CGPA[cite: 1]</p>
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-semibold text-text-color mb-4">Education</h3>
+                        <div class="card-bg p-4 rounded-lg">
+                            <p class="font-bold text-lg">BCA (Honours), Cybersecurity[cite: 1]</p>
+                            <p class="text-sm text-gray-400">Chanakya University, Bengaluru[cite: 1]</p>
+                            <p class="text-xs text-primary mt-1">CGPA: 8.3/10[cite: 1]</p>
+                        </div>
                     </div>
                 </div>
             </section>
             
             <!-- CONTACT SECTION -->
             <section id="contact" class="section-content pt-8">
-                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Contact</h2>
+                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Connect</h2>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <a href="mailto:sugnanamurthygm@gmail.com" class="card-bg p-6 rounded-xl text-center">Email Me</a>
+                    <a href="mailto:sugnanamurthygm@gmail.com" class="card-bg p-6 rounded-xl text-center hover:bg-primary/10">Email</a>
+                    <a href="https://www.linkedin.com/in/sugnana-murthy-gm-6270" target="_blank" class="card-bg p-6 rounded-xl text-center hover:bg-primary/10">LinkedIn</a>
+                    <a href="https://github.com/CU22BCA033A" target="_blank" class="card-bg p-6 rounded-xl text-center hover:bg-primary/10">GitHub</a>
                 </div>
             </section>
         </div>
@@ -212,7 +253,7 @@
             lucide.createIcons();
         }
 
-        const roles = ["Security Consultant", "Penetration Tester", "Cybersecurity Engineer", "Vulnerability Analyst"];
+        const roles = ["Security Consultant", "Penetration Tester", "Cybersecurity Engineer", "Vulnerability Analyst"];[cite: 1]
         let roleIndex = 0, charIndex = 0, isDeleting = false;
         function type() {
             const currentRole = roles[roleIndex];
