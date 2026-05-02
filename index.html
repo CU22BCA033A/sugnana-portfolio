@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sugnana Murthy GM - Security & Full-Stack Portfolio</title>
+    <title>Suggu - Security & Full-Stack Portfolio</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Lucide Icons for modern, clean vectors -->
+    <!-- Load Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
-        /* Custom Tailwind Configuration */
         :root {
-            --primary-color: #00ADB5; /* Deep Cyber Teal */
-            --secondary-color: #393E46; /* Dark Gray for cards */
-            --background-color: #222831; /* Near-Black Background */
-            --text-color: #EEEEEE; /* Light text */
+            --primary-color: #00ADB5; 
+            --secondary-color: #393E46; 
+            --background-color: #222831; 
+            --text-color: #EEEEEE; 
         }
 
         .dark-theme-bg { background-color: var(--background-color); }
@@ -34,7 +33,6 @@
             transform: translateY(0);
         }
 
-        /* Typing effect cursor */
         .typing-cursor {
             display: inline-block;
             width: 3px;
@@ -49,18 +47,32 @@
             50% { opacity: 0; }
         }
 
-        /* --- Animated Code Snippet CSS --- */
         @keyframes code-scroll {
             0% { transform: translateY(0); }
-            /* Significantly increased scroll limit to make animation clearer with larger font */
             100% { transform: translateY(-30%); } 
         }
 
         .animate-code-scroll {
-            animation: code-scroll 12s linear infinite; /* Slightly slower speed for better readability */
+            animation: code-scroll 12s linear infinite;
         }
 
-        /* Spinning loader for AI generation */
+        .terminal-window {
+            height: 8rem; 
+            background-color: #1a1e24; 
+            border-radius: 0.5rem; 
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+        }
+
+        .terminal-window pre {
+            margin: 0;
+            padding: 1rem;
+            color: #f8fafc;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+
         .loader {
             border: 4px solid rgba(255, 255, 255, 0.3);
             border-top: 4px solid var(--primary-color);
@@ -74,27 +86,6 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        
-       /* Updated style for the terminal area: Rectangular shape fix */
-        .terminal-window {
-    /* HEIGHT: Fixed height for the terminal look (rectangular shape) */
-            height: 8rem; 
-            background-color: #1a1e24; 
-            border-radius: 0.5rem; 
-            padding: 0; 
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5); /* Added shadow for depth */
-        }
-
-/* Ensure the pre element (the text) starts from the edge */
-        .terminal-window pre {
-            margin: 0;
-            padding: 1rem; /* Added padding here so text isn't touching the very edge */
-            color: #f8fafc;
-            font-family: monospace;
-            white-space: pre-wrap; /* Ensures long lines wrap inside the box */
-        }
     </style>
 </head>
 
@@ -104,13 +95,11 @@
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 card-bg shadow-lg border-b border-primary/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- Logo/Name -->
                 <div class="flex-shrink-0">
-                    <span class="text-2xl font-bold text-primary">Sugnana Murthy</span>
+                    <span class="text-2xl font-bold text-primary">Suggu</span>
                 </div>
-                <!-- Navigation Links -->
                 <div class="flex space-x-6">
-                    <a href="#home" data-section="home" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium">Home</a>
+                    <a href="#home" data-section="home" class="nav-link text-primary transition duration-300 font-medium">Home</a>
                     <a href="#skills" data-section="skills" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium">Skills</a>
                     <a href="#projects" data-section="projects" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium">Projects</a>
                     <a href="#activities" data-section="activities" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium">Experience</a>
@@ -124,57 +113,39 @@
     <main class="pt-20 pb-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
 
-            <!-- HOME SECTION (Active by default) -->
+            <!-- HOME SECTION -->
             <section id="home" data-section="home" class="section-content active min-h-[calc(100vh-80px)] flex items-center">
                 <div class="grid md:grid-cols-2 gap-12 items-center w-full">
-                    <!-- Text Content -->
                     <div class="space-y-6">
                         <p class="text-xl text-primary font-medium">Hello, I'm</p>
-                        <h1 class="text-6xl font-extrabold tracking-tight text-text-color">
-                            Sugnana Murthy GM
-                        </h1>
+                        <h1 class="text-6xl font-extrabold tracking-tight text-text-color">Sugnana Murthy GM</h1>
                         <h2 class="text-3xl font-light text-gray-300 h-10">
                             <span id="typewriter-text" class="font-mono"></span><span class="typing-cursor"></span>
                         </h2>
                         <p class="text-lg text-gray-400 max-w-xl">
-                            Dynamic <b>Full-Stack Web Developer and Cybersecurity Enthusiast</b> specializing in building secure, scalable web applications and implementing robust security practices. Proficient in HTML, CSS, JavaScript, React, Flask, and AWS, with hands-on experience in encryption, ethical hacking, and AI security. Passionate about advancing web security and contributing to innovative solutions.
+                            Dynamic <b>Full-Stack Web Developer and Cybersecurity Enthusiast</b> with a vibe-coding mindset[cite: 1]. Specializing in building secure, scalable applications and implementing robust defense against adversarial attacks[cite: 1]. Currently a student at <b>Chanakya University (8.3 CGPA)</b>[cite: 1].
                         </p>
                         <div class="flex space-x-4 pt-4">
-                            <a href="#projects" class="bg-primary text-background-color font-bold py-3 px-6 rounded-lg hover:opacity-90 transition duration-300 shadow-lg shadow-primary/30" onclick="switchSection('projects')">
-                                View Projects
-                            </a>
-                            <a href="#contact" class="border border-primary text-primary font-bold py-3 px-6 rounded-lg hover:bg-primary/10 transition duration-300" onclick="switchSection('contact')">
-                                Get In Touch
-                            </a>
+                            <a href="#projects" class="bg-primary text-background-color font-bold py-3 px-6 rounded-lg hover:opacity-90 transition duration-300 shadow-lg shadow-primary/30" onclick="switchSection('projects')">View Projects</a>
+                            <a href="#contact" class="border border-primary text-primary font-bold py-3 px-6 rounded-lg hover:bg-primary/10 transition duration-300" onclick="switchSection('contact')">Get In Touch</a>
                         </div>
                     </div>
-                    <!-- Profile Picture and Code Visual -->
                     <div class="flex flex-col items-center space-y-6 max-w-md mx-auto">
                         <div class="card-bg p-3 rounded-full border-4 border-primary shadow-2xl shadow-primary/30">
-                            <!-- Image URL updated to the latest link provided by the user -->
                             <img src="https://media.licdn.com/dms/image/v2/D5603AQFxwD4mr9Hnbw/profile-displayphoto-scale_400_400/B56ZsvqQfUI0Ak-/0/1766031166006?e=1778716800&v=beta&t=qVm8YV_yN258BjHJu_hPVXxwpjIysh8tZwhUjUyMqUM" 
-                                 alt="Sugnana Murthy GM professional portrait" 
-                                 class="w-64 h-64 object-cover rounded-full transform hover:scale-105 transition duration-500"
-                                 onerror="this.onerror=null; this.src='https://placehold.co/256x256/393E46/EEEEEE?text=Profile+Image+Fallback';"
-                            >
+                                 alt="Suggu professional portrait" 
+                                 class="w-64 h-64 object-cover rounded-full transform hover:scale-105 transition duration-500">
                         </div>
-                        <!-- Centering wrapper: Max width adjusted to max-w-xl for a better rectangular fit across devices -->
-                        <div class="card-bg p-3 rounded-xl border border-primary/20 w-full max-w-xl shadow-xl hidden lg:block">
-                            <!-- Applied the new terminal-window class for fixed size and shape -->
+                        <div class="card-bg p-3 rounded-xl border border-primary/20 w-full shadow-xl hidden lg:block">
                             <div class="terminal-window font-mono">
-                                <!-- Increased text size and line-height adjusted in CSS -->
                                 <pre class="text-primary/70 animate-code-scroll">
 <span class="text-red-400"># CyberSec Trace:</span> Initiated...
 <span class="text-yellow-400">> $ nmap -sV -p 80,443 target.com</span>
-<span class="text-green-400">80/tcp open http Apache httpd 2.4.41 ((Unix))</span>
-<span class="text-green-400">443/tcp open ssl/http Apache httpd 2.4.41 ((Unix))</span>
-<span class="text-primary">$ git add .</span>
-<span class="text-yellow-400">$ git commit -m "Secure API endpoints (Auth fix)"</span>
-<span class="text-primary">$ git push origin main</span>
+<span class="text-green-400">Scanning for vulnerabilities...</span>
+<span class="text-primary">$ git commit -m "Secure API"</span>
 <span class="text-green-400">Deployment successful!</span>
-<span class="text-red-400">Vulnerability Scan:</span> Complete. 1 critical, 0 high.
-<span class="text-yellow-400"># Next task:</span> Review log files and apply patch.
-<span class="text-green-400">Security Patch Applied:</span> Successfully mitigated CVE-2023-4447.
+<span class="text-red-400">SENTINEL.IO:</span> Analyzing threat...
+<span class="text-green-400">Integrity: 100%</span>
                                 </pre>
                             </div>
                         </div>
@@ -186,51 +157,44 @@
             <section id="skills" data-section="skills" class="section-content hidden pt-8">
                 <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Core Skills & Expertise</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Category 1: Cybersecurity & AI Security -->
                     <div class="card-bg p-6 rounded-xl shadow-lg border-t-4 border-primary">
                         <div class="flex items-center space-x-3 mb-4">
                             <i data-lucide="shield-half" class="text-primary w-6 h-6"></i>
-                            <h3 class="text-xl font-semibold text-text-color">Cybersecurity & AI Security</h3>
+                            <h3 class="text-xl font-semibold text-text-color">Cybersecurity</h3>
                         </div>
-                        <ul class="space-y-2 text-gray-400">
-                            <li>Web Application Security, Ethical Hacking & Pen Testing</li>
-                            <li>Quantum Cryptography & Encryption (Caesar, Beaufort, Autokey)</li>
-                            <li>Adversarial AI Defense & ML Security</li>
-                            <li>Computer Networks, Log Inspection, Web Security</li>
-                            <li>AI Tools: Openai, Grok, LangChain, Gemini, Sora</li>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li>Ethical Hacking & Pen Testing[cite: 1]</li>
+                            <li>Burp Suite, Metasploit, Nmap[cite: 1]</li>
+                            <li>Quantum Cryptography & Log Inspection[cite: 1]</li>
+                            <li>Web Application Security & Wireshark[cite: 1]</li>
                         </ul>
                     </div>
 
-                    <!-- Category 2: Full-Stack Development -->
                     <div class="card-bg p-6 rounded-xl shadow-lg border-t-4 border-primary">
                         <div class="flex items-center space-x-3 mb-4">
                             <i data-lucide="code-square" class="text-primary w-6 h-6"></i>
-                            <h3 class="text-xl font-semibold text-text-color">Full-Stack Development</h3>
+                            <h3 class="text-xl font-semibold text-text-color">Full-Stack Dev</h3>
                         </div>
-                        <ul class="space-y-2 text-gray-400">
-                            <li>Languages: HTML, CSS, JavaScript, PHP</li>
-                            <li>Front-End: React, jQuery, Bootstrap, Responsive Design</li>
-                            <li>Back-End: Flask, API Integration</li>
-                            <li>Databases: MySQL, MongoDB</li>
-                            <li>Web Optimization: SEO Best Practices</li>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li>HTML, CSS, JS, React, PHP, Flask[cite: 1]</li>
+                            <li>API Integration & SEO Best Practices[cite: 1]</li>
+                            <li>AWS & Google Cloud Services[cite: 1]</li>
+                            <li>MySQL & MongoDB[cite: 1]</li>
                         </ul>
                     </div>
                     
-                    <!-- Category 3: Cloud, Analytics & Soft Skills -->
                     <div class="card-bg p-6 rounded-xl shadow-lg border-t-4 border-primary">
                         <div class="flex items-center space-x-3 mb-4">
-                            <i data-lucide="cloud" class="text-primary w-6 h-6"></i>
-                            <h3 class="text-xl font-semibold text-text-color">Cloud, Analytics & Soft Skills</h3>
+                            <i data-lucide="languages" class="text-primary w-6 h-6"></i>
+                            <h3 class="text-xl font-semibold text-text-color">Communication</h3>
                         </div>
-                        <ul class="space-y-2 text-gray-400">
-                            <li>Cloud & DevOps: AWS, Google Cloud, Git Version Control</li>
-                            <li>Analytics: Real-time Analytics, SEO</li>
-                            <li>Automation: Python & Bash Scripting</li>
-                            <li>Soft Skills: Problem Solving, Prompt Engineering, Communication</li>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li>English (C2 Proficient)[cite: 1]</li>
+                            <li>Kannada & Hindi (C1 Advanced)[cite: 1]</li>
+                            <li>Sanskrit (A1)[cite: 1]</li>
+                            <li>Prompt Engineering & Technical Writing[cite: 1]</li>
                         </ul>
                     </div>
-
                 </div>
             </section>
             
@@ -239,155 +203,110 @@
                 <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Key Projects</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
-                    <!-- Project 1: Cybersecurity Awareness Portal -->
+                    <!-- SENTINEL.IO -->
                     <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-text-color mb-2">1. Cybersecurity Awareness Portal (NISD Compliance)</h3>
-                            <p class="text-primary font-medium mb-4">React, Flask, AWS</p>
-                            <p class="text-gray-400 text-sm mb-4">Built a NISD-aligned web portal for cybersecurity education, hosted on AWS, achieving high user satisfaction.</p>
-                            <button onclick="showProjectModal(1)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">
-                                View Details
-                            </button>
+                            <h3 class="text-xl font-bold text-text-color mb-2">SENTINEL.IO</h3>
+                            <p class="text-primary font-medium mb-4">AI / threat Detection</p>
+                            <p class="text-gray-400 text-sm mb-4">Multi-layered artificial intelligence designed for real-time threat detection[cite: 1].</p>
+                            <button onclick="showProjectModal(8)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">View Details</button>
                         </div>
                     </div>
 
-                    <!-- Project 2: Translatr (Encryption Tool) -->
+                    <!-- Vuln-scanner -->
                     <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-text-color mb-2">2. Translatr (Encryption/Decryption Tool)</h3>
-                            <p class="text-primary font-medium mb-4">AWS Encryption SDK, Custom Ciphers</p>
-                            <p class="text-gray-400 text-sm mb-4">Developed a robust tool supporting Caesar, Beaufort, and Autokey ciphers for secure data transformation.</p>
-                            <button onclick="showProjectModal(2)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 3: Steganography Web App -->
-                    <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-text-color mb-2">3. Steganography Web App</h3>
-                            <p class="text-primary font-medium mb-4">JavaScript, Flask</p>
-                            <p class="text-gray-400 text-sm mb-4">A secure application to hide and extract messages within images, built with JavaScript and Flask.</p>
-                            <button onclick="showProjectModal(3)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 4: Secure Adversarial AI Models -->
-                    <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-text-color mb-2">4. Secure Adversarial AI Models</h3>
-                            <p class="text-primary font-medium mb-4">AI/ML Security</p>
-                            <p class="text-gray-400 text-sm mb-4">Implemented defenses against adversarial AI attacks, successfully improving model robustness by 15%.</p>
-                            <button onclick="showProjectModal(4)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 5: Real-Time Threat Dashboard -->
-                    <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-text-color mb-2">5. Real-Time Threat Intelligence Dashboard</h3>
-                            <p class="text-primary font-medium mb-4">Cyber Intelligence, Data Visualization</p>
-                            <p class="text-gray-400 text-sm mb-4">System designed to collect, analyze, and visualize threat intelligence data in real-time for immediate action.</p>
-                            <button onclick="showProjectModal(5)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 6: Temple and Monument Detection -->
-                    <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-text-color mb-2">6. Temple and Monument Detection</h3>
-                            <p class="text-primary font-medium mb-4">YOLOV8 Deep Learning, Computer Vision</p>
-                            <p class="text-gray-400 text-sm mb-4">Utilized YOLOV8 Deep Learning for efficient, real-time object recognition of temples and monuments.</p>
-                            <button onclick="showProjectModal(6)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">
-                                View Details
-                            </button>
+                            <h3 class="text-xl font-bold text-text-color mb-2">Vuln-scanner</h3>
+                            <p class="text-primary font-medium mb-4">Phishing Intelligence</p>
+                            <p class="text-gray-400 text-sm mb-4">A Multi-Modal Phishing Intelligence System for advanced threat analysis[cite: 1].</p>
+                            <button onclick="showProjectModal(10)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">View Details</button>
                         </div>
                     </div>
 
-                    <!-- Project 7: Auction Web App (NEW - Simple Card, No Modal needed for this one) -->
+                    <!-- IoT Project -->
                     <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-text-color mb-2">7. Auction Web App (CPL)</h3>
-                            <p class="text-primary font-medium mb-4">PHP, MySQL</p>
-                            <p class="text-gray-400 text-sm mb-4">Built a full-stack web application with role-based access for 200+ users (Chanakya Premier League).</p>
-                            <!-- Note: Added a disabled/placeholder button for the last project -->
-                            <span class="text-sm border border-gray-600 text-gray-600 py-2 px-4 rounded-full cursor-not-allowed">Details Soon</span>
+                            <h3 class="text-xl font-bold text-text-color mb-2">IoT Door Controller</h3>
+                            <p class="text-primary font-medium mb-4">RFID & Encryption</p>
+                            <p class="text-gray-400 text-sm mb-4">Automatic Door controller Using Encryption with the help of RFID[cite: 1].</p>
+                            <button onclick="showProjectModal(11)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">View Details</button>
                         </div>
                     </div>
 
+                    <!-- Translatr -->
+                    <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-text-color mb-2">Translatr</h3>
+                            <p class="text-primary font-medium mb-4">AWS Encryption SDK</p>
+                            <p class="text-gray-400 text-sm mb-4">Implemented Caesar, Beaufort, and Autokey ciphers using AWS Encryption SDK[cite: 1].</p>
+                            <button onclick="showProjectModal(2)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Steganography -->
+                    <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-text-color mb-2">Steganography Web App</h3>
+                            <p class="text-primary font-medium mb-4">JavaScript & Flask</p>
+                            <p class="text-gray-400 text-sm mb-4">Developed a JavaScript-Flask application to securely hide messages in images[cite: 1].</p>
+                            <button onclick="showProjectModal(3)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Adversarial AI -->
+                    <div class="card-bg rounded-xl overflow-hidden shadow-xl hover:shadow-primary/20 transition duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-text-color mb-2">Secure Adversarial AI</h3>
+                            <p class="text-primary font-medium mb-4">AI Model Defense</p>
+                            <p class="text-gray-400 text-sm mb-4">Improved model robustness by 15% against malicious data injection and manipulation[cite: 1].</p>
+                            <button onclick="showProjectModal(4)" class="text-sm border border-primary text-primary py-2 px-4 rounded-full hover:bg-primary hover:text-background-color transition duration-300">View Details</button>
+                        </div>
+                    </div>
                 </div>
             </section>
             
-            <!-- ACTIVITIES & CERTIFICATIONS SECTION -->
+            <!-- EXPERIENCE & ACTIVITIES SECTION -->
             <section id="activities" data-section="activities" class="section-content hidden pt-8">
-                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Professional Growth & Certifications</h2>
-                
+                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Growth & Experience</h2>
                 <div class="grid lg:grid-cols-2 gap-12">
-                    <!-- Column 1: Activities/Experience -->
                     <div class="space-y-6">
                         <h3 class="text-2xl font-semibold text-text-color flex items-center mb-4">
-                            <i data-lucide="award" class="text-primary w-5 h-5 mr-3"></i> Professional Activities & Experience
+                            <i data-lucide="briefcase" class="text-primary w-5 h-5 mr-3"></i> Internships
                         </h3>
                         <ul class="space-y-4">
                             <li class="card-bg p-4 rounded-lg border-l-4 border-primary">
-                                <p class="font-bold text-lg">Cyber Job Simulations (Deloitte, Tata, Telstra)</p>
-                                <p class="text-sm text-gray-400">Completed simulations focusing on incident postmortem, malware mitigation, and security analysis on Forage.</p>
+                                <p class="font-bold text-lg">Fidrox Technology Pvt. Ltd.[cite: 1]</p>
+                                <p class="text-sm text-primary">Cybersecurity Intern (Current)</p>
+                                <p class="text-xs text-gray-400 mt-1">Gaining experience in real-world industry security projects[cite: 1].</p>
                             </li>
-                            <li class="card-bg p-4 rounded-lg border-l-4 border-primary">
-                                <p class="font-bold text-lg">CTF & Bug Bounty Participation</p>
-                                <p class="text-sm text-gray-400">Actively participates in Capture The Flag challenges and bug bounty programs to enhance practical cybersecurity skills.</p>
+                            <li class="card-bg p-4 rounded-lg border-l-4 border-primary/50">
+                                <p class="font-bold text-lg">NullClass Pvt. Ltd.[cite: 1]</p>
+                                <p class="text-sm text-gray-400">Cybersecurity Intern</p>
                             </li>
-                            <li class="card-bg p-4 rounded-lg border-l-4 border-primary">
-                                <p class="font-bold text-lg">Technical Blog Author & Simulations</p>
-                                <p class="text-sm text-gray-400">Published technical blogs (TCP, MySQL Ports, STRIDE, SSH) and conducted networking simulations (Wireshark, Cisco Packet Tracer).</p>
-                            </li>
+                        </ul>
+
+                        <h3 class="text-2xl font-semibold text-text-color flex items-center mt-8 mb-4">
+                            <i data-lucide="award" class="text-primary w-5 h-5 mr-3"></i> Job Simulations (Forage)
+                        </h3>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><b>Deloitte:</b> Cyber Job Simulation[cite: 1]</li>
+                            <li><b>Tata:</b> Security Analyst Simulation[cite: 1]</li>
+                            <li><b>Telstra:</b> Malware Mitigation & Incident Postmortem[cite: 1]</li>
                         </ul>
                     </div>
 
-                    <!-- Column 2: Certifications -->
                     <div class="space-y-6">
                         <h3 class="text-2xl font-semibold text-text-color flex items-center mb-4">
                             <i data-lucide="graduation-cap" class="text-primary w-5 h-5 mr-3"></i> Key Certifications
                         </h3>
-                        <ul class="space-y-3">
-                            <li class="card-bg p-3 rounded-lg border-l-4 border-primary/70">
-                                <p class="font-medium text-text-color">Google: AI Essentials</p>
-                            </li>
-                            <li class="card-bg p-3 rounded-lg border-l-4 border-primary/70">
-                                <p class="font-medium text-text-color">Google: Fundamentals of Cybersecurity</p>
-                            </li>
-                            <li class="card-bg p-3 rounded-lg border-l-4 border-primary/70">
-                                <p class="font-medium text-text-color">Google: Generative AI</p>
-                            </li>
-                            <li class="card-bg p-3 rounded-lg border-l-4 border-primary/70">
-                                <p class="font-medium text-text-color">Google: Play It Safe: Manage Security Risks</p>
-                            </li>
-                            <li class="card-bg p-3 rounded-lg border-l-4 border-primary/70">
-                                <p class="font-medium text-text-color">Infosys: Open AI Development</p>
-                            </li>
-                            <li class="card-bg p-3 rounded-lg border-l-4 border-primary/70">
-                                <p class="font-medium text-text-color">Infosys: Ethical Hacking for Beginner</p>
-                            </li>
-                            <li class="card-bg p-3 rounded-lg border-l-4 border-primary/70">
-                                <p class="font-medium text-text-color">CISCO: Cybersecurity</p>
-                            </li>
-                            <li class="card-bg p-3 rounded-lg border-l-4 border-primary/70">
-                                <p class="font-medium text-text-color">IIT Kharagpur: Introduction to Quantum Cryptography</p>
-                            </li>
-                            <li class="card-bg p-3 rounded-lg border-l-4 border-primary/70">
-                                <p class="font-medium text-text-color">IIT Kharagpur: Astrophysics</p>
-                            </li>
-                            <li class="card-bg p-3 rounded-lg border-l-4 border-primary/70">
-                                <p class="font-medium text-text-color">NISM Exam</p>
-                            </li>
-                        </ul>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div class="card-bg p-3 rounded-lg text-xs">Google: AI Essentials[cite: 1]</div>
+                            <div class="card-bg p-3 rounded-lg text-xs">Google: Cyber Fundamentals[cite: 1]</div>
+                            <div class="card-bg p-3 rounded-lg text-xs">CISCO: Cybersecurity[cite: 1]</div>
+                            <div class="card-bg p-3 rounded-lg text-xs">IIT: Quantum Cryptography[cite: 1]</div>
+                            <div class="card-bg p-3 rounded-lg text-xs">Infosys: OpenAI Dev[cite: 1]</div>
+                            <div class="card-bg p-3 rounded-lg text-xs">Infosys: Ethical Hacking[cite: 1]</div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -396,31 +315,24 @@
             <section id="contact" data-section="contact" class="section-content hidden pt-8">
                 <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Connect with Me</h2>
                 <div class="grid md:grid-cols-3 gap-8">
-                    
-                    <!-- Contact Card 1: Email -->
-                    <a href="mailto:sugnanamurhtygm@gmail.com" class="card-bg p-6 rounded-xl text-center flex flex-col items-center justify-center hover:bg-primary/10 transition duration-300 shadow-xl">
+                    <a href="mailto:sugnanamurthygm@gmail.com" class="card-bg p-6 rounded-xl text-center flex flex-col items-center hover:bg-primary/10 transition duration-300">
                         <i data-lucide="mail" class="text-primary w-8 h-8 mb-3"></i>
                         <p class="text-lg font-semibold">Email Me</p>
-                        <p class="text-sm text-gray-400">sugnanamurthygm@gmail.com</p>
+                        <p class="text-xs text-gray-400">sugnanamurthygm@gmail.com</p>
                     </a>
-                    
-                    <!-- Contact Card 2: LinkedIn -->
-                    <a href="https://www.linkedin.com/in/sugnana-murthy-gm-6270" target="_blank" rel="noopener noreferrer" class="card-bg p-6 rounded-xl text-center flex flex-col items-center justify-center hover:bg-primary/10 transition duration-300 shadow-xl">
+                    <a href="https://www.linkedin.com/in/sugnana-murthy-gm-6270" target="_blank" class="card-bg p-6 rounded-xl text-center flex flex-col items-center hover:bg-primary/10 transition duration-300">
                         <i data-lucide="linkedin" class="text-primary w-8 h-8 mb-3"></i>
-                        <p class="text-lg font-semibold">Connect on LinkedIn</p>
-                        <p class="text-sm text-gray-400">/sugnana-murthy-gm-6270</p>
+                        <p class="text-lg font-semibold">LinkedIn</p>
+                        <p class="text-xs text-gray-400">/sugnana-murthy-gm-6270</p>
                     </a>
-                    
-                    <!-- Contact Card 3: GitHub -->
-                    <a href="https://github.com/CU22BCA033A" target="_blank" rel="noopener noreferrer" class="card-bg p-6 rounded-xl text-center flex flex-col items-center justify-center hover:bg-primary/10 transition duration-300 shadow-xl">
+                    <a href="https://github.com/CU22BCA033A" target="_blank" class="card-bg p-6 rounded-xl text-center flex flex-col items-center hover:bg-primary/10 transition duration-300">
                         <i data-lucide="github" class="text-primary w-8 h-8 mb-3"></i>
-                        <p class="text-lg font-semibold">View My Code</p>
-                        <p class="text-sm text-gray-400">/CU22BCA033A</p>
+                        <p class="text-lg font-semibold">GitHub</p>
+                        <p class="text-xs text-gray-400">/CU22BCA033A</p>
                     </a>
                 </div>
-                
-                <div class="mt-8 text-center text-gray-400">
-                    <p>Phone: 7483546559 | Address: Bengaluru</p>
+                <div class="mt-8 text-center text-gray-400 text-sm">
+                    <p>Phone: 7483546559 | Location: Bengaluru[cite: 1]</p>
                 </div>
             </section>
 
@@ -429,417 +341,145 @@
     
     <!-- Footer -->
     <footer class="card-bg mt-12 py-6 border-t border-primary/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-400">
-            &copy; 2024 Sugnana Murthy GM. All rights reserved. Built with passion and security in mind.
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-400">
+            &copy; 2026 Sugnana Murthy GM. Built with passion and security in mind.
         </div>
     </footer>
-
 
     <!-- Project Detail Modal -->
     <div id="project-modal" class="fixed inset-0 bg-black/80 z-[100] hidden flex items-center justify-center p-4" onclick="closeProjectModal()">
         <div class="card-bg w-full max-w-3xl rounded-xl p-8 shadow-2xl relative" onclick="event.stopPropagation()">
-            <button onclick="closeProjectModal()" class="absolute top-4 right-4 text-gray-400 hover:text-primary transition duration-300">
+            <button onclick="closeProjectModal()" class="absolute top-4 right-4 text-gray-400 hover:text-primary">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
             <h3 id="modal-title" class="text-3xl font-bold text-primary mb-2"></h3>
             <p id="modal-tech" class="text-lg text-gray-300 mb-4"></p>
             <div id="modal-description" class="text-gray-400 space-y-4 mb-6 border-b border-primary/20 pb-4"></div>
             
-            <!-- Gemini AI Feature Section -->
             <h4 class="text-xl font-semibold text-text-color mb-4 flex items-center">
-                <i data-lucide="lightbulb" class="w-5 h-5 text-primary mr-2"></i> Cybersecurity Intelligence (Powered by Gemini)
+                <i data-lucide="lightbulb" class="w-5 h-5 text-primary mr-2"></i> Cybersecurity Insight (Powered by Gemini)
             </h4>
-
-            <button id="generate-summary-btn" class="bg-primary text-background-color font-bold py-2 px-4 rounded-lg flex items-center hover:opacity-90 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed" onclick="generateSecuritySummary()">
+            <button id="generate-summary-btn" class="bg-primary text-background-color font-bold py-2 px-4 rounded-lg flex items-center hover:opacity-90 disabled:opacity-50" onclick="generateSecuritySummary()">
                 <i data-lucide="sparkles" class="w-5 h-5 mr-2"></i>
                 <span id="button-text">✨ Get Security Insight</span>
             </button>
-
-            <!-- AI Output Area -->
             <div id="ai-output-container" class="mt-4 hidden p-4 border border-primary/50 rounded-lg bg-gray-900/50">
-                <p id="ai-summary" class="text-gray-300"></p>
-                <div id="ai-sources" class="text-xs text-gray-500 mt-2 space-y-1"></div>
+                <p id="ai-summary" class="text-gray-300 text-sm italic"></p>
             </div>
-
         </div>
     </div>
 
-
     <script>
-        // --- Configuration for Gemini API ---
         const GEMINI_MODEL = 'gemini-2.5-flash-preview-09-2025';
         const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=`;
-        const API_KEY = ""; // Canvas will provide the key at runtime
+        const API_KEY = ""; // Key provided by environment
 
-        // --- 1. State and Data Management ---
         const sections = ['home', 'skills', 'projects', 'activities', 'contact'];
-        const sectionElements = sections.map(id => document.getElementById(id));
-        const navLinks = document.querySelectorAll('.nav-link');
         let currentSection = 'home';
         let currentProjectId = null;
         
-        // Data for Project Modals - Added specific prompt keys for Gemini
         const projectDetails = {
-            1: {
-                title: "Cybersecurity Awareness Portal (NISD Compliance)",
-                tech: "React, Flask, AWS",
-                description: [
-                    "Built a fully functional, secure web portal utilizing React for the dynamic frontend and Flask for a robust, scalable backend.",
-                    "The content is specifically aligned with NISD (National Information Security Division) standards for high-quality cybersecurity education.",
-                    "Hosted on AWS, demonstrating cloud deployment proficiency and ensuring high availability and scalability.",
-                    "Achieved 90% user satisfaction, proving its effectiveness as a training and awareness tool."
-                ],
-                geminiPrompt: "Analyze this NISD-compliant Cybersecurity Awareness Portal built on React/Flask/AWS. What are the key security best practices for hosting such a platform on the cloud, specifically regarding data integrity and user authentication? Summarize in one paragraph."
-            },
-            2: {
-                title: "Translatr (Encryption/Decryption Tool)",
-                tech: "AWS Encryption SDK, Custom Ciphers",
-                description: [
-                    "A cryptographic tool developed to implement and demonstrate various classical encryption algorithms.",
-                    "Supports Caesar, Beaufort, and Autokey ciphers, providing practical insight into cryptographic mechanisms.",
-                    "Utilized the AWS Encryption SDK to handle key management and secure operations, showcasing cloud-based security development."
-                ],
-                geminiPrompt: "Summarize the modern risks associated with using classical ciphers (Caesar, Beaufort, Autokey) for modern applications and why the AWS Encryption SDK or AES-256 is a more secure, industry-standard alternative for data at rest/in transit. Summarize in one paragraph."
-            },
-            3: {
-                title: "Steganography Web App",
-                tech: "JavaScript, Flask",
-                description: [
-                    "Developed a full-stack web application using JavaScript and Flask to implement steganography.",
-                    "Functionality includes securely hiding and extracting messages embedded within image files.",
-                    "Demonstrates skill in web security and advanced data manipulation techniques."
-                ],
-                geminiPrompt: "Explain the threat landscape of steganography in web applications (e.g., C2 communications) and suggest three technical mitigation steps a modern Web Application Firewall (WAF) or Intrusion Detection System (IDS) could take to identify and block it. Summarize in one paragraph."
-            },
-            4: {
-                title: "Secure Adversarial AI Models",
-                tech: "AI/ML Security",
-                description: [
-                    "Focused on the critical domain of AI security by implementing robust defenses against common adversarial attacks.",
-                    "Demonstrated ability to improve model robustness by 15% against malicious data injection and manipulation attempts.",
-                    "Explores the intersection of Machine Learning and Cybersecurity, a highly advanced and sought-after skill."
-                ],
-                geminiPrompt: "Provide a brief overview of the two most common adversarial AI attacks (e.g., model poisoning, evasion attacks) and how improving model robustness by 15% directly benefits an organization's security posture. Summarize in one paragraph."
-            },
-            5: {
-                title: "Real-Time Threat Intelligence Dashboard",
-                tech: "Cyber Intelligence, Data Visualization",
-                description: [
-                    "Designed and developed a comprehensive cybersecurity application for visualizing threat data.",
-                    "The dashboard is built to collect and analyze security intelligence in real-time, enabling rapid response to emerging threats.",
-                    "A critical project demonstrating skills in data processing, analysis, and intuitive visualization for security operations."
-                ],
-                geminiPrompt: "What are the three most critical real-time threat indicators that an effective dashboard should monitor (e.g., failed login attempts, anomalous network traffic, known bad IPs), and what is the primary security benefit of centralizing this data? Summarize in one paragraph."
-            },
-            6: {
-                title: "Temple and Monument Detection",
-                tech: "YOLOV8 Deep Learning, Computer Vision",
-                description: [
-                    "A computer vision project utilizing the YOLOV8 Deep Learning model.",
-                    "Achieved efficient, real-time object recognition and detection of specific temples and monuments.",
-                    "Showcases strong skills in AI, Deep Learning model implementation, and performance optimization."
-                ],
-                geminiPrompt: "When deploying a computer vision model like YOLOV8 in a security or public infrastructure context (e.g., monitoring), what are the main privacy and ethical concerns that must be addressed, and what steps should be taken to ensure GDPR or similar compliance? Summarize in one paragraph."
-            }
+            2: { title: "Translatr", tech: "AWS Encryption SDK", description: ["Implemented classical ciphers (Caesar, Beaufort, Autokey) using modern AWS cloud security tools[cite: 1]."], geminiPrompt: "Discuss the security trade-offs between classical ciphers and modern AES-256 encryption." },
+            3: { title: "Steganography Web App", tech: "Flask & JavaScript", description: ["Securely embed hidden messages within image data, showcasing data manipulation and web security[cite: 1]."], geminiPrompt: "Explain the threat of steganography in command-and-control (C2) communication." },
+            4: { title: "Secure Adversarial AI", tech: "AI/ML Security", description: ["Improved model robustness by 15% to defend against data poisoning and evasion attacks[cite: 1]."], geminiPrompt: "What are the common methods to harden a machine learning model against adversarial attacks?" },
+            8: { title: "SENTINEL.IO", tech: "Artificial Intelligence", description: ["A multi-layered AI system designed for high-speed, real-time threat detection across networks[cite: 1]."], geminiPrompt: "How does multi-layered AI improve detection rates for Zero-Day vulnerabilities?" },
+            10: { title: "Vuln-scanner", tech: "Phishing Intelligence", description: ["A comprehensive multi-modal system built to detect and analyze complex phishing threats[cite: 1]."], geminiPrompt: "What are the advantages of multi-modal analysis in phishing detection compared to URL filtering?" },
+            11: { title: "IoT Door Controller", tech: "RFID & Encryption", description: ["Secure IoT hardware integration using encrypted RFID signals for automated access control[cite: 1]."], geminiPrompt: "Analyze the vulnerabilities of unencrypted RFID systems in physical security." }
         };
 
-        // --- 2. Interactive Navigation (SPA Simulation) ---
+        function switchSection(id) {
+            document.querySelectorAll('.section-content').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('active');
+            });
+            const target = document.getElementById(id);
+            target.classList.remove('hidden');
+            setTimeout(() => { target.classList.add('active'); }, 50);
 
-        /**
-         * Switches the active section based on the provided ID.
-         * @param {string} targetSectionId 
-         */
-        function switchSection(targetSectionId) {
-            // Find and deactivate the current section
-            const currentEl = document.querySelector(`.section-content.active`);
-            if (currentEl) {
-                currentEl.classList.remove('active');
-                currentEl.classList.add('hidden');
-            }
-
-            // Find and activate the target section
-            const targetEl = document.getElementById(targetSectionId);
-            if (targetEl) {
-                targetEl.classList.remove('hidden');
-                // Give it a small delay before adding 'active' for transition effect
-                setTimeout(() => {
-                    targetEl.classList.add('active');
-                    currentSection = targetSectionId;
-                    // Update URL hash for "connected pages" feel
-                    history.pushState(null, '', `#${targetSectionId}`);
-                    // Re-run Lucide icons render on the new section
-                    lucide.createIcons();
-                }, 50); 
-            }
-
-            // Update active state in navigation bar
-            navLinks.forEach(link => {
+            document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('text-primary');
                 link.classList.add('text-gray-300');
-                if (link.dataset.section === targetSectionId) {
-                    link.classList.add('text-primary');
-                    link.classList.remove('text-gray-300');
-                }
+                if (link.dataset.section === id) link.classList.add('text-primary');
             });
+            history.pushState(null, '', `#${id}`);
+            lucide.createIcons();
         }
 
-        // Initialize section based on URL hash on load
-        function initializeSections() {
-            const hash = window.location.hash.replace('#', '');
-            const initialSection = sections.includes(hash) ? hash : 'home';
-            
-            // Hide all sections initially
-            sectionElements.forEach(el => {
-                if (el.id !== initialSection) {
-                    el.classList.add('hidden');
-                    el.classList.remove('active');
-                }
-            });
-
-            // Activate the initial section
-            const initialEl = document.getElementById(initialSection);
-            if (initialEl) {
-                initialEl.classList.remove('hidden');
-                initialEl.classList.add('active');
-            }
-            
-            // Update nav state
-            switchSection(initialSection);
-        }
-
-        // Add event listeners for navigation links
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetSection = link.dataset.section;
-                switchSection(targetSection);
-                // Smooth scroll to the top of the content area
-                document.querySelector('main').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
-
-        // Handle browser back/forward buttons
         window.addEventListener('popstate', () => {
-            const hash = window.location.hash.replace('#', '');
-            if (sections.includes(hash)) {
-                switchSection(hash);
-            }
+            const hash = window.location.hash.replace('#', '') || 'home';
+            switchSection(hash);
         });
 
-
-        // --- 3. Project Modal Logic ---
-        const modal = document.getElementById('project-modal');
-        const modalTitle = document.getElementById('modal-title');
-        const modalTech = document.getElementById('modal-tech');
-        const modalDescription = document.getElementById('modal-description');
-        const aiOutputContainer = document.getElementById('ai-output-container');
-        const aiSummary = document.getElementById('ai-summary');
-        const aiSources = document.getElementById('ai-sources');
-        const generateBtn = document.getElementById('generate-summary-btn');
-        const btnText = document.getElementById('button-text');
-        
-
-        function showProjectModal(projectId) {
-            currentProjectId = projectId;
-            const detail = projectDetails[projectId];
-            if (!detail) return;
-
-            // Reset AI content and button state
-            aiOutputContainer.classList.add('hidden');
-            aiSummary.textContent = '';
-            aiSources.innerHTML = '';
-            generateBtn.disabled = false;
-            btnText.innerHTML = '<i data-lucide="sparkles" class="w-5 h-5 mr-2"></i> ✨ Get Security Insight';
-
-            // Populate static content
-            modalTitle.textContent = detail.title;
-            modalTech.textContent = detail.tech;
-            
-            // Populate description as paragraphs
-            modalDescription.innerHTML = detail.description.map(p => `<p class="mb-2">${p}</p>`).join('');
-
-            // Show modal
-            modal.classList.remove('hidden');
-            lucide.createIcons(); // Re-render icons in the modal
+        function showProjectModal(id) {
+            currentProjectId = id;
+            const data = projectDetails[id];
+            if (!data) return;
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-tech').textContent = data.tech;
+            document.getElementById('modal-description').innerHTML = data.description.map(p => `<p>${p}</p>`).join('');
+            document.getElementById('ai-output-container').classList.add('hidden');
+            document.getElementById('project-modal').classList.remove('hidden');
+            lucide.createIcons();
         }
 
         function closeProjectModal() {
-            modal.classList.add('hidden');
-            currentProjectId = null;
+            document.getElementById('project-modal').classList.add('hidden');
         }
 
-
-        // --- 4. Gemini API Integration ---
-
-        /**
-         * Generic function to fetch response from Gemini API with exponential backoff.
-         * @param {object} payload - The request body for the API.
-         * @returns {Promise<{text: string, sources: Array<{uri: string, title: string}>}>}
-         */
-        async function fetchGeminiResponse(payload, maxRetries = 5) {
-            for (let i = 0; i < maxRetries; i++) {
-                try {
-                    const response = await fetch(GEMINI_API_URL + API_KEY, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (!response.ok) {
-                        // Throw error to trigger retry if 429 (Rate Limit) or other retryable errors
-                        throw new Error(`API error: ${response.status} ${response.statusText}`);
-                    }
-
-                    const result = await response.json();
-                    const candidate = result.candidates?.[0];
-
-                    if (candidate && candidate.content?.parts?.[0]?.text) {
-                        const text = candidate.content.parts[0].text;
-                        
-                        // Extract grounding sources
-                        let sources = [];
-                        const groundingMetadata = candidate.groundingMetadata;
-                        if (groundingMetadata && groundingMetadata.groundingAttributions) {
-                            sources = groundingMetadata.groundingAttributions
-                                .map(attribution => ({
-                                    uri: attribution.web?.uri,
-                                    title: attribution.web?.title,
-                                }))
-                                .filter(source => source.uri && source.title);
-                        }
-                        
-                        return { text, sources };
-
-                    } else {
-                        return { text: "Error: The model returned an empty response.", sources: [] };
-                    }
-
-                } catch (error) {
-                    console.error("Gemini API call failed:", error);
-                    if (i < maxRetries - 1) {
-                        const delay = Math.pow(2, i) * 1000 + Math.random() * 1000;
-                        await new Promise(resolve => setTimeout(resolve, delay));
-                    } else {
-                        throw new Error("Failed to connect to the Gemini API after multiple retries.");
-                    }
-                }
-            }
-        }
-
-        /**
-         * Triggers the Gemini API call to generate a security summary for the current project.
-         */
         async function generateSecuritySummary() {
-            if (!currentProjectId) return;
             const project = projectDetails[currentProjectId];
-            if (!project) return;
+            const btn = document.getElementById('generate-summary-btn');
+            const output = document.getElementById('ai-output-container');
+            const textEl = document.getElementById('ai-summary');
 
-            // Set loading state
-            generateBtn.disabled = true;
-            btnText.innerHTML = '<span class="loader mr-2"></span> Generating Insight...';
-            aiOutputContainer.classList.add('hidden');
-            aiSummary.textContent = '';
-            aiSources.innerHTML = '';
-
-
-            const systemPrompt = "You are a concise, world-class Cybersecurity Consultant. Your task is to analyze the following project description and provide a single-paragraph summary of its key security implications, attack vectors, or defensive mechanisms. Start your summary with 'Security Insight: '";
-            const userQuery = project.geminiPrompt;
-
-            const payload = {
-                contents: [{ parts: [{ text: userQuery }] }],
-                tools: [{ "google_search": {} }],
-                systemInstruction: {
-                    parts: [{ text: systemPrompt }]
-                },
-            };
+            btn.disabled = true;
+            btn.innerHTML = '<span class="loader mr-2"></span> Analyzing...';
 
             try {
-                const { text, sources } = await fetchGeminiResponse(payload);
-                
-                aiSummary.textContent = text;
-                
-                // Display sources
-                if (sources.length > 0) {
-                    aiSources.innerHTML = '<p class="font-bold text-primary mt-3">Sources:</p>' + sources.map((s, index) => 
-                        `<a href="${s.uri}" target="_blank" rel="noopener noreferrer" class="block text-gray-500 hover:text-primary underline transition duration-300">
-                            ${index + 1}. ${s.title}
-                        </a>`
-                    ).join('');
-                } else {
-                     aiSources.innerHTML = '';
-                }
-
-                aiOutputContainer.classList.remove('hidden');
-
-            } catch (error) {
-                aiSummary.textContent = `Error generating insight: ${error.message}`;
-                aiOutputContainer.classList.remove('hidden');
-                console.error("Final API error:", error);
+                const response = await fetch(GEMINI_API_URL + API_KEY, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: project.geminiPrompt }] }],
+                        systemInstruction: { parts: [{ text: "You are a top-tier security consultant. Provide a 2-sentence technical insight." }] }
+                    })
+                });
+                const result = await response.json();
+                textEl.textContent = result.candidates[0].content.parts[0].text;
+                output.classList.remove('hidden');
+            } catch (e) {
+                textEl.textContent = "Error fetching AI insight. Check API key.";
+                output.classList.remove('hidden');
             } finally {
-                // Reset button state
-                generateBtn.disabled = false;
-                btnText.innerHTML = '<i data-lucide="sparkles" class="w-5 h-5 mr-2"></i> ✨ Get Security Insight';
-                lucide.createIcons(); // Re-render sparkle icon
+                btn.disabled = false;
+                btn.innerHTML = '<i data-lucide="sparkles" class="w-5 h-5 mr-2"></i> ✨ Get Security Insight';
+                lucide.createIcons();
             }
         }
 
-
-        // --- 5. Typing Animation (Advanced Feature) ---
         const textElement = document.getElementById('typewriter-text');
-        const roles = [
-            "Security Consultant",
-            "Full-Stack Web Developer",
-            "Penetration Tester",
-            "Vulnerability Analyst"
-        ];
-        let roleIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typingSpeed = 100;
+        const roles = ["Security Consultant", "Penetration Tester", "Cybersecurity Engineer", "Vulnerability Analyst", "Full-Stack Developer"];[cite: 1]
+        let roleIndex = 0, charIndex = 0, isDeleting = false;
 
         function type() {
             const currentRole = roles[roleIndex];
-            const display = currentRole.substring(0, charIndex);
-            textElement.textContent = display;
-
+            textElement.textContent = currentRole.substring(0, charIndex);
             if (!isDeleting) {
-                // Typing forward
                 charIndex++;
-                if (charIndex > currentRole.length) {
-                    isDeleting = true;
-                    typingSpeed = 20; // Pause at end, then faster delete
-                    setTimeout(type, 1500); // Wait longer before starting to delete
-                    return;
-                }
-                typingSpeed = 100 - Math.random() * 50; // Randomize speed
+                if (charIndex > currentRole.length) { isDeleting = true; setTimeout(type, 1500); return; }
             } else {
-                // Typing backward (deleting)
                 charIndex--;
-                if (charIndex === 0) {
-                    isDeleting = false;
-                    roleIndex = (roleIndex + 1) % roles.length;
-                    typingSpeed = 150; // Pause slightly before next word starts
-                }
-                typingSpeed = 50; // Consistent delete speed
+                if (charIndex === 0) { isDeleting = false; roleIndex = (roleIndex + 1) % roles.length; }
             }
-
-            if (!isDeleting && charIndex > 0) {
-                // Scroll the typing element into view if it's the active section
-                if (currentSection === 'home') {
-                    textElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            }
-
-            setTimeout(type, typingSpeed);
+            setTimeout(type, isDeleting ? 50 : 100);
         }
-        
-        // --- 6. Initialization on Load ---
-        window.onload = function() {
-            initializeSections(); // Sets the correct initial page state
-            type(); // Start the typewriter effect
-            lucide.createIcons(); // Initialize all Lucide icons
+
+        window.onload = () => {
+            const hash = window.location.hash.replace('#', '') || 'home';
+            switchSection(hash);
+            type();
+            lucide.createIcons();
         };
     </script>
-
 </body>
 </html>
