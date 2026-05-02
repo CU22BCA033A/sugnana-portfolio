@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sugnana Murthy GM - Security & Full-Stack Portfolio</title>
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
@@ -22,7 +20,7 @@
         .text-primary { color: var(--primary-color); }
         .border-primary { border-color: var(--primary-color); }
         
-        /* Fixed SPA Visibility Logic: Ensures info starts at the top without gaps */
+        /* Visibility Logic: Ensures content starts at the top without gaps */
         .section-content {
             display: none; 
             opacity: 0;
@@ -79,17 +77,17 @@
                     <span class="text-2xl font-bold text-primary">Sugnana Murthy GM</span>
                 </div>
                 <div class="flex space-x-6">
-                    <button onclick="switchSection('home')" class="nav-link text-primary transition duration-300 font-medium px-2">Home</button>
-                    <button onclick="switchSection('skills')" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium px-2">Skills</button>
-                    <button onclick="switchSection('projects')" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium px-2">Projects</button>
-                    <button onclick="switchSection('activities')" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium px-2">Experience</button>
-                    <button onclick="switchSection('contact')" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium px-2">Contact</button>
+                    <a href="#home" onclick="switchSection('home')" class="nav-link text-primary transition duration-300 font-medium px-2">Home</a>
+                    <a href="#skills" onclick="switchSection('skills')" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium px-2">Skills</a>
+                    <a href="#projects" onclick="switchSection('projects')" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium px-2">Projects</a>
+                    <a href="#activities" onclick="switchSection('activities')" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium px-2">Experience</a>
+                    <a href="#contact" onclick="switchSection('contact')" class="nav-link text-gray-300 hover:text-primary transition duration-300 font-medium px-2">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Main Container -->
+    <!-- Content Container -->
     <main class="pt-20 pb-12 flex-grow"> 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
@@ -106,13 +104,13 @@
                             Dynamic <b>Full-Stack Web Developer and Cybersecurity Enthusiast</b> specializing in building secure, scalable applications[cite: 1]. Currently a student at <b>Chanakya University (8.3 CGPA)</b>[cite: 1].
                         </p>
                         <div class="flex space-x-4 pt-4">
-                            <button onclick="switchSection('projects')" class="bg-primary text-background-color font-bold py-3 px-6 rounded-lg hover:opacity-90 transition duration-300 shadow-lg shadow-primary/30">View Projects</button>
-                            <button onclick="switchSection('contact')" class="border border-primary text-primary font-bold py-3 px-6 rounded-lg hover:bg-primary/10 transition duration-300">Get In Touch</button>
+                            <a href="#projects" onclick="switchSection('projects')" class="bg-primary text-background-color font-bold py-3 px-6 rounded-lg hover:opacity-90 transition duration-300 shadow-lg shadow-primary/30">View Projects</a>
+                            <a href="#contact" onclick="switchSection('contact')" class="border border-primary text-primary font-bold py-3 px-6 rounded-lg hover:bg-primary/10 transition duration-300">Get In Touch</a>
                         </div>
                     </div>
                     <div class="flex flex-col items-center space-y-6 max-w-md mx-auto">
                         <div class="card-bg p-3 rounded-full border-4 border-primary shadow-2xl">
-                            <img src="https://media.licdn.com/dms/image/v2/D5603AQFxwD4mr9Hnbw/profile-displayphoto-scale_400_400/B56ZsvqQfUI0Ak-/0/1766031166006?e=1778716800&v=beta&t=qVm8YV_yN258BjHJu_hPVXxwpjIysh8tZwhUjUyMqUM" alt="Profile Image" class="w-64 h-64 object-cover rounded-full">
+                            <img src="https://media.licdn.com/dms/image/v2/D5603AQFxwD4mr9Hnbw/profile-displayphoto-scale_400_400/B56ZsvqQfUI0Ak-/0/1766031166006?e=1778716800&v=beta&t=qVm8YV_yN258BjHJu_hPVXxwpjIysh8tZwhUjUyMqUM" alt="Sugnana Murthy GM" class="w-64 h-64 object-cover rounded-full">
                         </div>
                         <div class="card-bg p-3 rounded-xl border border-primary/20 w-full hidden lg:block">
                             <div class="terminal-window font-mono">
@@ -220,7 +218,7 @@
             
             <!-- EXPERIENCE SECTION -->
             <section id="activities" class="section-content">
-                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Professional Experience</h2>
+                <h2 class="text-4xl font-bold text-primary mb-10 border-b border-primary/50 pb-4">Professional Growth</h2>
                 <div class="grid lg:grid-cols-2 gap-12">
                     <div class="space-y-6">
                         <h3 class="text-2xl font-semibold text-text-color flex items-center mb-4"><i data-lucide="briefcase" class="text-primary w-5 h-5 mr-3"></i> Internships</h3>
@@ -295,14 +293,14 @@
         </div>
     </main>
     
-    <footer class="card-bg py-6 text-center text-xs text-gray-400 border-t border-primary/20">
+    <footer class="card-bg py-6 text-center text-xs text-gray-400 border-t border-primary/20 mt-auto">
         &copy; 2026 Sugnana Murthy GM. All rights reserved.[cite: 1]
     </footer>
 
     <script>
-        // Restored Navigation Logic
+        // Restored and Fixed Navigation Logic
         function switchSection(id) {
-            // Hide all sections
+            // Remove active from all sections
             const sections = document.querySelectorAll('.section-content');
             sections.forEach(s => s.classList.remove('active'));
             
@@ -322,7 +320,7 @@
                 }
             });
 
-            // Update hash and reset scroll
+            // Update hash and reset scroll to top of content
             window.location.hash = id;
             window.scrollTo(0, 0);
             lucide.createIcons();
@@ -346,6 +344,7 @@
             setTimeout(type, isDeleting ? 50 : 100);
         }
 
+        // Initialization
         window.onload = () => {
             const hash = window.location.hash.replace('#', '') || 'home';
             switchSection(hash);
@@ -353,6 +352,7 @@
             lucide.createIcons();
         };
 
+        // Browser history support
         window.onhashchange = () => {
             const hash = window.location.hash.replace('#', '') || 'home';
             switchSection(hash);
